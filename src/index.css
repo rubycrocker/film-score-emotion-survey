@@ -1,74 +1,3 @@
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-} 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-
-
 
 *{
   margin: 0;
@@ -76,23 +5,34 @@ button:focus-visible {
   box-sizing: border-box;
 }
 
-
-
 /* main */
-
-.main {
-box-sizing: content-box;
+/* .main {
+  box-sizing: content-box;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%; /* Adjust as needed */
+  /*height: 100vh; /* Adjust as needed */
+  /* Add other styles as needed */
+/*} */
+
+.main {
+  box-sizing: content-box;
+  display: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   max-width: 1200px;
   display: block;
   margin: auto;
   height: 680px;
   background-color: rgb(255, 255, 255);
-  padding: 60px;
-  padding-top: 300px;
-  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  /*padding-top: 300px;*/
+  padding-bottom: 20px;
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
@@ -101,11 +41,14 @@ box-sizing: content-box;
 }
 
 body{
+  font-family: 'Helvetica';
   width: 90%;
   height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 200px;
+  padding-left: 40px;
 }
 
 /* container form */
@@ -154,14 +97,6 @@ body{
   user-select: none;
 }
 
-/* .container form{
-  width: 50%;
-  height: 30cqh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-} */
 
 
 /* Text */
@@ -230,6 +165,52 @@ p2 {
   text-align: center;
 }
 
+h4 {
+  width: 100%;
+    font-family: 'Helvetica';
+    font-weight: 100;
+    font-style: normal;
+    font-size: 18px;
+    margin: 5px;
+    text-align: left;
+}
+
+h5 {
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 30px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.navBox{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 70px;
+}
+
+.navBox button{
+  width: 80%;    
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  background: rgb(0, 100, 116);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer; 
+}
+
+.navBox button:hover{
+  background: rgb(0, 64, 83);
+  transition: all 0.3s ease;
+} 
 
 
 
@@ -266,7 +247,7 @@ p2 {
   outline: none;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 0px 10px;
+  padding: 1px 10px;
   font-size: 16px;
   color: #000000;
 }
@@ -276,18 +257,20 @@ p2 {
   padding: 10px 20px;
   border: none;
   outline: none;
-  background: rgb(0, 157, 205);
+  background: rgb(0, 100, 116);
   color: #ffffff;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
+
   
-}
+} 
 
 .inputBox button:hover{
-  background: rgb(0, 17, 255);
+  background: rgb(0, 64, 83);
   transition: all 0.3s ease;
 }
+
 
 
 /* Footer , naviagation button */
@@ -308,6 +291,7 @@ p2 {
   right: 0;
   border-top: 3px solid rgb(217, 217, 217);
 }
+
 .submit {
   position: relative;
   padding-top:20px;
@@ -316,26 +300,20 @@ p2 {
 
 
 /* Navigation Button*/
+
+
 .button, .progress {
-  width: 60%;    
+  width: 80%;    
   padding: 10px 20px;
   border: none;
   outline: none;
-  background: rgb(0, 119, 255);
-  color: #FFF;
+  background: rgb(0, 100, 116);
+  color: #ffffff;
   font-size: 20px;
   font-weight: bold;
-  cursor: pointer;
+  cursor: pointer; 
 }
 
-
-/* .button {
-  border: 2px solid black;
-  margin: -20px -50px; 
-  position:relative;
-  top:50%; 
-  left:50%;
-} */
 
 ::placeholder{
   font-size: 16px;
@@ -343,7 +321,7 @@ p2 {
 
 .alert{
   width: 100%;
-  background: rgb(0, 255, 106);
+  background: rgb(0, 147, 61);
   padding: 10px 20px;
   border-radius: 5px;
   text-align: center;
@@ -354,10 +332,59 @@ p2 {
 
 form {
   border-radius: 5px;
-  background-color: #D4E6F1;
+  background-color: #d4eaf1;
   padding: 20px;
   text-align: center;
 }
+
+
+#confirm-consent-button,
+#submit-demographics-button,
+#submit-page4-button,
+#submit-page5-button,
+#submit-page6-button {
+  background-color: rgb(0, 100, 116); /* Green background color */
+  color: white; /* White text color */
+  padding: 10px 1px; /* Padding for the button */
+  border: none; /* No border */
+  width: 200px;
+  /*border-radius: 4px;  Rounded corners */
+  cursor: pointer; /* Cursor on hover */
+  font-family: 'Helvetica';
+  font-weight: 20;
+  font-style: normal;
+  font-size: 16px;
+}
+
+#confirm-consent-button:hover,
+#submit-demographics-button:hover,
+#submit-page4-button:hover,
+#submit-page5-button:hover,
+#submit-page6-button:hover {
+  background-color: rgb(0, 64, 83); /* Darker green on hover */
+}
+
+
+#previous-button{
+  position: absolute;
+  bottom: 10px; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  background-color: rgb(1, 155, 179); /* Green background color */
+  color: white; /* White text color */
+  padding: 10px 1px; /* Padding for the button */
+  border: none; /* No border */
+  width: 100px;
+  /*border-radius: 4px;  Rounded corners */
+  cursor: pointer; /* Cursor on hover */
+  font-family: 'Helvetica';
+  font-weight: 20;
+  font-style: normal;
+  font-size: 16px;
+}
+#page6-previous-button:hover {
+  background-color: rgb(2, 100, 130); /* Darker green on hover */
+}
+
 
 /* Custom styles for the sub-paragraph */
 sub-paragraph {
@@ -440,6 +467,70 @@ sub-paragraph sup {
   background-color: #ffffff; /* Optional: Set a background color for the waveform container */
   margin-bottom: 10px;
 }
+
+.help-tooltip {
+  position: fixed;
+  /*top: 110%; /*Adjust as needed */
+  top: 300px;
+  left: 50%; /* Adjust as needed */
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.help-tooltip img {
+  width: 400px;
+  height: 400px;
+  background-position: center;
+  display: block;
+  margin: 0 auto;
+  border: 4px solid #333;
+}
+
+.help-btn {
+  background-color: #20b4dd;
+  color: #fefefe;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 5px;
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 13px;
+}
+.help-btn:hover {
+  background-color: #0d4858;
+}
+
+#save-region-dot-btn,
+#save-region-dot-btn2,
+#save-region-dot-btn3,
+#save-region-dot-btn4,
+#save-region-dot-btn5 {
+  background: rgb(0, 100, 116);
+  color: #fefefe;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 5px;
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 18px;
+}
+#save-region-dot-btn:hover,
+#save-region-dot-btn2:hover,
+#save-region-dot-btn3:hover,
+#save-region-dot-btn4:hover,
+#save-region-dot-btn5:hover {
+  background-color: #024661;
+}
+
+
 
 
 
@@ -524,14 +615,6 @@ sub-paragraph sup {
   margin: 30px 0;
 }
 
-/* #waveform {
-/*style for waveform container
-  width: 100%; /* Adjust the width as needed */
-  /*height: 200px; /* Adjust the height as needed */
-  /*background-color: #f0f0f0; /* Background color for the container */
-  /*border: 1px solid #ccc; /* Border for the container */
-/*}*/ 
-
 
 
 .timeline-class {
@@ -564,7 +647,8 @@ sub-paragraph sup {
 .btn-toggle-pause,
 .btn-stop,
 .marker-btn,
-.save-dot-marker {
+.save-dot-marker,
+.delete-all-btn {
   background-color: #0077ff;
   color: #fefefe;
   border: none;
@@ -591,7 +675,7 @@ sub-paragraph sup {
   font-family: 'Helvetica';
   font-weight: 100;
   font-style: normal;
-  font-size: 12px;
+  font-size: 13px;
 
 }
 
@@ -604,6 +688,7 @@ sub-paragraph sup {
   font-weight: 100;
   font-style: normal;
   font-size: 15px;
+  background-color: #d4eaf1;
 }
 
 .btn-toggle-pause:hover,
@@ -613,11 +698,19 @@ sub-paragraph sup {
   background-color: #00326b;
 }
 
-.submit-audio1-data-btn:hover {
+.submit-audio1-data-btn:hover,
+.submit-audio2-data-btn:hover,
+.submit-audio3-data-btn:hover,
+.submit-audio4-data-btn:hover,
+.submit-audio5-data-btn:hover {
   background-color: #00326b;
 }
-.submit-audio1-data-btn {
-  background-color: #0077ff;
+.submit-audio1-data-btn,
+.submit-audio2-data-btn,
+.submit-audio3-data-btn,
+.submit-audio4-data-btn,
+.submit-audio5-data-btn {
+  background: rgb(0, 100, 116);
   color: #fefefe;
   border: none;
   border-radius: 5px;
@@ -628,7 +721,10 @@ sub-paragraph sup {
   font-family: 'Helvetica';
   font-weight: 100;
   font-style: normal;
-  font-size: 15px;
+  font-size: 18px;
+}
+#submit-audio1-data-btn:hover {
+  background-color: #024661;
 }
 
 .container2 {
@@ -645,18 +741,21 @@ sub-paragraph sup {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
 }
 .container2 {
   font-family: 'Helvetica';
   font-weight: 100;
   font-style: normal;
   font-size: 15px;
+
 }
 
 .radio-group2 label {
   display: block; /* Change display property to "block" */
   width: 100%;
   margin-bottom: 5px; /* Add some vertical spacing between the options */
+  
 }
 
 
@@ -665,6 +764,7 @@ sub-paragraph sup {
   font-weight: normal;
   margin-bottom: 10px;
   text-align: left;
+
 
 }
 
