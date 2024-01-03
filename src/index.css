@@ -212,40 +212,46 @@ h5 {
   transition: all 0.3s ease;
 } 
 
+textarea {
+  font-family: 'Helvetica';
+  width: 60%; /* Set the desired width */
+  resize: vertical; /* Allow vertical resizing */
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  font-size: 16px;
+  color: #000000;
+}
 
 
-
-/* input boxes */
-.inputBox{
+/* /* input boxes */
+.inputBox {
   width: 100%;
   margin: 10px 0;
   border-radius: 5px;
-  overflow: hidden;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.inputBox input[type="text"]{
+.inputBox input[type="text"] {
   width: 80%;
-  height: 50px;
+  height: auto;
   border-radius: 5px;
-  border: none;
-  outline: none;
-  overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 0px 10px;
+  padding: 10px;
   font-size: 16px;
   color: #000000;
+  resize: none;
+  overflow: hidden;
+  white-space: normal; /* or use 'normal' for word wrapping */
 }
 
-.inputBox textarea{
+.inputBox textarea {
   width: 80%;
   height: 120px;
   border-radius: 5px;
   border: none;
   outline: none;
-  overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 1px 10px;
   font-size: 16px;
@@ -342,7 +348,11 @@ form {
 #submit-demographics-button,
 #submit-page4-button,
 #submit-page5-button,
-#submit-page6-button {
+#submit-page6-button,
+#submit-page7-button,
+#submit-page8-button,
+#submit-page9-button,
+#submit-page10-button {
   background-color: rgb(0, 100, 116); /* Green background color */
   color: white; /* White text color */
   padding: 10px 1px; /* Padding for the button */
@@ -360,7 +370,11 @@ form {
 #submit-demographics-button:hover,
 #submit-page4-button:hover,
 #submit-page5-button:hover,
-#submit-page6-button:hover {
+#submit-page6-button:hover,
+#submit-page7-button:hover,
+#submit-page8-button:hover,
+#submit-page9-button:hover,
+#submit-page10-button:hover   {
   background-color: rgb(0, 64, 83); /* Darker green on hover */
 }
 
@@ -508,7 +522,12 @@ sub-paragraph sup {
 #save-region-dot-btn2,
 #save-region-dot-btn3,
 #save-region-dot-btn4,
-#save-region-dot-btn5 {
+#save-region-dot-btn5,
+#save-region-dot-btn6,
+#save-region-dot-btn7,
+#save-region-dot-btn8,
+#save-region-dot-btn9,
+#save-region-dot-btn10 {
   background: rgb(0, 100, 116);
   color: #fefefe;
   border: none;
@@ -526,7 +545,12 @@ sub-paragraph sup {
 #save-region-dot-btn2:hover,
 #save-region-dot-btn3:hover,
 #save-region-dot-btn4:hover,
-#save-region-dot-btn5:hover {
+#save-region-dot-btn5:hover,
+#save-region-dot-btn6:hover,
+#save-region-dot-btn7:hover,
+#save-region-dot-btn8:hover,
+#save-region-dot-btn9:hover,
+#save-region-dot-btn10:hover{
   background-color: #024661;
 }
 
@@ -702,14 +726,24 @@ sub-paragraph sup {
 .submit-audio2-data-btn:hover,
 .submit-audio3-data-btn:hover,
 .submit-audio4-data-btn:hover,
-.submit-audio5-data-btn:hover {
+.submit-audio5-data-btn:hover,
+.submit-audio6-data-btn:hover,
+.submit-audio7-data-btn:hover,
+.submit-audio8-data-btn:hover,
+.submit-audio9-data-btn:hover,
+.submit-audio10-data-btn:hover {
   background-color: #00326b;
 }
 .submit-audio1-data-btn,
 .submit-audio2-data-btn,
 .submit-audio3-data-btn,
 .submit-audio4-data-btn,
-.submit-audio5-data-btn {
+.submit-audio5-data-btn,
+.submit-audio6-data-btn,
+.submit-audio7-data-btn,
+.submit-audio8-data-btn,
+.submit-audio9-data-btn,
+.submit-audio10-data-btn {
   background: rgb(0, 100, 116);
   color: #fefefe;
   border: none;

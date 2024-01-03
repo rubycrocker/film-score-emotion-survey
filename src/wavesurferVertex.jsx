@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import WaveSurfer from 'wavesurfer.js';
 import RegionsPlugin from 'https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.esm.js';
+//import RegionsPlugin from 'wavesurfer.js/dist/plugin/wavesurfer.regions.min.js';
  
-export const WavesurferVertex = ({ audioFile, initialDots, onDotPositionUpdate, onRegionInformationUpdate, onSaveDotPositions}) => {
+export const WavesurferVertex = ({ audioFile, loadRandomAudioFile, initialDots, onDotPositionUpdate, onRegionInformationUpdate, onSaveDotPositions}) => {
 
   const wavesurferRef = useRef(null);
   const wsRegionsRef = useRef(null);
@@ -10,47 +11,14 @@ export const WavesurferVertex = ({ audioFile, initialDots, onDotPositionUpdate, 
   const [dots, setDots] = useState([]);
   const [draggedDotIndex, setDraggedDotIndex] = useState(null);
   const [newRegionId, setNewRegionId] = useState(null);
-
-
-
   //firestore saving stuff...
   const [savedDotPositions, setSavedDotPositions] = useState([]);
   const [regionInformation, setRegionInformation] = useState([]);
   
-
-  useEffect(() => {
-    const loadAudioFile = async () => {
-        try {
-          // Load the specified audio file
-          wavesurferRef.current.load(audioFile);
-        } catch (error) {
-          console.error('Error loading audio file:', error);
-        }
-    };
-    const loadRandomAudioFile = async () => {
-        try {
-          // Fetch the list of audio files
-          const response = await fetch('/audioFolder.json'); // Replace with the correct path
-          const files = await response.json();
-      
-          // Randomly select an audio file
-          const randomAudioFile = files[Math.floor(Math.random() * files.length)];
-      
-          // Log the selected file
-          console.log('Selected Audio File:', randomAudioFile);
-      
-          // Load the selected audio file
-          wavesurferRef.current.load(`/audioFolder/${randomAudioFile}`);
-        } catch (error) {
-          console.error('Error loading audio file:', error);
-        }
-    };
   
-    // Call the function to load a random audio file
-    //loadRandomAudioFile();
-    loadAudioFile();
-
-    // Create the WaveSurfer instance
+  useEffect(() => {
+    loadRandomAudioFile();
+        // Create the WaveSurfer instance
     wavesurferRef.current = WaveSurfer.create({
       container: '#waveform',
       waveColor: 'violet',
@@ -70,10 +38,6 @@ export const WavesurferVertex = ({ audioFile, initialDots, onDotPositionUpdate, 
     const wsRegions = wavesurferRef.current.registerPlugin(RegionsPlugin.create());
     wsRegionsRef.current = wsRegions;
 
-    // Call the function to load a random audio file
-    //loadRandomAudioFile();
-    loadRandomAudioFile();
-
 
     // Handle region update
     wavesurferRef.current.on('region-update-end', (region) => {
@@ -89,6 +53,18 @@ export const WavesurferVertex = ({ audioFile, initialDots, onDotPositionUpdate, 
       }
     };
   }, []);
+
+    useEffect(() => {
+    // Load the specified audio file when audioFile changes
+    if (audioFile) {
+      wavesurferRef.current.load(audioFile);
+      console.log('Audio file loaded successfully');
+    }
+  }, [audioFile]); 
+
+
+
+  
 
 
 
@@ -166,7 +142,6 @@ export const WavesurferVertex = ({ audioFile, initialDots, onDotPositionUpdate, 
   };
 
   //vertex:
-    
     const handleDotDragStart = (e, dotIndex) => {
         setDraggedDotIndex(dotIndex);
         
@@ -261,11 +236,15 @@ export const WavesurferVertex = ({ audioFile, initialDots, onDotPositionUpdate, 
       </button>
       <p></p>
       <button id="deleteAllButton" className="delete-all-btn" onClick={handleDeleteAllRegions}>
-        Remove Markers
+        Remove All Markers
       </button>
 
       <h2> 2. Energy and Positivity - Emotion Graph </h2>
       <p1> Please click and drag the dots that match the corresponding markers above to represent the energy/positivity you feel: </p1>
+      <p></p>
+      <sub-paragraph>
+        The dots might be a bit slow moving! 
+      </sub-paragraph>
 
       <div className="page-container" style={{ backgroundColor: '#d4eaf1'}}>
         <div className="centered-container">

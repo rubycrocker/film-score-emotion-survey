@@ -4,14 +4,12 @@ import { initializeApp } from 'firebase/app';
 import { useRef } from 'react';
 import { getFirestore, collection, addDoc, updateDoc, getDoc } from 'firebase/firestore/lite';
 import { Vertex } from '/Users/rubycrocker/ruby-fme-app/src/vertex.jsx';
-//import WaveSurferComponent from './WaveSurferComponent';
-//import WavSurfer from '/Users/rubycrocker/ruby-fme-app/src/wavsurfer.jsx';
-//import { Dots } from '/Users/rubycrocker/ruby-fme-app/src/assets/dots.jsx';
-import { WavesurferVertex } from './wavesurferVertex';
+import { WavesurferVertex } from './wavesurferVertex.jsx';
 //import { WaveSurferComponent } from '/Users/rubycrocker/ruby-fme-app/src/WaveSurferComponent.jsx';
 import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js'
 import RegionsPlugin from 'https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.esm.js'
-//import { audioFiles } from 'audioFiles.json';
+//import { audioFiles } from 'audioFiles.json';\
+
 
 
 const firebaseConfig = {
@@ -32,8 +30,6 @@ import viteLogo from '/vite.svg'*/}
 import './App.css'
 
 
-
-
 function App() {
   //const [count, setCount] = useState(0)
   const [currentPage, setCurrentPage] = useState('page1'); //initialise first page
@@ -46,6 +42,7 @@ function App() {
   const audioRef = useRef(null);
   const myRef = collection(firestore, 'messages');
   const [volume, setVolume] = useState(1.0); // Initial volume set to 100%
+  const wavesurferRef = useRef(null);
 
 
   //emotion sentence and familiarity on form...
@@ -63,6 +60,21 @@ function App() {
   //song 5 emotion sentence and familiarity on form...
   const [emotionSentence5, setEmotionSentence5] = useState('');
   const [familiarityRating5, setFamiliarityRating5] = useState('');
+  //song 6 emotion sentence and familiarity on form...
+  const [emotionSentence6, setEmotionSentence6] = useState('');
+  const [familiarityRating6, setFamiliarityRating6] = useState('');
+  //song 7 emotion sentence and familiarity on form...
+  const [emotionSentence7, setEmotionSentence7] = useState('');
+  const [familiarityRating7, setFamiliarityRating7] = useState('');
+  //song 8 emotion sentence and familiarity on form...
+  const [emotionSentence8, setEmotionSentence8] = useState('');
+  const [familiarityRating8, setFamiliarityRating8] = useState('');
+  //song 9 emotion sentence and familiarity on form...
+  const [emotionSentence9, setEmotionSentence9] = useState('');
+  const [familiarityRating9, setFamiliarityRating9] = useState('');
+  //song 10 emotion sentence and familiarity on form...
+  const [emotionSentence10, setEmotionSentence10] = useState('');
+  const [familiarityRating10, setFamiliarityRating10] = useState('');
 
 
   const [consentConfirmed, setConsentConfirmed] = useState(false);//consent page
@@ -143,49 +155,334 @@ function App() {
         // Handle error and show appropriate message
       }
     };
-    ////////////////////////////
-    //random audio file logic:
-     const audioFiles = ['002.mp3', '003.mp3', '031.mp3', '123.mp3', '139.mp3', '233.mp3', '267.mp3', '292.mp3', '310.mp3', '355.mp3' ];
-     const [selectedAudioFile, setSelectedAudioFile] = useState(null);
 
-     const handleRandomizeAudio = () => {
+    ////////////////////////////////////////////////////////////////
+    //random audio file logic:
+     /* const audioFiles = ['002.mp3', '003.mp3', '031.mp3', '123.mp3', '139.mp3', '233.mp3', '267.mp3', '292.mp3', '310.mp3', '355.mp3' ];
+     const [selectedAudioFile, setSelectedAudioFile] = useState(null);
+  
+     /* const handleRandomizeAudio = () => {
       const randomIndex = Math.floor(Math.random() * audioFiles.length);
       setSelectedAudioFile(audioFiles[randomIndex]);
-    };  
+    };  */ 
+    ////////////////////////////////////////////////////////////////
+    const [loadedAudioFile, setLoadedAudioFile] = useState('');
+    //ensure that the loadrandomaudiofile starts empty - hopefully no double loads...
+    useEffect(() => {
+      // Load the random audio file when the component mounts
+      loadRandomAudioFile1().then((randomAudioFile) => {
+        setLoadedAudioFile(randomAudioFile);
+      });
+    }, []);
+    useEffect(() => {
+      // Load the random audio file when the component mounts
+      loadRandomAudioFile2().then((randomAudioFile) => {
+        setLoadedAudioFile(randomAudioFile);
+      });
+    }, []);
+    useEffect(() => {
+      // Load the random audio file when the component mounts
+      loadRandomAudioFile3().then((randomAudioFile) => {
+        setLoadedAudioFile(randomAudioFile);
+      });
+    }, []);
+    useEffect(() => {
+      // Load the random audio file when the component mounts
+      loadRandomAudioFile4().then((randomAudioFile) => {
+        setLoadedAudioFile(randomAudioFile);
+      });
+    }, []);
+    useEffect(() => {
+      // Load the random audio file when the component mounts
+      loadRandomAudioFile5().then((randomAudioFile) => {
+        setLoadedAudioFile(randomAudioFile);
+      });
+    }, []);
+    useEffect(() => {
+      // Load the random audio file when the component mounts
+      loadRandomAudioFile6().then((randomAudioFile) => {
+        setLoadedAudioFile(randomAudioFile);
+      });
+    }, []);
+    useEffect(() => {
+      // Load the random audio file when the component mounts
+      loadRandomAudioFile7().then((randomAudioFile) => {
+        setLoadedAudioFile(randomAudioFile);
+      });
+    }, []);
+    useEffect(() => {
+      // Load the random audio file when the component mounts
+      loadRandomAudioFile8().then((randomAudioFile) => {
+        setLoadedAudioFile(randomAudioFile);
+      });
+    }, []);
+    useEffect(() => {
+      // Load the random audio file when the component mounts
+      loadRandomAudioFile9().then((randomAudioFile) => {
+        setLoadedAudioFile(randomAudioFile);
+      });
+    }, []);
+    useEffect(() => {
+      // Load the random audio file when the component mounts
+      loadRandomAudioFile10().then((randomAudioFile) => {
+        setLoadedAudioFile(randomAudioFile);
+      });
+    }, []);
 
-    const audioFilesPage1 = ['public/audioFiles1/002.mp3', 'public/audioFiles1/003.mp3'];
-    const audioFilesPage2 = ['031.mp3', '123.mp3'];
-    const audioFilesPage3 = ['139.mp3', '233.mp3'];
-    const audioFilesPage4 = ['267.mp3', '292.mp3'];
-    const audioFilesPage5 = ['310.mp3', '355.mp3'];
 
-    const [selectedAudioFile1, setSelectedAudioFile1] = useState(null);
-    const [selectedAudioFile2, setSelectedAudioFile2] = useState(null);
-    const [selectedAudioFile3, setSelectedAudioFile3] = useState(null);
-    const [selectedAudioFile4, setSelectedAudioFile4] = useState(null);
-    const [selectedAudioFile5, setSelectedAudioFile5] = useState(null);
 
-    const handleRandomizeAudio1 = () => {
-      const randomIndex = Math.floor(Math.random() * audioFilesPage1.length);
-      setSelectedAudioFile1(audioFilesPage1[randomIndex]);
-    };
-    const handleRandomizeAudio2 = () => {
-      const randomIndex = Math.floor(Math.random() * audioFilesPage2.length);
-      setSelectedAudioFile2(audioFilesPage2[randomIndex]);
-    };
-    const handleRandomizeAudio3 = () => {
-      const randomIndex = Math.floor(Math.random() * audioFilesPage3.length);
-      setSelectedAudioFile3(audioFilesPage3[randomIndex]);
-    };
-    const handleRandomizeAudio4 = () => {
-      const randomIndex = Math.floor(Math.random() * audioFilesPage4.length);
-      setSelectedAudioFile4(audioFilesPage4[randomIndex]);
-    };
-    const handleRandomizeAudio5 = () => {
-      const randomIndex = Math.floor(Math.random() * audioFilesPage5.length);
-      setSelectedAudioFile5(audioFilesPage5[randomIndex]);
+    ////////////////////////////////////////////////////////////////
+
+    const [audioFile1, setAudioFile1] = useState('');
+    const loadRandomAudioFile1 = async () => {
+      try {
+        // Check if an audio file is already selected
+        if (!audioFile1) {
+          const response = await fetch('/audioFolder1.json');
+          const files = await response.json();
+          console.log('Fetched Files:', files);
+    
+          // Select a random audio file
+          const randomAudioFile = files[Math.floor(Math.random() * files.length)];
+          console.log('Selected Audio File:', randomAudioFile);
+    
+          // Set the audio file in the state
+          setAudioFile1(`/audioFolder1/${randomAudioFile}`);
+          return randomAudioFile;
+        }
+    
+        // If an audio file is already selected, return it without fetching a new one
+        return audioFile1;
+      } catch (error) {
+        console.error('Error loading audio file:', error);
+      }
     };
 
+    const [audioFile2, setAudioFile2] = useState('');
+    const loadRandomAudioFile2 = async () => {
+      try {
+        // Check if an audio file is already selected
+        if (!audioFile2) {
+          const response = await fetch('/audioFolder2.json');
+          const files = await response.json();
+          console.log('Fetched Files:', files);
+    
+          // Select a random audio file
+          const randomAudioFile = files[Math.floor(Math.random() * files.length)];
+          console.log('Selected Audio File:', randomAudioFile);
+    
+          // Set the audio file in the state
+          setAudioFile2(`/audioFolder2/${randomAudioFile}`);
+          return randomAudioFile;
+        }
+    
+        // If an audio file is already selected, return it without fetching a new one
+        return audioFile2;
+      } catch (error) {
+        console.error('Error loading audio file:', error);
+      }
+    };
+
+    const [audioFile3, setAudioFile3] = useState('');
+    const loadRandomAudioFile3 = async () => {
+      try {
+        // Check if an audio file is already selected
+        if (!audioFile3) {
+          const response = await fetch('/audioFolder3.json');
+          const files = await response.json();
+          console.log('Fetched Files:', files);
+    
+          // Select a random audio file
+          const randomAudioFile = files[Math.floor(Math.random() * files.length)];
+          console.log('Selected Audio File:', randomAudioFile);
+    
+          // Set the audio file in the state
+          setAudioFile3(`/audioFolder3/${randomAudioFile}`);
+          return randomAudioFile;
+        }
+    
+        // If an audio file is already selected, return it without fetching a new one
+        return audioFile3;
+      } catch (error) {
+        console.error('Error loading audio file:', error);
+      }
+    };
+
+    const [audioFile4, setAudioFile4] = useState('');
+    const loadRandomAudioFile4 = async () => {
+      try {
+        // Check if an audio file is already selected
+        if (!audioFile4) {
+          const response = await fetch('/audioFolder4.json');
+          const files = await response.json();
+          console.log('Fetched Files:', files);
+    
+          // Select a random audio file
+          const randomAudioFile = files[Math.floor(Math.random() * files.length)];
+          console.log('Selected Audio File:', randomAudioFile);
+    
+          // Set the audio file in the state
+          setAudioFile4(`/audioFolder4/${randomAudioFile}`);
+          return randomAudioFile;
+        }
+    
+        // If an audio file is already selected, return it without fetching a new one
+        return audioFile4;
+      } catch (error) {
+        console.error('Error loading audio file:', error);
+      }
+    };
+
+    const [audioFile5, setAudioFile5] = useState('');
+    const loadRandomAudioFile5 = async () => {
+      try {
+        // Check if an audio file is already selected
+        if (!audioFile5) {
+          const response = await fetch('/audioFolder5.json');
+          const files = await response.json();
+          console.log('Fetched Files:', files);
+    
+          // Select a random audio file
+          const randomAudioFile = files[Math.floor(Math.random() * files.length)];
+          console.log('Selected Audio File:', randomAudioFile);
+    
+          // Set the audio file in the state
+          setAudioFile5(`/audioFolder5/${randomAudioFile}`);
+          return randomAudioFile;
+        }
+    
+        // If an audio file is already selected, return it without fetching a new one
+        return audioFile5;
+      } catch (error) {
+        console.error('Error loading audio file:', error);
+      }
+    };
+
+    const [audioFile6, setAudioFile6] = useState('');
+    const loadRandomAudioFile6 = async () => {
+      try {
+        // Check if an audio file is already selected
+        if (!audioFile6) {
+          const response = await fetch('/audioFolder6.json');
+          const files = await response.json();
+          console.log('Fetched Files:', files);
+    
+          // Select a random audio file
+          const randomAudioFile = files[Math.floor(Math.random() * files.length)];
+          console.log('Selected Audio File:', randomAudioFile);
+    
+          // Set the audio file in the state
+          setAudioFile6(`/audioFolder6/${randomAudioFile}`);
+          return randomAudioFile;
+        }
+    
+        // If an audio file is already selected, return it without fetching a new one
+        return audioFile6;
+      } catch (error) {
+        console.error('Error loading audio file:', error);
+      }
+    };
+    const [audioFile7, setAudioFile7] = useState('');
+    const loadRandomAudioFile7 = async () => {
+      try {
+        // Check if an audio file is already selected
+        if (!audioFile7) {
+          const response = await fetch('/audioFolder7.json');
+          const files = await response.json();
+          console.log('Fetched Files:', files);
+    
+          // Select a random audio file
+          const randomAudioFile = files[Math.floor(Math.random() * files.length)];
+          console.log('Selected Audio File:', randomAudioFile);
+    
+          // Set the audio file in the state
+          setAudioFile7(`/audioFolder7/${randomAudioFile}`);
+          return randomAudioFile;
+        }
+    
+        // If an audio file is already selected, return it without fetching a new one
+        return audioFile7;
+      } catch (error) {
+        console.error('Error loading audio file:', error);
+      }
+    };
+
+    const [audioFile8, setAudioFile8] = useState('');
+    const loadRandomAudioFile8 = async () => {
+      try {
+        // Check if an audio file is already selected
+        if (!audioFile8) {
+          const response = await fetch('/audioFolder8.json');
+          const files = await response.json();
+          console.log('Fetched Files:', files);
+    
+          // Select a random audio file
+          const randomAudioFile = files[Math.floor(Math.random() * files.length)];
+          console.log('Selected Audio File:', randomAudioFile);
+    
+          // Set the audio file in the state
+          setAudioFile8(`/audioFolder8/${randomAudioFile}`);
+          return randomAudioFile;
+        }
+    
+        // If an audio file is already selected, return it without fetching a new one
+        return audioFile8;
+      } catch (error) {
+        console.error('Error loading audio file:', error);
+      }
+    };
+
+    const [audioFile9, setAudioFile9] = useState('');
+    const loadRandomAudioFile9 = async () => {
+      try {
+        // Check if an audio file is already selected
+        if (!audioFile9) {
+          const response = await fetch('/audioFolder9.json');
+          const files = await response.json();
+          console.log('Fetched Files:', files);
+    
+          // Select a random audio file
+          const randomAudioFile = files[Math.floor(Math.random() * files.length)];
+          console.log('Selected Audio File:', randomAudioFile);
+    
+          // Set the audio file in the state
+          setAudioFile9(`/audioFolder9/${randomAudioFile}`);
+          return randomAudioFile;
+        }
+    
+        // If an audio file is already selected, return it without fetching a new one
+        return audioFile9;
+      } catch (error) {
+        console.error('Error loading audio file:', error);
+      }
+    };
+
+    const [audioFile10, setAudioFile10] = useState('');
+    const loadRandomAudioFile10 = async () => {
+      try {
+        // Check if an audio file is already selected
+        if (!audioFile10) {
+          const response = await fetch('/audioFolder10.json');
+          const files = await response.json();
+          console.log('Fetched Files:', files);
+    
+          // Select a random audio file
+          const randomAudioFile = files[Math.floor(Math.random() * files.length)];
+          console.log('Selected Audio File:', randomAudioFile);
+    
+          // Set the audio file in the state
+          setAudioFile10(`/audioFolder10/${randomAudioFile}`);
+          return randomAudioFile;
+        }
+    
+        // If an audio file is already selected, return it without fetching a new one
+        return audioFile10;
+      } catch (error) {
+        console.error('Error loading audio file:', error);
+      }
+    };
+
+    
 
 
 
@@ -220,9 +517,11 @@ function App() {
             const emotionSentence = emotionSentenceInput.value;
     
             // Save the familiartiy emotion sentence form
+            const randomAudioFile = await loadRandomAudioFile1();
             formsData.song1ESF = {
               emotionSentence,
               familiarityRating,
+              audioFile: `/audioFolder1/${randomAudioFile}`,
             };
     
             // Update the forms data in the participant's document
@@ -246,6 +545,15 @@ function App() {
 
     /////// alert for submit sentence:
     const handleSubmitSong1 = async () => {
+
+      const hasRegions1 = regionInformation.length > 0;  // Check if there are regions
+      const hasDots1 = setDotPositions.length > 0;
+
+      if (!hasRegions1 || !hasDots1) {
+        // If there are no regions or dots, show an alert
+        alert('Please ensure you have clicked "Update" AND "Save Regions And Dots" before continuing.                                                                    Please make sure you have added at least one marker.');
+        return; // Stop execution if conditions are not met
+      }
       // Validate the form before allowing to proceed to the next page
       const emotionSentence1 = document.getElementById('emotion_sentence').value;
       const familiarity1 = document.querySelector('input[name="familiar"]:checked')?.value;
@@ -258,6 +566,10 @@ function App() {
           await handleSubmitSentenceFamiliar();
           // If the form is valid and data is submitted, move to the next page
           nextPage();
+
+          // Reset or clear regionInformation and dotPositions for Song 2
+          setRegionInformation([]);  // Reset or clear regionInformation
+          setDotPositions([]);  // Reset or clear dotPositions
         } catch (error) {
           console.error('Error handling song 1 submission:', error);
           // Handle the error, e.g., show an alert to the user
@@ -294,6 +606,7 @@ function App() {
             formsData.song2ESF = {
               emotionSentence2,
               familiarityRating2,
+              audioFile: audioFile2,
             };
     
             // Update the forms data in the participant's document
@@ -317,6 +630,14 @@ function App() {
 
     /////// alert for submit sentence:
     const handleSubmitSong2 = async () => {
+      const hasRegions2 = regionInformation.length > 0;  // Check if there are regions
+      const hasDots2 = setDotPositions.length > 0;
+
+      if (!hasRegions2 || !hasDots2) {
+        // If there are no regions or dots, show an alert
+        alert('Please ensure you have clicked "Update" AND "Save Regions And Dots" before continuing.                                                                    Please make sure you have added at least one marker.');
+        return; // Stop execution if conditions are not met
+      }
       // Validate the form before allowing to proceed to the next page
       const emotionSentence2 = document.getElementById('emotion_sentence2').value;
       const familiarity2 = document.querySelector('input[name="familiar2"]:checked')?.value;
@@ -329,6 +650,10 @@ function App() {
           await handleSubmitSentenceFamiliar2();
           // If the form is valid and data is submitted, move to the next page
           nextPage();
+
+          // Reset or clear regionInformation and dotPositions for Song 2
+          setRegionInformation([]);  // Reset or clear regionInformation
+          setDotPositions([]);  // Reset or clear dotPositions
         } catch (error) {
           console.error('Error handling song 2 submission:', error);
           // Handle the error, e.g., show an alert to the user
@@ -366,6 +691,7 @@ function App() {
             formsData.song3ESF = {
               emotionSentence3,
               familiarityRating3,
+              audioFile: audioFile3,
             };
     
             // Update the forms data in the participant's document
@@ -387,6 +713,14 @@ function App() {
     };
     /////// alert for submit sentence:
     const handleSubmitSong3 = async () => {
+      const hasRegions3 = regionInformation.length > 0;  // Check if there are regions
+      const hasDots3 = setDotPositions.length > 0;
+
+      if (!hasRegions3 || !hasDots3) {
+        // If there are no regions or dots, show an alert
+        alert('Please ensure you have clicked "Update" AND "Save Regions And Dots" before continuing.                                                                    Please make sure you have added at least one marker.');
+        return; // Stop execution if conditions are not met
+      }
       // Validate the form before allowing to proceed to the next page
       const emotionSentence3 = document.getElementById('emotion_sentence3').value;
       const familiarity3 = document.querySelector('input[name="familiar3"]:checked')?.value;
@@ -399,6 +733,9 @@ function App() {
           await handleSubmitSentenceFamiliar3();
           // If the form is valid and data is submitted, move to the next page
           nextPage();
+
+          setRegionInformation([]);  // Reset or clear regionInformation
+          setDotPositions([]);  // Reset or clear dotPositions
         } catch (error) {
           console.error('Error handling song 3 submission:', error);
           // Handle the error, e.g., show an alert to the user
@@ -434,6 +771,7 @@ function App() {
             formsData.song4ESF = {
               emotionSentence4,
               familiarityRating4,
+              audioFile: audioFile4,
             };
     
             // Update the forms data in the participant's document
@@ -455,6 +793,14 @@ function App() {
     };
     /////// alert for submit sentence:
     const handleSubmitSong4 = async () => {
+      const hasRegions4 = regionInformation.length > 0;  // Check if there are regions
+      const hasDots4 = setDotPositions.length > 0;
+
+      if (!hasRegions4 || !hasDots4) {
+        // If there are no regions or dots, show an alert
+        alert('Please ensure you have clicked "Update" AND "Save Regions And Dots" before continuing.                                                                    Please make sure you have added at least one marker.');
+        return; // Stop execution if conditions are not met
+      }
       // Validate the form before allowing to proceed to the next page
       const emotionSentence4 = document.getElementById('emotion_sentence4').value;
       const familiarity4 = document.querySelector('input[name="familiar4"]:checked')?.value;
@@ -467,6 +813,9 @@ function App() {
           await handleSubmitSentenceFamiliar4();
           // If the form is valid and data is submitted, move to the next page
           nextPage();
+
+          setRegionInformation([]);  // Reset or clear regionInformation
+          setDotPositions([]);  // Reset or clear dotPositions
         } catch (error) {
           console.error('Error handling song 4 submission:', error);
           // Handle the error, e.g., show an alert to the user
@@ -502,6 +851,87 @@ function App() {
             formsData.song5ESF = {
               emotionSentence5,
               familiarityRating5,
+              audioFile: audioFile5,
+            };
+    
+            // Update the forms data in the participant's document
+            await updateDoc(participantDocRef, { forms: formsData });
+    
+            alert('Sentence and Familiarity form submitted successfully!');
+            //nextPage(); // Move to the next page
+          } else {
+            console.error('Form elements not found.');
+            alert('Please fill in Emotion Sentence and Familiarity forms.');
+          }
+        } else {
+          console.error('Participant ID or participant document reference missing.');
+        }
+      } catch (error) {
+        console.error('Error submitting Sentence and Familiarity form:', error);
+        alert('Please fill in Emotion Sentence and Familiarity forms.');
+      }
+    };
+        /////// alert for submit sentence:
+        const handleSubmitSong5 = async () => {
+          const hasRegions5 = regionInformation.length > 0;  // Check if there are regions
+          const hasDots5 = setDotPositions.length > 0;
+    
+          if (!hasRegions5 || !hasDots5) {
+            // If there are no regions or dots, show an alert
+            alert('Please ensure you have clicked "Update" AND "Save Regions And Dots" before continuing.                                                                    Please make sure you have added at least one marker.');
+            return; // Stop execution if conditions are not met
+          }
+          // Validate the form before allowing to proceed to the next page
+          const emotionSentence5 = document.getElementById('emotion_sentence5').value;
+          const familiarity5 = document.querySelector('input[name="familiar5"]:checked')?.value;
+      
+          if(!emotionSentence5 || !familiarity5){
+            alert('Please fill out all form fields and click Submit.');
+          } else {
+            try {
+              // Wait for the data to be submitted to Firestore before proceeding
+              await handleSubmitSentenceFamiliar5();
+              // If the form is valid and data is submitted, move to the next page
+              nextPage();
+
+              setRegionInformation([]);  // Reset or clear regionInformation
+              setDotPositions([]);  // Reset or clear dotPositions
+            } catch (error) {
+              console.error('Error handling song 5 submission:', error);
+              // Handle the error, e.g., show an alert to the user
+            }
+          }
+        };
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //song6:
+    const handleFamiliarityChange6 = (event) => {
+      setFamiliarityRating6(event.target.value);
+    };
+    const handleSubmitSentenceFamiliar6 = async () => {
+      //e.preventDefault();
+      try {
+        if (participantID && participantDocRef) {
+          // Get the current forms data from the participant's document
+          const participantData = (await getDoc(participantDocRef)).data();
+          const formsData = participantData.forms || {};
+    
+          // Collect data from the familiartiy emotion sentence form
+          const familiarityInput6 = document.querySelector('input[name="familiar6"]:checked');
+          const emotionSentenceInput6 = document.getElementById('emotion_sentence6');
+          console.log('familiarityInput6:', familiarityInput6);
+          console.log('emotionSentenceInput6:', emotionSentenceInput6);   
+    
+          // Check if the elements are not null or undefined
+          if (familiarityInput6 && emotionSentenceInput6) {
+            const familiarityRating6 = familiarityInput6.value;
+            const emotionSentence6 = emotionSentenceInput6.value;
+    
+            // Save the familiartiy emotion sentence form
+            formsData.song6ESF = {
+              emotionSentence6,
+              familiarityRating6,
+              audioFile: audioFile6,
             };
     
             // Update the forms data in the participant's document
@@ -522,25 +952,358 @@ function App() {
       }
     };
     /////// alert for submit sentence:
-    const handleSubmitSong5 = async () => {
+    const handleSubmitSong6 = async () => {
+      const hasRegions6 = regionInformation.length > 0;  // Check if there are regions
+      const hasDots6 = setDotPositions.length > 0;
+
+      if (!hasRegions6 || !hasDots6) {
+        // If there are no regions or dots, show an alert
+        alert('Please ensure you have clicked "Update" AND "Save Regions And Dots" before continuing.                                                                    Please make sure you have added at least one marker.');
+        return; // Stop execution if conditions are not met
+      }
       // Validate the form before allowing to proceed to the next page
-      const emotionSentence5 = document.getElementById('emotion_sentence5').value;
-      const familiarity5 = document.querySelector('input[name="familiar5"]:checked')?.value;
+      const emotionSentence6 = document.getElementById('emotion_sentence6').value;
+      const familiarity6 = document.querySelector('input[name="familiar6"]:checked')?.value;
   
-      if(!emotionSentence5 || !familiarity5){
+      if(!emotionSentence6 || !familiarity6){
         alert('Please fill out all form fields and click Submit.');
       } else {
         try {
           // Wait for the data to be submitted to Firestore before proceeding
-          await handleSubmitSentenceFamiliar5();
+          await handleSubmitSentenceFamiliar6();
           // If the form is valid and data is submitted, move to the next page
           nextPage();
+
+          setRegionInformation([]);  // Reset or clear regionInformation
+          setDotPositions([]);  // Reset or clear dotPositions
         } catch (error) {
-          console.error('Error handling song 5 submission:', error);
+          console.error('Error handling song 6 submission:', error);
           // Handle the error, e.g., show an alert to the user
         }
       }
     };
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //song7:
+    const handleFamiliarityChange7 = (event) => {
+      setFamiliarityRating7(event.target.value);
+    };
+    const handleSubmitSentenceFamiliar7 = async () => {
+      //e.preventDefault();
+      try {
+        if (participantID && participantDocRef) {
+          // Get the current forms data from the participant's document
+          const participantData = (await getDoc(participantDocRef)).data();
+          const formsData = participantData.forms || {};
+    
+          // Collect data from the familiartiy emotion sentence form
+          const familiarityInput7 = document.querySelector('input[name="familiar7"]:checked');
+          const emotionSentenceInput7 = document.getElementById('emotion_sentence7');
+          console.log('familiarityInput7:', familiarityInput7);
+          console.log('emotionSentenceInput7:', emotionSentenceInput7);   
+    
+          // Check if the elements are not null or undefined
+          if (familiarityInput7 && emotionSentenceInput7) {
+            const familiarityRating7 = familiarityInput7.value;
+            const emotionSentence7 = emotionSentenceInput7.value;
+    
+            // Save the familiartiy emotion sentence form
+            formsData.song7ESF = {
+              emotionSentence7,
+              familiarityRating7,
+              audioFile: audioFile7,
+            };
+    
+            // Update the forms data in the participant's document
+            await updateDoc(participantDocRef, { forms: formsData });
+    
+            alert('Sentence and Familiarity form submitted successfully!');
+            //nextPage(); // Move to the next page
+          } else {
+            console.error('Form elements not found.');
+            alert('Please fill in Emotion Sentence and Familiarity forms.');
+          }
+        } else {
+          console.error('Participant ID or participant document reference missing.');
+        }
+      } catch (error) {
+        console.error('Error submitting Sentence and Familiarity form:', error);
+        alert('Please fill in Emotion Sentence and Familiarity forms.');
+      }
+    };
+    /////// alert for submit sentence:
+    const handleSubmitSong7 = async () => {
+      const hasRegions7 = regionInformation.length > 0;  // Check if there are regions
+      const hasDots7 = setDotPositions.length > 0;
+
+      if (!hasRegions7 || !hasDots7) {
+        // If there are no regions or dots, show an alert
+        alert('Please ensure you have clicked "Update" AND "Save Regions And Dots" before continuing.                                                                    Please make sure you have added at least one marker.');
+        return; // Stop execution if conditions are not met
+      }
+      // Validate the form before allowing to proceed to the next page
+      const emotionSentence7 = document.getElementById('emotion_sentence7').value;
+      const familiarity7 = document.querySelector('input[name="familiar7"]:checked')?.value;
+  
+      if(!emotionSentence7 || !familiarity7){
+        alert('Please fill out all form fields and click Submit.');
+      } else {
+        try {
+          // Wait for the data to be submitted to Firestore before proceeding
+          await handleSubmitSentenceFamiliar7();
+          // If the form is valid and data is submitted, move to the next page
+          nextPage();
+
+          setRegionInformation([]);  // Reset or clear regionInformation
+          setDotPositions([]);  // Reset or clear dotPositions
+        } catch (error) {
+          console.error('Error handling song 7 submission:', error);
+          // Handle the error, e.g., show an alert to the user
+        }
+      }
+    };
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //song8:
+    const handleFamiliarityChange8 = (event) => {
+      setFamiliarityRating8(event.target.value);
+    };
+    const handleSubmitSentenceFamiliar8 = async () => {
+      //e.preventDefault();
+      try {
+        if (participantID && participantDocRef) {
+          // Get the current forms data from the participant's document
+          const participantData = (await getDoc(participantDocRef)).data();
+          const formsData = participantData.forms || {};
+    
+          // Collect data from the familiartiy emotion sentence form
+          const familiarityInput8 = document.querySelector('input[name="familiar8"]:checked');
+          const emotionSentenceInput8 = document.getElementById('emotion_sentence8');
+          console.log('familiarityInput8:', familiarityInput8);
+          console.log('emotionSentenceInput8:', emotionSentenceInput8);   
+    
+          // Check if the elements are not null or undefined
+          if (familiarityInput8 && emotionSentenceInput8) {
+            const familiarityRating8 = familiarityInput8.value;
+            const emotionSentence8 = emotionSentenceInput8.value;
+    
+            // Save the familiartiy emotion sentence form
+            formsData.song8ESF = {
+              emotionSentence8,
+              familiarityRating8,
+              audioFile: audioFile8,
+            };
+    
+            // Update the forms data in the participant's document
+            await updateDoc(participantDocRef, { forms: formsData });
+    
+            alert('Sentence and Familiarity form submitted successfully!');
+            //nextPage(); // Move to the next page
+          } else {
+            console.error('Form elements not found.');
+            alert('Please fill in Emotion Sentence and Familiarity forms.');
+          }
+        } else {
+          console.error('Participant ID or participant document reference missing.');
+        }
+      } catch (error) {
+        console.error('Error submitting Sentence and Familiarity form:', error);
+        alert('Please fill in Emotion Sentence and Familiarity forms.');
+      }
+    };
+    /////// alert for submit sentence:
+    const handleSubmitSong8 = async () => {
+      const hasRegions8 = regionInformation.length > 0;  // Check if there are regions
+      const hasDots8 = setDotPositions.length > 0;
+
+      if (!hasRegions8 || !hasDots8) {
+        // If there are no regions or dots, show an alert
+        alert('Please ensure you have clicked "Update" AND "Save Regions And Dots" before continuing.                                                                    Please make sure you have added at least one marker.');
+        return; // Stop execution if conditions are not met
+      }
+      // Validate the form before allowing to proceed to the next page
+      const emotionSentence8 = document.getElementById('emotion_sentence8').value;
+      const familiarity8 = document.querySelector('input[name="familiar8"]:checked')?.value;
+  
+      if(!emotionSentence8 || !familiarity8){
+        alert('Please fill out all form fields and click Submit.');
+      } else {
+        try {
+          // Wait for the data to be submitted to Firestore before proceeding
+          await handleSubmitSentenceFamiliar8();
+          // If the form is valid and data is submitted, move to the next page
+          nextPage();
+
+          setRegionInformation([]);  // Reset or clear regionInformation
+          setDotPositions([]);  // Reset or clear dotPositions
+        } catch (error) {
+          console.error('Error handling song 8 submission:', error);
+          // Handle the error, e.g., show an alert to the user
+        }
+      }
+    };
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //song9:
+    const handleFamiliarityChange9 = (event) => {
+      setFamiliarityRating9(event.target.value);
+    };
+    const handleSubmitSentenceFamiliar9 = async () => {
+      //e.preventDefault();
+      try {
+        if (participantID && participantDocRef) {
+          // Get the current forms data from the participant's document
+          const participantData = (await getDoc(participantDocRef)).data();
+          const formsData = participantData.forms || {};
+    
+          // Collect data from the familiartiy emotion sentence form
+          const familiarityInput9 = document.querySelector('input[name="familiar9"]:checked');
+          const emotionSentenceInput9 = document.getElementById('emotion_sentence9');
+          console.log('familiarityInput9:', familiarityInput9);
+          console.log('emotionSentenceInput9:', emotionSentenceInput9);   
+    
+          // Check if the elements are not null or undefined
+          if (familiarityInput9 && emotionSentenceInput9) {
+            const familiarityRating9 = familiarityInput9.value;
+            const emotionSentence9 = emotionSentenceInput9.value;
+    
+            // Save the familiartiy emotion sentence form
+            formsData.song9ESF = {
+              emotionSentence9,
+              familiarityRating9,
+              audioFile: audioFile9,
+            };
+    
+            // Update the forms data in the participant's document
+            await updateDoc(participantDocRef, { forms: formsData });
+    
+            alert('Sentence and Familiarity form submitted successfully!');
+            //nextPage(); // Move to the next page
+          } else {
+            console.error('Form elements not found.');
+            alert('Please fill in Emotion Sentence and Familiarity forms.');
+          }
+        } else {
+          console.error('Participant ID or participant document reference missing.');
+        }
+      } catch (error) {
+        console.error('Error submitting Sentence and Familiarity form:', error);
+        alert('Please fill in Emotion Sentence and Familiarity forms.');
+      }
+    };
+    /////// alert for submit sentence:
+    const handleSubmitSong9 = async () => {
+      const hasRegions9 = regionInformation.length > 0;  // Check if there are regions
+      const hasDots9 = setDotPositions.length > 0;
+
+      if (!hasRegions9 || !hasDots9) {
+        // If there are no regions or dots, show an alert
+        alert('Please ensure you have clicked "Update" AND "Save Regions And Dots" before continuing.                                                                    Please make sure you have added at least one marker.');
+        return; // Stop execution if conditions are not met
+      }
+      // Validate the form before allowing to proceed to the next page
+      const emotionSentence9 = document.getElementById('emotion_sentence9').value;
+      const familiarity9 = document.querySelector('input[name="familiar9"]:checked')?.value;
+  
+      if(!emotionSentence9 || !familiarity9){
+        alert('Please fill out all form fields and click Submit.');
+      } else {
+        try {
+          // Wait for the data to be submitted to Firestore before proceeding
+          await handleSubmitSentenceFamiliar9();
+          // If the form is valid and data is submitted, move to the next page
+          nextPage();
+
+          setRegionInformation([]);  // Reset or clear regionInformation
+          setDotPositions([]);  // Reset or clear dotPositions
+        } catch (error) {
+          console.error('Error handling song 9 submission:', error);
+          // Handle the error, e.g., show an alert to the user
+        }
+      }
+    };
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //song10:
+    const handleFamiliarityChange10 = (event) => {
+      setFamiliarityRating10(event.target.value);
+    };
+    const handleSubmitSentenceFamiliar10 = async () => {
+      //e.preventDefault();
+      try {
+        if (participantID && participantDocRef) {
+          // Get the current forms data from the participant's document
+          const participantData = (await getDoc(participantDocRef)).data();
+          const formsData = participantData.forms || {};
+    
+          // Collect data from the familiartiy emotion sentence form
+          const familiarityInput10 = document.querySelector('input[name="familiar10"]:checked');
+          const emotionSentenceInput10 = document.getElementById('emotion_sentence10');
+          console.log('familiarityInput10:', familiarityInput10);
+          console.log('emotionSentenceInput10:', emotionSentenceInput10);   
+    
+          // Check if the elements are not null or undefined
+          if (familiarityInput10 && emotionSentenceInput10) {
+            const familiarityRating10 = familiarityInput10.value;
+            const emotionSentence10 = emotionSentenceInput10.value;
+    
+            // Save the familiartiy emotion sentence form
+            formsData.song10ESF = {
+              emotionSentence10,
+              familiarityRating10,
+              audioFile: audioFile10,
+            };
+    
+            // Update the forms data in the participant's document
+            await updateDoc(participantDocRef, { forms: formsData });
+    
+            alert('Sentence and Familiarity form submitted successfully!');
+            //nextPage(); // Move to the next page
+          } else {
+            console.error('Form elements not found.');
+            alert('Please fill in Emotion Sentence and Familiarity forms.');
+          }
+        } else {
+          console.error('Participant ID or participant document reference missing.');
+        }
+      } catch (error) {
+        console.error('Error submitting Sentence and Familiarity form:', error);
+        alert('Please fill in Emotion Sentence and Familiarity forms.');
+      }
+    };
+    /////// alert for submit sentence:
+    const handleSubmitSong10 = async () => {
+      const hasRegions10 = regionInformation.length > 0;  // Check if there are regions
+      const hasDots10 = setDotPositions.length > 0;
+
+      if (!hasRegions10 || !hasDots10) {
+        // If there are no regions or dots, show an alert
+        alert('Please ensure you have clicked "Update" AND "Save Regions And Dots" before continuing.                                                                    Please make sure you have added at least one marker.');
+        return; // Stop execution if conditions are not met
+      }
+      // Validate the form before allowing to proceed to the next page
+      const emotionSentence10 = document.getElementById('emotion_sentence10').value;
+      const familiarity10 = document.querySelector('input[name="familiar10"]:checked')?.value;
+  
+      if(!emotionSentence10 || !familiarity10){
+        alert('Please fill out all form fields and click Submit.');
+      } else {
+        try {
+          // Wait for the data to be submitted to Firestore before proceeding
+          await handleSubmitSentenceFamiliar10();
+          // If the form is valid and data is submitted, move to the next page
+          nextPage();
+
+          setRegionInformation([]);  // Reset or clear regionInformation
+          setDotPositions([]);  // Reset or clear dotPositions
+        } catch (error) {
+          console.error('Error handling song 10 submission:', error);
+          // Handle the error, e.g., show an alert to the user
+        }
+      }
+    };
+
+
 
 
 
@@ -649,7 +1412,7 @@ function App() {
         };
         // Add the data to the forms subcollection
         await updateDoc(participantDocRef, { forms: formsData });
-        alert('Data submitted successfully!');
+        alert('Regions and Dots Saved!');
         //nextPage(); // Move to the next page
       } else {
         console.error('Participant ID or participant document reference missing.');
@@ -713,7 +1476,7 @@ function App() {
         // Add the data to the forms subcollection
         await updateDoc(participantDocRef, { forms: formsData });
 
-        alert('Data submitted successfully!');
+        alert('Regions and Dots Saved!');
         //nextPage(); // Move to the next page
       } else {
         console.error('Participant ID or participant document reference missing.');
@@ -745,7 +1508,7 @@ function App() {
         // Add the data to the forms subcollection
         await updateDoc(participantDocRef, { forms: formsData });
 
-        alert('Data submitted successfully!');
+        alert('Regions and Dots Saved!');
         //nextPage(); // Move to the next page
       } else {
         console.error('Participant ID or participant document reference missing.');
@@ -777,7 +1540,7 @@ function App() {
         // Add the data to the forms subcollection
         await updateDoc(participantDocRef, { forms: formsData });
 
-        alert('Data submitted successfully!');
+        alert('Regions and Dots Saved!');
         //nextPage(); // Move to the next page
       } else {
         console.error('Participant ID or participant document reference missing.');
@@ -808,7 +1571,7 @@ function App() {
         // Add the data to the forms subcollection
         await updateDoc(participantDocRef, { forms: formsData });
 
-        alert('Data submitted successfully!');
+        alert('Regions and Dots Saved!');
         //nextPage(); // Move to the next page
       } else {
         console.error('Participant ID or participant document reference missing.');
@@ -817,6 +1580,162 @@ function App() {
       console.error('Error submitting data:', error);
     }
   }; 
+
+  ///////////////////////////////////////////////////////////
+  const myRef13 = collection(firestore, 'regions');
+  const handleSaveRegionsToFirestore6 = async (e) => {
+    e.preventDefault();
+    try {
+      // Ensure participantID and participantDocRef are available
+      if (participantID && participantDocRef) {
+        const participantData = (await getDoc(participantDocRef)).data();
+        const formsData = participantData.forms || {};
+
+        // Collect data from the dots?
+        const scaledDotPositions = scaleDotPositions(dotPositions);
+
+        // Prepare the data to be saved to Firestore
+        formsData.song6regions = {
+          dotCoordinates: scaledDotPositions,
+          regions: regionInformation,
+        };
+
+        // Add the data to the forms subcollection
+        await updateDoc(participantDocRef, { forms: formsData });
+
+        alert('Regions and Dots Saved!');
+        //nextPage(); // Move to the next page
+      } else {
+        console.error('Participant ID or participant document reference missing.');
+      }
+    } catch (error) {
+      console.error('Error submitting data:', error);
+    }
+  }; 
+   ///////////////////////////////////////////////////////////
+   const myRef14 = collection(firestore, 'regions');
+   const handleSaveRegionsToFirestore7 = async (e) => {
+     e.preventDefault();
+     try {
+       // Ensure participantID and participantDocRef are available
+       if (participantID && participantDocRef) {
+         const participantData = (await getDoc(participantDocRef)).data();
+         const formsData = participantData.forms || {};
+ 
+         // Collect data from the dots?
+         const scaledDotPositions = scaleDotPositions(dotPositions);
+ 
+         // Prepare the data to be saved to Firestore
+         formsData.song7regions = {
+           dotCoordinates: scaledDotPositions,
+           regions: regionInformation,
+         };
+ 
+         // Add the data to the forms subcollection
+         await updateDoc(participantDocRef, { forms: formsData });
+ 
+         alert('Regions and Dots Saved!');
+         //nextPage(); // Move to the next page
+       } else {
+         console.error('Participant ID or participant document reference missing.');
+       }
+     } catch (error) {
+       console.error('Error submitting data:', error);
+     }
+   }; 
+   ///////////////////////////////////////////////////////////
+   const myRef15 = collection(firestore, 'regions');
+   const handleSaveRegionsToFirestore8 = async (e) => {
+     e.preventDefault();
+     try {
+       // Ensure participantID and participantDocRef are available
+       if (participantID && participantDocRef) {
+         const participantData = (await getDoc(participantDocRef)).data();
+         const formsData = participantData.forms || {};
+ 
+         // Collect data from the dots?
+         const scaledDotPositions = scaleDotPositions(dotPositions);
+ 
+         // Prepare the data to be saved to Firestore
+         formsData.song8regions = {
+           dotCoordinates: scaledDotPositions,
+           regions: regionInformation,
+         };
+ 
+         // Add the data to the forms subcollection
+         await updateDoc(participantDocRef, { forms: formsData });
+ 
+         alert('Regions and Dots Saved!');
+         //nextPage(); // Move to the next page
+       } else {
+         console.error('Participant ID or participant document reference missing.');
+       }
+     } catch (error) {
+       console.error('Error submitting data:', error);
+     }
+   }; 
+   ///////////////////////////////////////////////////////////
+   const myRef16 = collection(firestore, 'regions');
+   const handleSaveRegionsToFirestore9 = async (e) => {
+     e.preventDefault();
+     try {
+       // Ensure participantID and participantDocRef are available
+       if (participantID && participantDocRef) {
+         const participantData = (await getDoc(participantDocRef)).data();
+         const formsData = participantData.forms || {};
+ 
+         // Collect data from the dots?
+         const scaledDotPositions = scaleDotPositions(dotPositions);
+ 
+         // Prepare the data to be saved to Firestore
+         formsData.song9regions = {
+           dotCoordinates: scaledDotPositions,
+           regions: regionInformation,
+         };
+ 
+         // Add the data to the forms subcollection
+         await updateDoc(participantDocRef, { forms: formsData });
+ 
+         alert('Regions and Dots Saved!');
+         //nextPage(); // Move to the next page
+       } else {
+         console.error('Participant ID or participant document reference missing.');
+       }
+     } catch (error) {
+       console.error('Error submitting data:', error);
+     }
+   }; 
+   ///////////////////////////////////////////////////////////
+   const myRef17 = collection(firestore, 'regions');
+   const handleSaveRegionsToFirestore10 = async (e) => {
+     e.preventDefault();
+     try {
+       // Ensure participantID and participantDocRef are available
+       if (participantID && participantDocRef) {
+         const participantData = (await getDoc(participantDocRef)).data();
+         const formsData = participantData.forms || {};
+ 
+         // Collect data from the dots?
+         const scaledDotPositions = scaleDotPositions(dotPositions);
+ 
+         // Prepare the data to be saved to Firestore
+         formsData.song10regions = {
+           dotCoordinates: scaledDotPositions,
+           regions: regionInformation,
+         };
+ 
+         // Add the data to the forms subcollection
+         await updateDoc(participantDocRef, { forms: formsData });
+ 
+         alert('Regions and Dots Saved!');
+         //nextPage(); // Move to the next page
+       } else {
+         console.error('Participant ID or participant document reference missing.');
+       }
+     } catch (error) {
+       console.error('Error submitting data:', error);
+     }
+   }; 
 
 
 
@@ -930,7 +1849,7 @@ function App() {
 
 
    // trying to save page 4 form...
-   const myRef3 = collection(firestore, 'responses_music');
+  /*  const myRef3 = collection(firestore, 'responses_music');
 
    const handleSavePage4 = async (e) => {
     e.preventDefault();
@@ -1003,86 +1922,153 @@ function App() {
       handleSavePage4();
       nextPage();
     }
-  }; 
+  }; */
+  
+  // Add state for page 4 form submission confirmation
+const [page4FormSubmitted, setPage4FormSubmitted] = useState(false);
 
+// ...
 
+// trying to save page 4 form...
+const myRef3 = collection(firestore, 'responses_music');
 
-   // trying to save page 5 form...
-   const myRef4 = collection(firestore, 'responses_emotion');
-   const handleSavePage5 = async (e) => {
-    e.preventDefault();
+const handleSavePage4 = async (e) => {
+  e.preventDefault();
 
-    const importance = document.querySelector('input[name="importance"]:checked')?.value;
-    const activities = document.querySelector('input[name="activities"]:checked')?.value;
-    const addiction = document.querySelector('input[name="addiction"]:checked')?.value;
-    const new_music = document.querySelector('input[name="new_music"]:checked')?.value;
-    const search = document.querySelector('input[name="search"]:checked')?.value;
-    const genre = document.getElementById('genre_data').value.trim();
-    const evoke = document.querySelector('input[name="evoke"]:checked')?.value;
-    const memories = document.querySelector('input[name="memories"]:checked')?.value;
-    const shiver = document.querySelector('input[name="shiver"]:checked')?.value;
-    const excite = document.querySelector('input[name="excite"]:checked')?.value;
-    const talk = document.querySelector('input[name="talk"]:checked')?.value;
+  const music_hrs = document.querySelector('input[name="music-hrs"]:checked')?.value;
+  const music_hrs2 = document.querySelector('input[name="music-hrs2"]:checked')?.value;
+  const years = document.querySelector('input[name="years"]:checked')?.value;
+  const singer = document.querySelector('input[name="singer"]:checked')?.value;
+  const mistakes = document.querySelector('input[name="mistakes"]:checked')?.value;
+  const differences = document.querySelector('input[name="differences"]:checked')?.value;
+  const out_of_time = document.querySelector('input[name="out-of-time"]:checked')?.value;
+  const out_of_tune = document.querySelector('input[name="out-of-tune"]:checked')?.value;
+  const musician = document.querySelector('input[name="musician"]:checked')?.value;
+  const production = document.querySelector('input[name="production"]:checked')?.value;
 
-    if(!importance || !activities || !addiction || !search || !genre || !evoke || !memories || !shiver || !excite || !talk){
-      alert('Please fill in all the form fields.');
-      return;
-    }
+  if(!music_hrs || !music_hrs2 || !years || !singer || !mistakes || !differences || !out_of_time || !out_of_tune || !musician || !production){
+    alert('Please fill out all form fields.');
+    return;
+  }
 
-    try {
-      if (participantID && participantDocRef) {
+  try {
+    // Ensure participantID and participantDocRef are available
+    if (participantID && participantDocRef) {
+      const participantData = (await getDoc(participantDocRef)).data();
+      const formsData = participantData.forms || {};
 
-        const participantData = (await getDoc(participantDocRef)).data();
-        const formsData = participantData.forms || {};
+      formsData.page4musicExperienceForm = {
+        music_hrs,
+        music_hrs2,
+        years,
+        singer,
+        mistakes,
+        differences,
+        out_of_time,
+        out_of_tune, 
+        musician,
+        production
+      };
 
-        formsData.page5musicEmotionForm = {
-          importance,
-          activities,
-          addiction,
-          new_music,
-          search,
-          genre,
-          evoke,
-          memories,
-          shiver,
-          excite,
-          talk,
-        }; 
-
-        // Add the data to the forms collection
-        await updateDoc(participantDocRef, { forms: formsData });
-        //alerts:
-        alert('Data submitted successfully!');
-        nextPage(); // Move to the next page
-      } else {
-        console.error('Participant ID or participant document reference missing.');
-      }
-    } catch (error) {
-      console.error('Error submitting data:', error);
-    }
-  };
-  const handleNextButtonClickP5 = () => {
-    // Validate the form before allowing to proceed to the next page
-    const importance = document.querySelector('input[name="importance"]:checked')?.value;
-    const activities = document.querySelector('input[name="activities"]:checked')?.value;
-    const addiction = document.querySelector('input[name="addiction"]:checked')?.value;
-    const new_music = document.querySelector('input[name="new_music"]:checked')?.value;
-    const search = document.querySelector('input[name="search"]:checked')?.value;
-    const genre = document.getElementById('genre_data').value.trim();
-    const evoke = document.querySelector('input[name="evoke"]:checked')?.value;
-    const memories = document.querySelector('input[name="memories"]:checked')?.value;
-    const shiver = document.querySelector('input[name="shiver"]:checked')?.value;
-    const excite = document.querySelector('input[name="excite"]:checked')?.value;
-    const talk = document.querySelector('input[name="talk"]:checked')?.value;
-
-    if(!importance || !activities || !addiction || !search || !genre || !evoke || !memories || !shiver || !excite || !talk){
-      alert('Please fill out all form fields.');
+      // Add the data to the forms collection
+      await updateDoc(participantDocRef, { forms: formsData });
+      
+      // Set the form submission state to true
+      setPage4FormSubmitted(true);
+      // alerts:
+      alert('Data submitted successfully!');
     } else {
-      // If the form is valid, save the data and move to the next page
-      handleSavePage5();
-      nextPage();
+      console.error('Participant ID or participant document reference missing.');
     }
-  };
+  } catch (error) {
+    console.error('Error submitting data:', error);
+  }
+};
+
+const handleNextButtonClickP4 = () => {
+  // Check if the form has been submitted before allowing to proceed to the next page
+  if (!page4FormSubmitted) {
+    alert('Please submit the form before proceeding to the next page.');
+  } else {
+    // If the form is valid, move to the next page
+    nextPage();
+  }
+};
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Add state for page 4 form submission confirmation
+const [page5FormSubmitted, setPage5FormSubmitted] = useState(false);
+// trying to save page 4 form...
+const myRef4 = collection(firestore, 'responses_emotion');
+
+const handleSavePage5 = async (e) => {
+  e.preventDefault();
+
+  const importance = document.querySelector('input[name="importance"]:checked')?.value;
+  const activities = document.querySelector('input[name="activities"]:checked')?.value;
+  const addiction = document.querySelector('input[name="addiction"]:checked')?.value;
+  const new_music = document.querySelector('input[name="new_music"]:checked')?.value;
+  const search = document.querySelector('input[name="search"]:checked')?.value;
+  const genre = document.getElementById('genre_data').value.trim();
+  const evoke = document.querySelector('input[name="evoke"]:checked')?.value;
+  const memories = document.querySelector('input[name="memories"]:checked')?.value;
+  const shiver = document.querySelector('input[name="shiver"]:checked')?.value;
+  const excite = document.querySelector('input[name="excite"]:checked')?.value;
+  const talk = document.querySelector('input[name="talk"]:checked')?.value;
+
+  if(!importance || !activities || !addiction || !new_music || !search || !genre || !evoke || !memories || !shiver || !excite || !talk){
+    alert('Please fill in all the form fields.');
+    return;
+  }
+
+  try {
+    // Ensure participantID and participantDocRef are available
+    if (participantID && participantDocRef) {
+      const participantData = (await getDoc(participantDocRef)).data();
+      const formsData = participantData.forms || {};
+
+      formsData.page5musicEmotionForm = {
+        importance,
+        activities,
+        addiction,
+        new_music,
+        search,
+        genre,
+        evoke,
+        memories,
+        shiver,
+        excite,
+        talk,
+      };
+
+      // Add the data to the forms collection
+      await updateDoc(participantDocRef, { forms: formsData });
+      
+      // Set the form submission state to true
+      setPage5FormSubmitted(true);
+      // alerts:
+      alert('Data submitted successfully!');
+    } else {
+      console.error('Participant ID or participant document reference missing.');
+    }
+  } catch (error) {
+    console.error('Error submitting data:', error);
+  }
+};
+
+const handleNextButtonClickP5 = () => {
+  // Check if the form has been submitted before allowing to proceed to the next page
+  if (!page5FormSubmitted) {
+    alert('Please submit the form before proceeding to the next page.');
+  } else {
+    // If the form is valid, move to the next page
+    nextPage();
+  }
+};
   ////////////////
 
   /* const myRef6 = collection(firestore, 'music-personality');
@@ -1143,6 +2129,7 @@ function App() {
   //music personality quiz - page 6:
   const [userResponses, setUserResponses] = useState([]);
   const [musicPersonality, setMusicPersonality] = useState(null);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleAnswerChange = (questionIndex, answerIndex) => {
     setUserResponses((prevResponses) => {
@@ -1181,6 +2168,8 @@ function App() {
     determineMusicPersonality();
     console.log('User Responses:', userResponses);
     alert('Submitted!');
+    //set state to true...
+    setFormSubmitted(true);
   };
 
   const personalityDescriptions = {
@@ -1190,6 +2179,17 @@ function App() {
     D: "D - The Groove Commander!",
     E: "E - The Sonic Innovator!",
     F: "F - The Serenading Poet!"
+  };
+
+
+  const handleNextButtonClickMusicPersonality = () => {
+    // Check if the form has been submitted before allowing to proceed to the next page
+    if (!formSubmitted) {
+      alert('Please submit the form before proceeding to the next page.');
+    } else {
+      // If the form is valid, move to the next page
+      nextPage();
+    }
   };
 
   // volume change - practise page
@@ -2478,7 +3478,7 @@ function App() {
             </div>
             <div class="navBox">
               <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-              <button id="page6-next-button" onClick={nextPage} class="button" value="hide">Next</button>
+              <button id="page6-next-button" onClick={handleNextButtonClickMusicPersonality} class="button" value="hide">Next</button>
             </div>
         </div>
       )} 
@@ -2509,8 +3509,11 @@ function App() {
             />
             <h1> Please watch the video below: </h1>
             <p>
-              This video shows how the interactive space works.
+              This video shows how the next few pages will be structured and how to naviagate around the interactive space:
             </p>
+            <sub-paragraph> 
+              (Don't worry too much, it will be clear on the next few pages!) 
+            </sub-paragraph>
             <br></br>
             <img src="src/example-exp.gif" style={{ width: '700px', height: '700px' }}/>
             <p> - First, label the waveform </p>{/*(the position where you feel the emotion) */}
@@ -2543,20 +3546,18 @@ function App() {
         <div class="page" id="page8">
           <div class="main" id="main8">
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
-            <h5> Page 8 - Music Emotion Survey - SONG 1
-            </h5>
+            <h5> Page 8 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
+            <p>Song 1/10</p>
             <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
               
               <WavesurferVertex
-                  /* audioFile={handleRandomizeAudio} */
-                  // audioFile={shuffledAudioFiles.length >= 1 ? shuffledAudioFiles[0] : ''}
-                  //audioFile={audioFilesPage1}
-                  //audioFiles={[selectedAudioFile1]}
-                  audioFilesPage1={audioFilesPage1}
+                  //audioFile={handleRandomizeAudio}
+                  audioFile={audioFile1}
+                  loadRandomAudioFile={loadRandomAudioFile1}
                   containerId="audiowave1"
 
                   point={dotPosition}
@@ -2574,27 +3575,30 @@ function App() {
           </form>
           <div>
                 <h2> 3. How did you feel? - Explain with a sentence </h2>
-                <p>Please add a sentence based on the emotion you felt while listening to this excerpt</p>
-                <div class="inputBox">
-                  <form>
-                  <input 
-                  type="text" 
-                  id="emotion_sentence" 
-                  placeholder="Click here to write your sentence..." 
-                  name="ME_sentence"
-                  value={emotionSentence}
-                  onChange={(e) => setEmotionSentence(e.target.value)}>
-                  </input>
-                  <label for="ME_sentence"> </label>
-                  </form>
-                
-                </div>
+                <p>Please add a sentence based on the emotion you felt while listening to this excerpt:</p>
                 <sub-paragraph>
                 <p></p>
                 Example 1: Overall the excerpt felt tense, the first marker indicates when i felt most tense. The second marker indicates where my fear was highest.
                 <p></p>
                 Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
                 </sub-paragraph>
+
+                <div class="inputBox">
+                  <form>
+                  <textarea 
+                  rows="2"
+                  type="text" 
+                  id="emotion_sentence" 
+                  placeholder="Click here to write your sentence..." 
+                  name="ME_sentence"
+                  value={emotionSentence}
+                  onChange={(e) => setEmotionSentence(e.target.value)}>
+                  </textarea>
+                  <label for="ME_sentence"> </label>
+                  </form>
+                
+                </div>
+                
             </div>
 
             <h2> Was this music excerpt familiar to you? </h2>
@@ -2660,15 +3664,17 @@ function App() {
         <div class="page" id="page9">
           <div class="main" id="main9">
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
-            <h5> Page 9 - Music Emotion Survey - SONG 2</h5>
+            <h5> Page 9 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
+            <p>Song 2/10</p>
             <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
               
               <WavesurferVertex
-                  audioFile ={audioFilesPage2}
+                  audioFile={audioFile2}
+                  loadRandomAudioFile={loadRandomAudioFile2}
                   containerId="audiowave2"
 
                   point={dotPosition}
@@ -2686,26 +3692,28 @@ function App() {
           <div>
                 <h2> 3. How did you feel? - Explain with a sentence </h2>
                 <p>Please add a sentence based on the emotion you felt while listening to this excerpt</p>
-                <div class="inputBox">
-                  <form>
-                  <input 
-                  type="text" 
-                  id="emotion_sentence2" 
-                  placeholder="Click here to write your sentence..." 
-                  name="ME_sentence2"
-                  value={emotionSentence2}
-                  onChange={(e) => setEmotionSentence2(e.target.value)}>
-                  </input>
-                  <label for="ME_sentence2"> </label>
-                  </form>
-                
-                </div>
                 <sub-paragraph>
                 <p></p>
                 Example 1: Overall the excerpt felt tense, the first marker indicates when i felt most tense. The second marker indicates where my fear was highest.
                 <p></p>
                 Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
                 </sub-paragraph>
+
+                <div class="inputBox">
+                  <form>
+                  <textarea
+                  type="text" 
+                  id="emotion_sentence2" 
+                  placeholder="Click here to write your sentence..." 
+                  name="ME_sentence2"
+                  value={emotionSentence2}
+                  onChange={(e) => setEmotionSentence2(e.target.value)}>
+                  </textarea>
+                  <label for="ME_sentence2"> </label>
+                  </form>
+                
+                </div>
+                
             </div>
             <h2> Was this music excerpt familiar to you? </h2>
             <form>
@@ -2769,14 +3777,16 @@ function App() {
         <div class="page" id="page10">
           <div class="main" id="main10">
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
-            <h5> Page 10 - Music Emotion Survey - SONG 3</h5>
+            <h5> Page 10 - Music Emotion Survey</h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
+            <p>Song 3/10</p>
             <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
               <WavesurferVertex
-                  audioFile={audioFilesPage3}
+                  audioFile={audioFile3}
+                  loadRandomAudioFile={loadRandomAudioFile3}
                   containerId="audiowave3"
 
                   point={dotPosition}
@@ -2794,26 +3804,27 @@ function App() {
           <div>
                 <h2> 3. How did you feel? - Explain with a sentence </h2>
                 <p>Please add a sentence based on the emotion you felt while listening to this excerpt</p>
-                <div class="inputBox">
-                  <form>
-                  <input 
-                  type="text" 
-                  id="emotion_sentence3" 
-                  placeholder="Click here to write your sentence..." 
-                  name="ME_sentence3"
-                  value={emotionSentence3}
-                  onChange={(e) => setEmotionSentence3(e.target.value)}>
-                  </input>
-                  <label for="ME_sentence3"> </label>
-                  </form>
-                
-                </div>
                 <sub-paragraph>
                 <p></p>
                 Example 1: Overall the excerpt felt tense, the first marker indicates when i felt most tense. The second marker indicates where my fear was highest.
                 <p></p>
                 Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
                 </sub-paragraph>
+                <div class="inputBox">
+                  <form>
+                  <textarea 
+                  type="text" 
+                  id="emotion_sentence3" 
+                  placeholder="Click here to write your sentence..." 
+                  name="ME_sentence3"
+                  value={emotionSentence3}
+                  onChange={(e) => setEmotionSentence3(e.target.value)}>
+                  </textarea>
+                  <label for="ME_sentence3"> </label>
+                  </form>
+                
+                </div>
+                
             </div>
             <h2> Was this music excerpt familiar to you? </h2>
             <form>
@@ -2875,15 +3886,16 @@ function App() {
         <div class="page" id="page11">
           <div class="main" id="main11">
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
-            <h5> Page 11 - Music Emotion Survey - SONG 4 </h5>
+            <h5> Page 11 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
-            <p>Song #4</p>
+            <p>Song 4/10</p>
             <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
               <WavesurferVertex
-                  audioFile={audioFilesPage4}
+                  audioFile={audioFile4}
+                  loadRandomAudioFile={loadRandomAudioFile4}
                   containerId="audiowave4"
 
                   point={dotPosition}
@@ -2901,26 +3913,27 @@ function App() {
           <div>
                 <h2> 3. How did you feel? - Explain with a sentence </h2>
                 <p>Please add a sentence based on the emotion you felt while listening to this excerpt</p>
-                <div class="inputBox">
-                  <form>
-                  <input 
-                  type="text" 
-                  id="emotion_sentence4" 
-                  placeholder="Click here to write your sentence..." 
-                  name="ME_sentence4"
-                  value={emotionSentence4}
-                  onChange={(e) => setEmotionSentence4(e.target.value)}>
-                  </input>
-                  <label for="ME_sentence4"> </label>
-                  </form>
-                
-                </div>
                 <sub-paragraph>
                 <p></p>
                 Example 1: Overall the excerpt felt tense, the first marker indicates when i felt most tense. The second marker indicates where my fear was highest.
                 <p></p>
                 Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
                 </sub-paragraph>
+                <div class="inputBox">
+                  <form>
+                  <textarea 
+                  type="text" 
+                  id="emotion_sentence4" 
+                  placeholder="Click here to write your sentence..." 
+                  name="ME_sentence4"
+                  value={emotionSentence4}
+                  onChange={(e) => setEmotionSentence4(e.target.value)}>
+                  </textarea>
+                  <label for="ME_sentence4"> </label>
+                  </form>
+                
+                </div>
+                
             </div>
             <h2> Was this music excerpt familiar to you? </h2>
             <form>
@@ -2982,15 +3995,16 @@ function App() {
         <div class="page" id="page12">
           <div class="main" id="main12">
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
-            <h5> Page 12 - Music Emotion Survey - SONG 5 </h5>
+            <h5> Page 12 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
-            <p>Song #5</p>
+            <p>Song 5/10</p>
             <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
               <WavesurferVertex
-                  audioFile={audioFilesPage5}
+                  audioFile={audioFile5}
+                  loadRandomAudioFile={loadRandomAudioFile5}
                   containerId="audiowave5"
 
                   point={dotPosition}
@@ -3008,26 +4022,27 @@ function App() {
           <div>
                 <h2> 3. How did you feel? - Explain with a sentence </h2>
                 <p>Please add a sentence based on the emotion you felt while listening to this excerpt</p>
-                <div class="inputBox">
-                  <form>
-                  <input 
-                  type="text" 
-                  id="emotion_sentence5" 
-                  placeholder="Click here to write your sentence..." 
-                  name="ME_sentence5"
-                  value={emotionSentence5}
-                  onChange={(e) => setEmotionSentence5(e.target.value)}>
-                  </input>
-                  <label for="ME_sentence5"> </label>
-                  </form>
-                
-                </div>
                 <sub-paragraph>
                 <p></p>
                 Example 1: Overall the excerpt felt tense, the first marker indicates when i felt most tense. The second marker indicates where my fear was highest.
                 <p></p>
                 Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
                 </sub-paragraph>
+                <div class="inputBox">
+                  <form>
+                  <textarea 
+                  type="text" 
+                  id="emotion_sentence5" 
+                  placeholder="Click here to write your sentence..." 
+                  name="ME_sentence5"
+                  value={emotionSentence5}
+                  onChange={(e) => setEmotionSentence5(e.target.value)}>
+                  </textarea>
+                  <label for="ME_sentence5"> </label>
+                  </form>
+                
+                </div>
+                
             </div>
             <h2> Was this music excerpt familiar to you? </h2>
             <form>
@@ -3089,13 +4104,105 @@ function App() {
         <div class="page" id="page13">
           <div class="main" id="main13">
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
-            <h5> Page 13 - Music Emotion Survey - SONG 6 </h5>
+            <h5> Page 13 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
-            <p>Song #6</p>
+            <p>Song 6/10</p>
+            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+              <h2>1. Audio Waveform - Region and Markers </h2>
+              <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
+              <p1> Add as many markers as you'd like. </p1>
+              <WavesurferVertex
+                  audioFile={audioFile6}
+                  loadRandomAudioFile={loadRandomAudioFile6}
+                  containerId="audiowave6"
+
+                  point={dotPosition}
+                  onPositionUpdate={handlePositionUpdate}
+                  onDotPositionUpdate={(updatedPositions) => setDotPositions(updatedPositions)}
+                  onRegionInformationUpdate={(updatedRegionInfo) => setRegionInformation(updatedRegionInfo)}
+                  lockOriginalDot={lockOriginalDot}
+                  /> 
+              </div> 
+          <div>
+          <form>
+            {/* button below saves regions and dots inside participant info in firebase: */}
+            <button id='save-region-dot-btn6' onClick={handleSaveRegionsToFirestore6}> Save regions and dots </button> 
+          </form>
+          <div>
+                <h2> 3. How did you feel? - Explain with a sentence </h2>
+                <p>Please add a sentence based on the emotion you felt while listening to this excerpt</p>
+                <sub-paragraph>
+                <p></p>
+                Example 1: Overall the excerpt felt tense, the first marker indicates when i felt most tense. The second marker indicates where my fear was highest.
+                <p></p>
+                Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
+                </sub-paragraph>
+                <div class="inputBox">
+                  <form>
+                  <textarea 
+                  type="text" 
+                  id="emotion_sentence6" 
+                  placeholder="Click here to write your sentence..." 
+                  name="ME_sentence6"
+                  value={emotionSentence6}
+                  onChange={(e) => setEmotionSentence6(e.target.value)}>
+                  </textarea>
+                  <label for="ME_sentence6"> </label>
+                  </form>
+                
+                </div>
+                
+            </div>
+            <h2> Was this music excerpt familiar to you? </h2>
+            <form>
+              <div id="familiar-excerpt6" class="radio-group">
+                <label class="container2">
+                  <input type="radio" name="familiar6" id="definitely-familiar" value="definitely-familiar"
+                  checked={familiarityRating === 'definitely-familiar'}
+                  onChange={handleFamiliarityChange}
+                  ></input> It is definitely familiar, I know the song and what film it's from.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar6" id="familiar" value="familiar"
+                  checked={familiarityRating === 'familiar'}
+                  onChange={handleFamiliarityChange}
+                  ></input> It is very familiar but I am not sure where it's from.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar6" id="not-sure" value="not-sure"
+                  checked={familiarityRating === 'not-sure'}
+                  onChange={handleFamiliarityChange}
+                  ></input> Not Sure/ Don't know.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar6" id="familiar-feeling-not-familiar" value="familiar-feeling-not-familiar"
+                  checked={familiarityRating === 'familiar-feeling-not-familiar'}
+                  onChange={handleFamiliarityChange}
+                  ></input> It is not familiar, although it has a familiar feeling.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar6" id="never-heard-this" value="never-heard-this"
+                  checked={familiarityRating === 'never-heard-this'}
+                  onChange={handleFamiliarityChange}
+                  ></input> I have never heard this.
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              </form>
+              <br></br>
+                <button type="submit" id="submitAudio6DataButton"
+                className="submit-audio6-data-btn"
+                onClick={handleSubmitSentenceFamiliar6}> Submit Responses </button>
+            </div>
+
           </div>
           <div class="navBox">
             <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page13-next-button" onClick={nextPage} class="button" value="hide">Next</button>
+            <button id="page13-next-button" onClick={handleSubmitSong6} class="button" value="hide">Next</button>
           </div>
         </div>
       )}
@@ -3106,13 +4213,105 @@ function App() {
         <div class="page" id="page14">
           <div class="main" id="main14">
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
-            <h5> Page 14 - Music Emotion Survey - SONG 7</h5>
+            <h5> Page 14 - Music Emotion Survey</h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
-            <p>Song #7</p>
+            <p>Song 7/10</p>
+            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+              <h2>1. Audio Waveform - Region and Markers </h2>
+              <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
+              <p1> Add as many markers as you'd like. </p1>
+              <WavesurferVertex
+                  audioFile={audioFile7}
+                  loadRandomAudioFile={loadRandomAudioFile7}
+                  containerId="audiowave7"
+
+                  point={dotPosition}
+                  onPositionUpdate={handlePositionUpdate}
+                  onDotPositionUpdate={(updatedPositions) => setDotPositions(updatedPositions)}
+                  onRegionInformationUpdate={(updatedRegionInfo) => setRegionInformation(updatedRegionInfo)}
+                  lockOriginalDot={lockOriginalDot}
+                  /> 
+              </div> 
+          <div>
+          <form>
+            {/* button below saves regions and dots inside participant info in firebase: */}
+            <button id='save-region-dot-btn7' onClick={handleSaveRegionsToFirestore7}> Save regions and dots </button> 
+          </form>
+          <div>
+                <h2> 3. How did you feel? - Explain with a sentence </h2>
+                <p>Please add a sentence based on the emotion you felt while listening to this excerpt</p>
+                <sub-paragraph>
+                <p></p>
+                Example 1: Overall the excerpt felt tense, the first marker indicates when i felt most tense. The second marker indicates where my fear was highest.
+                <p></p>
+                Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
+                </sub-paragraph>
+                <div class="inputBox">
+                  <form>
+                  <textarea 
+                  type="text" 
+                  id="emotion_sentence7" 
+                  placeholder="Click here to write your sentence..." 
+                  name="ME_sentence7"
+                  value={emotionSentence7}
+                  onChange={(e) => setEmotionSentence7(e.target.value)}>
+                  </textarea>
+                  <label for="ME_sentence7"> </label>
+                  </form>
+                
+                </div>
+                
+            </div>
+            <h2> Was this music excerpt familiar to you? </h2>
+            <form>
+              <div id="familiar-excerpt7" class="radio-group">
+                <label class="container2">
+                  <input type="radio" name="familiar7" id="definitely-familiar" value="definitely-familiar"
+                  checked={familiarityRating === 'definitely-familiar'}
+                  onChange={handleFamiliarityChange}
+                  ></input> It is definitely familiar, I know the song and what film it's from.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar7" id="familiar" value="familiar"
+                  checked={familiarityRating === 'familiar'}
+                  onChange={handleFamiliarityChange}
+                  ></input> It is very familiar but I am not sure where it's from.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar7" id="not-sure" value="not-sure"
+                  checked={familiarityRating === 'not-sure'}
+                  onChange={handleFamiliarityChange}
+                  ></input> Not Sure/ Don't know.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar7" id="familiar-feeling-not-familiar" value="familiar-feeling-not-familiar"
+                  checked={familiarityRating === 'familiar-feeling-not-familiar'}
+                  onChange={handleFamiliarityChange}
+                  ></input> It is not familiar, although it has a familiar feeling.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar7" id="never-heard-this" value="never-heard-this"
+                  checked={familiarityRating === 'never-heard-this'}
+                  onChange={handleFamiliarityChange}
+                  ></input> I have never heard this.
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              </form>
+              <br></br>
+                <button type="submit" id="submitAudio7DataButton"
+                className="submit-audio7-data-btn"
+                onClick={handleSubmitSentenceFamiliar7}> Submit Responses </button>
+            </div>
+
           </div>
           <div class="navBox">
             <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page14-next-button" onClick={nextPage} class="button" value="hide">Next</button>
+            <button id="page14-next-button" onClick={handleSubmitSong7} class="button" value="hide">Next</button>
           </div>
         </div>
       )}
@@ -3123,13 +4322,105 @@ function App() {
         <div class="page" id="page15">
           <div class="main" id="main15">
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
-            <h5> Page 15 - Music Emotion Survey - SONG 8 </h5>
+            <h5> Page 15 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
-            <p>Song #8</p>
+            <p>Song 8/10</p>
+            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+              <h2>1. Audio Waveform - Region and Markers </h2>
+              <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
+              <p1> Add as many markers as you'd like. </p1>
+              <WavesurferVertex
+                  audioFile={audioFile8}
+                  loadRandomAudioFile={loadRandomAudioFile8}
+                  containerId="audiowave8"
+
+                  point={dotPosition}
+                  onPositionUpdate={handlePositionUpdate}
+                  onDotPositionUpdate={(updatedPositions) => setDotPositions(updatedPositions)}
+                  onRegionInformationUpdate={(updatedRegionInfo) => setRegionInformation(updatedRegionInfo)}
+                  lockOriginalDot={lockOriginalDot}
+                  /> 
+              </div> 
+          <div>
+          <form>
+            {/* button below saves regions and dots inside participant info in firebase: */}
+            <button id='save-region-dot-btn8' onClick={handleSaveRegionsToFirestore8}> Save regions and dots </button> 
+          </form>
+          <div>
+                <h2> 3. How did you feel? - Explain with a sentence </h2>
+                <p>Please add a sentence based on the emotion you felt while listening to this excerpt</p>
+                <sub-paragraph>
+                <p></p>
+                Example 1: Overall the excerpt felt tense, the first marker indicates when i felt most tense. The second marker indicates where my fear was highest.
+                <p></p>
+                Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
+                </sub-paragraph>
+                <div class="inputBox">
+                  <form>
+                  <textarea 
+                  type="text" 
+                  id="emotion_sentence8" 
+                  placeholder="Click here to write your sentence..." 
+                  name="ME_sentence8"
+                  value={emotionSentence8}
+                  onChange={(e) => setEmotionSentence8(e.target.value)}>
+                  </textarea>
+                  <label for="ME_sentence8"> </label>
+                  </form>
+                
+                </div>
+                
+            </div>
+            <h2> Was this music excerpt familiar to you? </h2>
+            <form>
+              <div id="familiar-excerpt8" class="radio-group">
+                <label class="container2">
+                  <input type="radio" name="familiar8" id="definitely-familiar" value="definitely-familiar"
+                  checked={familiarityRating === 'definitely-familiar'}
+                  onChange={handleFamiliarityChange}
+                  ></input> It is definitely familiar, I know the song and what film it's from.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar8" id="familiar" value="familiar"
+                  checked={familiarityRating === 'familiar'}
+                  onChange={handleFamiliarityChange}
+                  ></input> It is very familiar but I am not sure where it's from.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar8" id="not-sure" value="not-sure"
+                  checked={familiarityRating === 'not-sure'}
+                  onChange={handleFamiliarityChange}
+                  ></input> Not Sure/ Don't know.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar8" id="familiar-feeling-not-familiar" value="familiar-feeling-not-familiar"
+                  checked={familiarityRating === 'familiar-feeling-not-familiar'}
+                  onChange={handleFamiliarityChange}
+                  ></input> It is not familiar, although it has a familiar feeling.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar8" id="never-heard-this" value="never-heard-this"
+                  checked={familiarityRating === 'never-heard-this'}
+                  onChange={handleFamiliarityChange}
+                  ></input> I have never heard this.
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              </form>
+              <br></br>
+                <button type="submit" id="submitAudio8DataButton"
+                className="submit-audio8-data-btn"
+                onClick={handleSubmitSentenceFamiliar8}> Submit Responses </button>
+            </div>
+
           </div>
           <div class="navBox">
             <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page15-next-button" onClick={nextPage} class="button" value="hide">Next</button>
+            <button id="page15-next-button" onClick={handleSubmitSong8} class="button" value="hide">Next</button>
           </div>
         </div>
       )}
@@ -3140,13 +4431,105 @@ function App() {
         <div class="page" id="page16">
           <div class="main" id="main16">
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
-            <h5> Page 16 - Music Emotion Survey - SONG 9 </h5>
+            <h5> Page 16 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
-            <p>Song #9</p>
+            <p>Song 9/10</p>
+            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+              <h2>1. Audio Waveform - Region and Markers </h2>
+              <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
+              <p1> Add as many markers as you'd like. </p1>
+              <WavesurferVertex
+                  audioFile={audioFile9}
+                  loadRandomAudioFile={loadRandomAudioFile9}
+                  containerId="audiowave9"
+
+                  point={dotPosition}
+                  onPositionUpdate={handlePositionUpdate}
+                  onDotPositionUpdate={(updatedPositions) => setDotPositions(updatedPositions)}
+                  onRegionInformationUpdate={(updatedRegionInfo) => setRegionInformation(updatedRegionInfo)}
+                  lockOriginalDot={lockOriginalDot}
+                  /> 
+              </div> 
+          <div>
+          <form>
+            {/* button below saves regions and dots inside participant info in firebase: */}
+            <button id='save-region-dot-btn9' onClick={handleSaveRegionsToFirestore9}> Save regions and dots </button> 
+          </form>
+          <div>
+                <h2> 3. How did you feel? - Explain with a sentence </h2>
+                <p>Please add a sentence based on the emotion you felt while listening to this excerpt</p>
+                <sub-paragraph>
+                <p></p>
+                Example 1: Overall the excerpt felt tense, the first marker indicates when i felt most tense. The second marker indicates where my fear was highest.
+                <p></p>
+                Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
+                </sub-paragraph>
+                <div class="inputBox">
+                  <form>
+                  <textarea 
+                  type="text" 
+                  id="emotion_sentence9" 
+                  placeholder="Click here to write your sentence..." 
+                  name="ME_sentence9"
+                  value={emotionSentence9}
+                  onChange={(e) => setEmotionSentence9(e.target.value)}>
+                  </textarea>
+                  <label for="ME_sentence9"> </label>
+                  </form>
+                
+                </div>
+                
+            </div>
+            <h2> Was this music excerpt familiar to you? </h2>
+            <form>
+              <div id="familiar-excerpt9" class="radio-group">
+                <label class="container2">
+                  <input type="radio" name="familiar9" id="definitely-familiar" value="definitely-familiar"
+                  checked={familiarityRating === 'definitely-familiar'}
+                  onChange={handleFamiliarityChange}
+                  ></input> It is definitely familiar, I know the song and what film it's from.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar9" id="familiar" value="familiar"
+                  checked={familiarityRating === 'familiar'}
+                  onChange={handleFamiliarityChange}
+                  ></input> It is very familiar but I am not sure where it's from.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar9" id="not-sure" value="not-sure"
+                  checked={familiarityRating === 'not-sure'}
+                  onChange={handleFamiliarityChange}
+                  ></input> Not Sure/ Don't know.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar9" id="familiar-feeling-not-familiar" value="familiar-feeling-not-familiar"
+                  checked={familiarityRating === 'familiar-feeling-not-familiar'}
+                  onChange={handleFamiliarityChange}
+                  ></input> It is not familiar, although it has a familiar feeling.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar9" id="never-heard-this" value="never-heard-this"
+                  checked={familiarityRating === 'never-heard-this'}
+                  onChange={handleFamiliarityChange}
+                  ></input> I have never heard this.
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              </form>
+              <br></br>
+                <button type="submit" id="submitAudio9DataButton"
+                className="submit-audio9-data-btn"
+                onClick={handleSubmitSentenceFamiliar9}> Submit Responses </button>
+            </div>
+
           </div>
           <div class="navBox">
             <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page16-next-button" onClick={nextPage} class="button" value="hide">Next</button>
+            <button id="page16-next-button" onClick={handleSubmitSong9} class="button" value="hide">Next</button>
           </div>
         </div>
       )}
@@ -3157,13 +4540,105 @@ function App() {
         <div class="page" id="page17">
           <div class="main" id="main17">
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
-            <h5> Page 17 - Music Emotion Survey - SONG 10 </h5>
+            <h5> Page 17 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
-            <p>Song #10</p>
+            <p>Song 10/10</p>
+            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+              <h2>1. Audio Waveform - Region and Markers </h2>
+              <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
+              <p1> Add as many markers as you'd like. </p1>
+              <WavesurferVertex
+                  audioFile={audioFile10}
+                  loadRandomAudioFile={loadRandomAudioFile10}
+                  containerId="audiowave10"
+
+                  point={dotPosition}
+                  onPositionUpdate={handlePositionUpdate}
+                  onDotPositionUpdate={(updatedPositions) => setDotPositions(updatedPositions)}
+                  onRegionInformationUpdate={(updatedRegionInfo) => setRegionInformation(updatedRegionInfo)}
+                  lockOriginalDot={lockOriginalDot}
+                  /> 
+              </div> 
+          <div>
+          <form>
+            {/* button below saves regions and dots inside participant info in firebase: */}
+            <button id='save-region-dot-btn10' onClick={handleSaveRegionsToFirestore10}> Save regions and dots </button> 
+          </form>
+          <div>
+                <h2> 3. How did you feel? - Explain with a sentence </h2>
+                <p>Please add a sentence based on the emotion you felt while listening to this excerpt</p>
+                <sub-paragraph>
+                <p></p>
+                Example 1: Overall the excerpt felt tense, the first marker indicates when i felt most tense. The second marker indicates where my fear was highest.
+                <p></p>
+                Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
+                </sub-paragraph>
+                <div class="inputBox">
+                  <form>
+                  <textarea 
+                  type="text" 
+                  id="emotion_sentence10" 
+                  placeholder="Click here to write your sentence..." 
+                  name="ME_sentence10"
+                  value={emotionSentence10}
+                  onChange={(e) => setEmotionSentence10(e.target.value)}>
+                  </textarea>
+                  <label for="ME_sentence10"> </label>
+                  </form>
+                
+                </div>
+               
+            </div>
+            <h2> Was this music excerpt familiar to you? </h2>
+            <form>
+              <div id="familiar-excerpt10" class="radio-group">
+                <label class="container2">
+                  <input type="radio" name="familiar10" id="definitely-familiar" value="definitely-familiar"
+                  checked={familiarityRating === 'definitely-familiar'}
+                  onChange={handleFamiliarityChange}
+                  ></input> It is definitely familiar, I know the song and what film it's from.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar10" id="familiar" value="familiar"
+                  checked={familiarityRating === 'familiar'}
+                  onChange={handleFamiliarityChange}
+                  ></input> It is very familiar but I am not sure where it's from.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar10" id="not-sure" value="not-sure"
+                  checked={familiarityRating === 'not-sure'}
+                  onChange={handleFamiliarityChange}
+                  ></input> Not Sure/ Don't know.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar10" id="familiar-feeling-not-familiar" value="familiar-feeling-not-familiar"
+                  checked={familiarityRating === 'familiar-feeling-not-familiar'}
+                  onChange={handleFamiliarityChange}
+                  ></input> It is not familiar, although it has a familiar feeling.
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container2">
+                  <input type="radio" name="familiar10" id="never-heard-this" value="never-heard-this"
+                  checked={familiarityRating === 'never-heard-this'}
+                  onChange={handleFamiliarityChange}
+                  ></input> I have never heard this.
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              </form>
+              <br></br>
+                <button type="submit" id="submitAudio10DataButton"
+                className="submit-audio10-data-btn"
+                onClick={handleSubmitSentenceFamiliar10}> Submit Responses </button>
+            </div>
+
           </div>
           <div class="navBox">
             <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page17-next-button" onClick={nextPage} class="button" value="hide">Next</button>
+            <button id="page17-next-button" onClick={handleSubmitSong10} class="button" value="hide">Next</button>
           </div>
         </div>
       )}
