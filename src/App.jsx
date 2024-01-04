@@ -2368,16 +2368,18 @@ const handleNextButtonClickP5 = () => {
   };
 
 
-
-
   return (
     <>
       {currentPage === 'page1' && (
         <div class="page" id="page1">
           <div class="main" id="'main1">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 1 - Study Introduction </h5>
-
+            
             <h4> The purpose of this study is to understand how music in films makes us feel. By sharing your thoughts, you'll help us learn more about how emotions are created in film music! </h4>
             <br></br>
             <h4> This study will consist of 2 main surveys. </h4>
@@ -2418,6 +2420,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page2' && (
         <div class="page" id="page2">
           <div class="main" id="main2">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
           <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
           <h5> Page 2 - Consent Page </h5>
             <form>
@@ -2475,6 +2481,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page3' && (
         <div class="page" id="page3">
           <div class="main" id="main3">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 3 - Demographics Form </h5>
             <form action="" id="P3contactForm">
@@ -2586,6 +2596,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page4' && (
         <div class="page" id="page4">
           <div class="main" id="main4">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 4 - Music Background</h5>
             <p> Please fill out the below form based on your music background and experience:</p>
@@ -2923,6 +2937,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page5' && (
         <div class="page" id="page5">
           <div class="main" id="main5">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5>Page 5 - Emotion and Music Form </h5>
             <p>Please complete the form below based on your music listening preferences: </p>
@@ -3289,6 +3307,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page6' && (
         <div class="page" id="page6">
           <div class="main" id="main6">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5>Page 6 - Music Personality Questions</h5>
             <p>Please complete the form below: </p>
@@ -3491,6 +3513,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page7' && (
         <div class="page" id="page7">
           <div class="main" id="main7">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5>Page 7 - Music Listening Survey </h5>
             <p> This next section will require you to listen and label excerpts of music from films. Please make sure you have high quality headphones and/or speakers. And a quiet listening space away from distractions.</p>
@@ -3545,6 +3571,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page8' && (
         <div class="page" id="page8">
           <div class="main" id="main8">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 8 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
@@ -3663,6 +3693,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page9' && (
         <div class="page" id="page9">
           <div class="main" id="main9">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 9 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
@@ -3776,6 +3810,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page10' && (
         <div class="page" id="page10">
           <div class="main" id="main10">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 10 - Music Emotion Survey</h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
@@ -3885,6 +3923,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page11' && (
         <div class="page" id="page11">
           <div class="main" id="main11">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 11 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
@@ -3994,6 +4036,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page12' && (
         <div class="page" id="page12">
           <div class="main" id="main12">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 12 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
@@ -4103,6 +4149,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page13' && (
         <div class="page" id="page13">
           <div class="main" id="main13">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 13 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
@@ -4212,6 +4262,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page14' && (
         <div class="page" id="page14">
           <div class="main" id="main14">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 14 - Music Emotion Survey</h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
@@ -4321,6 +4375,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page15' && (
         <div class="page" id="page15">
           <div class="main" id="main15">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 15 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
@@ -4430,6 +4488,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page16' && (
         <div class="page" id="page16">
           <div class="main" id="main16">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 16 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
@@ -4539,6 +4601,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page17' && (
         <div class="page" id="page17">
           <div class="main" id="main17">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 17 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
@@ -4648,6 +4714,10 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page18' && (
         <div class="page" id="page18">
           <div class="main" id="main18">
+          <img src="src/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="src/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <p>  </p>
+          <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 18 - Music Personality Results: </h5>
             <p> music personality results page... </p>
