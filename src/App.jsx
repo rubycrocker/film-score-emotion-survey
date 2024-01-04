@@ -2218,7 +2218,7 @@ const handleNextButtonClickP5 = () => {
         <div className="page" id="page1">
           <div className="main" id="'main1">
           <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="././img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2265,7 +2265,7 @@ const handleNextButtonClickP5 = () => {
         <div class="page" id="page2">
           <div class="main" id="main2">
           <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="././img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
           <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
