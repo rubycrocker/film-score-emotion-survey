@@ -2371,10 +2371,10 @@ const handleNextButtonClickP5 = () => {
   return (
     <>
       {currentPage === 'page1' && (
-        <div class="page" id="page1">
-          <div class="main" id="'main1">
-          <img src="aimLogo.PNG" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page1">
+          <div className="main" id="'main1">
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2420,8 +2420,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page2' && (
         <div class="page" id="page2">
           <div class="main" id="main2">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
           <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2481,8 +2481,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page3' && (
         <div class="page" id="page3">
           <div class="main" id="main3">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2596,8 +2596,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page4' && (
         <div class="page" id="page4">
           <div class="main" id="main4">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2937,8 +2937,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page5' && (
         <div class="page" id="page5">
           <div class="main" id="main5">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3307,8 +3307,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page6' && (
         <div class="page" id="page6">
           <div class="main" id="main6">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3513,8 +3513,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page7' && (
         <div class="page" id="page7">
           <div class="main" id="main7">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3541,7 +3541,7 @@ const handleNextButtonClickP5 = () => {
               (Don't worry too much, it will be clear on the next few pages!) 
             </sub-paragraph>
             <br></br>
-            <img src="example-exp.gif" style={{ width: '700px', height: '700px' }}/>
+            <img src="img/example-exp.gif" style={{ width: '700px', height: '700px' }}/>
             <p> - First, label the waveform </p>{/*(the position where you feel the emotion) */}
             <p> - Then, label the graph with the corresponding dot colour.</p>{/*(high/low energy and high/low positivity) */}
             <p> - Then, add a short sentence on the emotions you felt.</p>
@@ -3552,7 +3552,7 @@ const handleNextButtonClickP5 = () => {
               If you are struggling to interpret the Energy/Positivity Graph, this is an example of how the graph could be interpreted by emotion annotations. However you can interpret it any way you want.
             </p>
             <br></br>
-            <img src="en-pos-anno.png" style={{ width: '400px', height: '400px' }}/>
+            <img src="img/en-pos-anno.png" style={{ width: '400px', height: '400px' }}/>
             <br></br>
 
           </div>
@@ -3571,8 +3571,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page8' && (
         <div class="page" id="page8">
           <div class="main" id="main8">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3693,8 +3693,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page9' && (
         <div class="page" id="page9">
           <div class="main" id="main9">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3810,8 +3810,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page10' && (
         <div class="page" id="page10">
           <div class="main" id="main10">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3923,8 +3923,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page11' && (
         <div class="page" id="page11">
           <div class="main" id="main11">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4036,8 +4036,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page12' && (
         <div class="page" id="page12">
           <div class="main" id="main12">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4149,8 +4149,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page13' && (
         <div class="page" id="page13">
           <div class="main" id="main13">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4262,8 +4262,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page14' && (
         <div class="page" id="page14">
           <div class="main" id="main14">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4375,8 +4375,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page15' && (
         <div class="page" id="page15">
           <div class="main" id="main15">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4488,8 +4488,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page16' && (
         <div class="page" id="page16">
           <div class="main" id="main16">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4601,8 +4601,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page17' && (
         <div class="page" id="page17">
           <div class="main" id="main17">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4714,8 +4714,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page18' && (
         <div class="page" id="page18">
           <div class="main" id="main18">
-          <img src="aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>

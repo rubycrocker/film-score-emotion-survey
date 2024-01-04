@@ -269,7 +269,7 @@ export const WavesurferVertex = ({ audioFile, loadRandomAudioFile, initialDots, 
             >Help</button>
             {showHelpTooltip && (
             <div className="help-tooltip">
-              <img src="src/en-pos-anno.png" />
+              <img src="img/en-pos-anno.png" />
             </div>
           )}
             
