@@ -157,15 +157,8 @@ function App() {
     };
 
     ////////////////////////////////////////////////////////////////
-    //random audio file logic:
-     /* const audioFiles = ['002.mp3', '003.mp3', '031.mp3', '123.mp3', '139.mp3', '233.mp3', '267.mp3', '292.mp3', '310.mp3', '355.mp3' ];
-     const [selectedAudioFile, setSelectedAudioFile] = useState(null);
-  
-     /* const handleRandomizeAudio = () => {
-      const randomIndex = Math.floor(Math.random() * audioFiles.length);
-      setSelectedAudioFile(audioFiles[randomIndex]);
-    };  */ 
     ////////////////////////////////////////////////////////////////
+
     const [loadedAudioFile, setLoadedAudioFile] = useState('');
     //ensure that the loadrandomaudiofile starts empty - hopefully no double loads...
     useEffect(() => {
@@ -1847,82 +1840,6 @@ function App() {
 
   /////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-   // trying to save page 4 form...
-  /*  const myRef3 = collection(firestore, 'responses_music');
-
-   const handleSavePage4 = async (e) => {
-    e.preventDefault();
-
-    const music_hrs = document.querySelector('input[name="music-hrs"]:checked')?.value;
-    const music_hrs2 = document.querySelector('input[name="music-hrs2"]:checked')?.value;
-    const years = document.querySelector('input[name="years"]:checked')?.value;
-    const singer = document.querySelector('input[name="singer"]:checked')?.value;
-    const mistakes = document.querySelector('input[name="mistakes"]:checked')?.value;
-    const differences = document.querySelector('input[name="differences"]:checked')?.value;
-    const out_of_time = document.querySelector('input[name="out-of-time"]:checked')?.value;
-    const out_of_tune = document.querySelector('input[name="out-of-tune"]:checked')?.value;
-    const musician = document.querySelector('input[name="musician"]:checked')?.value;
-    const production = document.querySelector('input[name="production"]:checked')?.value;
-
-    if(!music_hrs || !music_hrs2 || !years || !singer || !mistakes || !differences || !out_of_time || !out_of_tune || !musician || !production){
-      alert('Please fill in all the form fields.');
-      return;
-    }
-
-    try {
-      // Ensure participantID and participantDocRef are available
-      if (participantID && participantDocRef) {
-
-        const participantData = (await getDoc(participantDocRef)).data();
-        const formsData = participantData.forms || {};
-
-        formsData.page4musicExperienceForm = {
-          music_hrs,
-          music_hrs2,
-          years,
-          singer,
-          mistakes,
-          differences,
-          out_of_time,
-          out_of_tune,
-          musician,
-          production,
-        }; 
-  
-        // Add the data to the forms collection
-        await updateDoc(participantDocRef, { forms: formsData });
-        //alerts:
-        alert('Data submitted successfully!');
-        nextPage(); // Move to the next page
-      } else {
-        console.error('Participant ID or participant document reference missing.');
-      }
-    } catch (error) {
-      console.error('Error submitting data:', error);
-    }
-  };
-  const handleNextButtonClickP4 = () => {
-    // Validate the form before allowing to proceed to the next page
-    const music_hrs = document.querySelector('input[name="music-hrs"]:checked')?.value;
-    const music_hrs2 = document.querySelector('input[name="music-hrs2"]:checked')?.value;
-    const years = document.querySelector('input[name="years"]:checked')?.value;
-    const singer = document.querySelector('input[name="singer"]:checked')?.value;
-    const mistakes = document.querySelector('input[name="mistakes"]:checked')?.value;
-    const differences = document.querySelector('input[name="differences"]:checked')?.value;
-    const out_of_time = document.querySelector('input[name="out-of-time"]:checked')?.value;
-    const out_of_tune = document.querySelector('input[name="out-of-tune"]:checked')?.value;
-    const musician = document.querySelector('input[name="musician"]:checked')?.value;
-    const production = document.querySelector('input[name="production"]:checked')?.value;
-
-    if(!music_hrs || !music_hrs2 || !years || !singer || !mistakes || !differences || !out_of_time || !out_of_tune || !musician || !production){
-      alert('Please fill out all form fields.');
-    } else {
-      // If the form is valid, save the data and move to the next page
-      handleSavePage4();
-      nextPage();
-    }
-  }; */
   
   // Add state for page 4 form submission confirmation
 const [page4FormSubmitted, setPage4FormSubmitted] = useState(false);
@@ -2071,61 +1988,6 @@ const handleNextButtonClickP5 = () => {
 };
   ////////////////
 
-  /* const myRef6 = collection(firestore, 'music-personality');
-  const handleSavePage6 = async (e) => {
-    e.preventDefault();
-      const faveplace = document.querySelector('input[name="radio-option0"]:checked')?.value;
-      const matters = document.querySelector('input[name="radio-option1"]:checked')?.value;
-      const discover = document.querySelector('input[name="radio-option2"]:checked')?.value;
-      const describetaste = document.querySelector('input[name="radio-option3"]:checked')?.value;
-      const feelinggenre = document.querySelector('input[name="radio-option4"]:checked')?.value;
-    if (!faveplace || !matters || !discover || !describetaste || !feelinggenre) {
-      alert('Please fill in all the form fields.');
-      return;
-    }
-    try {
-      if (participantID && participantDocRef) {
-
-        const participantData = (await getDoc(participantDocRef)).data();
-        const formsData = participantData.forms || {};
-
-        formsData.musicPersonalityQuiz = {
-          faveplace,
-          matters,
-          discover,
-          describetaste,
-          feelinggenre,
-        }; 
-        // Add the data to the forms collection
-        await updateDoc(participantDocRef, { forms: formsData });
-        //alerts:
-        alert('Data submitted successfully!');
-        nextPage(); // Move to the next page
-      } else {
-        console.error('Participant ID or participant document reference missing.');
-      }
-    } catch (error) {
-      console.error('Error submitting data:', error);
-    }
-  };
-  const handleNextButtonClickP6 = () => {
-    // Validate the form before allowing to proceed to the next page
-      const faveplace = document.querySelector('input[name="radio-option0"]:checked')?.value;
-      const matters = document.querySelector('input[name="radio-option1"]:checked')?.value;
-      const discover = document.querySelector('input[name="radio-option2"]:checked')?.value;
-      const describetaste = document.querySelector('input[name="radio-option3"]:checked')?.value;
-      const feelinggenre = document.querySelector('input[name="radio-option4"]:checked')?.value;
-
-    if (!faveplace || !matters || !discover || !describetaste || !feelinggenre) {
-      alert('Please fill out all form fields.');
-    } else {
-      // If the form is valid, save the data and move to the next page
-      handleSavePage();
-      nextPage();
-    }
-  }; */
-
-   ///////////////////////////////////////////////////////////////////////////////////////////////////
   //music personality quiz - page 6:
   const [userResponses, setUserResponses] = useState([]);
   const [musicPersonality, setMusicPersonality] = useState(null);
@@ -2198,24 +2060,7 @@ const handleNextButtonClickP5 = () => {
     setVolume(newVolume);
     audioRef.current.volume = newVolume;
   };
-  //////////////////////////////////////////////////////////////////////////
-  /* const handleNextButtonClickP6 = (e) => {
-    e.preventDefault();
-    const faveplace = document.querySelector('input[name="radio-option0"]:checked')?.value;
-    const matters = document.querySelector('input[name="radio-option1"]:checked')?.value;
-    const discover = document.querySelector('input[name="radio-option2"]:checked')?.value;
-    const describetaste = document.querySelector('input[name="radio-option3"]:checked')?.value;
-    const feelinggenre = document.querySelector('input[name="radio-option4"]:checked')?.value;
 
-  if (!faveplace || !matters || !discover || !describetaste || !feelinggenre) {
-    alert('Please answer all questions.');
-  } else {
-    // If the form is valid, save the data and move to the next page
-    determineMusicPersonality();
-    nextPage();
-  }
-}; */
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -2367,14 +2212,13 @@ const handleNextButtonClickP5 = () => {
     }
   };
 
-
   return (
     <>
       {currentPage === 'page1' && (
         <div className="page" id="page1">
           <div className="main" id="'main1">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2420,8 +2264,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page2' && (
         <div class="page" id="page2">
           <div class="main" id="main2">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
           <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2481,8 +2325,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page3' && (
         <div class="page" id="page3">
           <div class="main" id="main3">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2596,8 +2440,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page4' && (
         <div class="page" id="page4">
           <div class="main" id="main4">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2937,8 +2781,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page5' && (
         <div class="page" id="page5">
           <div class="main" id="main5">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3307,8 +3151,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page6' && (
         <div class="page" id="page6">
           <div class="main" id="main6">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3513,8 +3357,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page7' && (
         <div class="page" id="page7">
           <div class="main" id="main7">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3571,8 +3415,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page8' && (
         <div class="page" id="page8">
           <div class="main" id="main8">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3693,8 +3537,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page9' && (
         <div class="page" id="page9">
           <div class="main" id="main9">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3810,8 +3654,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page10' && (
         <div class="page" id="page10">
           <div class="main" id="main10">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3923,8 +3767,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page11' && (
         <div class="page" id="page11">
           <div class="main" id="main11">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4036,8 +3880,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page12' && (
         <div class="page" id="page12">
           <div class="main" id="main12">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4149,8 +3993,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page13' && (
         <div class="page" id="page13">
           <div class="main" id="main13">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4262,8 +4106,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page14' && (
         <div class="page" id="page14">
           <div class="main" id="main14">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4375,8 +4219,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page15' && (
         <div class="page" id="page15">
           <div class="main" id="main15">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4488,8 +4332,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page16' && (
         <div class="page" id="page16">
           <div class="main" id="main16">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4601,8 +4445,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page17' && (
         <div class="page" id="page17">
           <div class="main" id="main17">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4714,8 +4558,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page18' && (
         <div class="page" id="page18">
           <div class="main" id="main18">
-          <img src="img/aimLogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="img/qmulLogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
