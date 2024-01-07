@@ -3385,7 +3385,7 @@ const handleNextButtonClickP5 = () => {
               (Don't worry too much, it will be clear on the next few pages!) 
             </sub-paragraph>
             <br></br>
-            <img src="img/example-exp.gif" style={{ width: '700px', height: '700px' }}/>
+            <img src="/img/example-exp.gif" style={{ width: '700px', height: '700px' }}/>
             <p> - First, label the waveform </p>{/*(the position where you feel the emotion) */}
             <p> - Then, label the graph with the corresponding dot colour.</p>{/*(high/low energy and high/low positivity) */}
             <p> - Then, add a short sentence on the emotions you felt.</p>
@@ -3396,7 +3396,7 @@ const handleNextButtonClickP5 = () => {
               If you are struggling to interpret the Energy/Positivity Graph, this is an example of how the graph could be interpreted by emotion annotations. However you can interpret it any way you want.
             </p>
             <br></br>
-            <img src="img/en-pos-anno.png" style={{ width: '400px', height: '400px' }}/>
+            <img src="/img/en-pos-anno.png" style={{ width: '400px', height: '400px' }}/>
             <br></br>
 
           </div>
