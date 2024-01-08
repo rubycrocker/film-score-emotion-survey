@@ -1,0 +1,810 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* main */
+/* .main {
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%; /* Adjust as needed */
+  /*height: 100vh; /* Adjust as needed */
+  /* Add other styles as needed */
+/*} */
+
+.main {
+  box-sizing: content-box;
+  display: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  margin: auto;
+  height: 680px;
+  background-color: rgb(255, 255, 255);
+  padding-left: 40px;
+  padding-right: 40px;
+  /*padding-top: 300px;*/
+  padding-bottom: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.2)
+}
+
+body{
+  font-family: 'Helvetica';
+  width: 90%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  padding-left: 40px;
+}
+
+/* container form */
+
+.container{
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 15px;
+}
+
+.container1{
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 15px;
+
+}
+
+.container1{
+  width: 100%;
+  height: 10vh;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+/* Create a custom radio button */
+.container {
+  display: inline-flex;
+  justify-content: space-evenly;
+  text-align: left;
+  width: 100px;      /* gaps between each individual radio item*/
+  line-height: 20px;
+  margin-bottom: 40px;
+  padding-left: 10px;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+
+/* Text */
+h1 {
+font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 40px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Helvetica';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+h3 {
+  width: 100%;
+    font-family: 'Helvetica';
+    font-weight: 550;
+    font-style: normal;
+    font-size: 18px;
+    margin: 5px;
+    text-align: left;
+}
+
+
+
+p {
+  width: 100%;
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 20px;
+  /*max-width: 1000px;*/
+  margin: 10px;
+  text-align: left;
+}
+
+p1 {
+  width: 100%;
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 18px;
+  /*max-width: 1000px;*/
+  margin: 5px;
+  text-align: left;
+}
+
+p2 {
+  width: 100%;
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 14px;
+  /*max-width: 1000px;*/
+  margin: 2px;
+  text-align: center;
+}
+
+h4 {
+  width: 100%;
+    font-family: 'Helvetica';
+    font-weight: 100;
+    font-style: normal;
+    font-size: 18px;
+    margin: 5px;
+    text-align: left;
+}
+
+h5 {
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 30px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.navBox{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 70px;
+}
+
+.navBox button{
+  width: 80%;    
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  background: rgb(0, 100, 116);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer; 
+}
+
+.navBox button:hover{
+  background: rgb(0, 64, 83);
+  transition: all 0.3s ease;
+} 
+
+textarea {
+  font-family: 'Helvetica';
+  width: 60%; /* Set the desired width */
+  resize: vertical; /* Allow vertical resizing */
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  font-size: 16px;
+  color: #000000;
+}
+
+
+/* /* input boxes */
+.inputBox {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.inputBox input[type="text"] {
+  width: 80%;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  font-size: 16px;
+  color: #000000;
+  resize: none;
+  overflow: hidden;
+  white-space: normal; /* or use 'normal' for word wrapping */
+}
+
+.inputBox textarea {
+  width: 80%;
+  height: 120px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1px 10px;
+  font-size: 16px;
+  color: #000000;
+}
+
+.inputBox button{
+  width: 80%;    
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  background: rgb(0, 100, 116);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+
+  
+} 
+
+.inputBox button:hover{
+  background: rgb(0, 64, 83);
+  transition: all 0.3s ease;
+}
+
+
+
+/* Footer , naviagation button */
+.navi {
+  position: fixed;
+  bottom: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 10px;
+  height: 80px;
+  max-width: 1500px;
+  display: block;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  left: 0;
+  right: 0;
+  border-top: 3px solid rgb(217, 217, 217);
+}
+
+.submit {
+  position: relative;
+  padding-top:20px;
+}
+
+
+
+/* Navigation Button*/
+
+
+.button, .progress {
+  width: 80%;    
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  background: rgb(0, 100, 116);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer; 
+}
+
+
+::placeholder{
+  font-size: 16px;
+}
+
+.alert{
+  width: 100%;
+  background: rgb(0, 147, 61);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 900;
+  display: none;
+} 
+
+form {
+  border-radius: 5px;
+  background-color: #d4eaf1;
+  padding: 20px;
+  text-align: center;
+}
+
+
+#confirm-consent-button,
+#submit-demographics-button,
+#submit-page4-button,
+#submit-page5-button,
+#submit-page6-button,
+#submit-page7-button,
+#submit-page8-button,
+#submit-page9-button,
+#submit-page10-button {
+  background-color: rgb(0, 100, 116); /* Green background color */
+  color: white; /* White text color */
+  padding: 10px 1px; /* Padding for the button */
+  border: none; /* No border */
+  width: 200px;
+  /*border-radius: 4px;  Rounded corners */
+  cursor: pointer; /* Cursor on hover */
+  font-family: 'Helvetica';
+  font-weight: 20;
+  font-style: normal;
+  font-size: 16px;
+}
+
+#confirm-consent-button:hover,
+#submit-demographics-button:hover,
+#submit-page4-button:hover,
+#submit-page5-button:hover,
+#submit-page6-button:hover,
+#submit-page7-button:hover,
+#submit-page8-button:hover,
+#submit-page9-button:hover,
+#submit-page10-button:hover   {
+  background-color: rgb(0, 64, 83); /* Darker green on hover */
+}
+
+
+#previous-button{
+  position: absolute;
+  bottom: 10px; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  background-color: rgb(1, 155, 179); /* Green background color */
+  color: white; /* White text color */
+  padding: 10px 1px; /* Padding for the button */
+  border: none; /* No border */
+  width: 100px;
+  /*border-radius: 4px;  Rounded corners */
+  cursor: pointer; /* Cursor on hover */
+  font-family: 'Helvetica';
+  font-weight: 20;
+  font-style: normal;
+  font-size: 16px;
+}
+#page6-previous-button:hover {
+  background-color: rgb(2, 100, 130); /* Darker green on hover */
+}
+
+
+/* Custom styles for the sub-paragraph */
+sub-paragraph {
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 11pt;
+  color: #676767;
+  margin-top: 5px;
+}
+
+sub-paragraph sup {
+  vertical-align: super;
+}
+
+.parent-container {
+  display: grid;
+  place-items: center;
+  /* Optionally, you can set a fixed width and height for the parent container if needed. */
+  /* width: 100%; */
+  /* height: 100%; */
+  padding-bottom: 30px;
+
+}
+
+.my-graph {
+  margin: 30px;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background-color: rgb(251, 251, 251);
+  overflow: hidden; /* to prevent the image from overflowing */
+}
+
+
+
+.my-app {
+  text-align: center;
+  padding: 20px;
+}
+
+#waveform {
+  position: relative;
+  height: 100px; /* Adjust the height as needed */
+  background-color: #f0f0f0; /* Optional: Set a background color for the waveform container */
+  margin-bottom: 20px;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh; /* Adjust as needed */
+  background-color: #D4E6F1;
+}
+
+.centered-container {
+  text-align: center; /* Optional: Center text within this container */
+}
+.wavesurfer-vertex {
+  background-color: #D4E6F1;
+}
+
+
+.vertex {
+  height: 400px;
+  width: 400px;
+  z-index: 10;
+  border-radius: 10px;
+  background-image: url('/Users/rubycrocker/ruby-fme-app/src/en-pos.png'); /* Replace with the actual path to your image */
+  background-size: 400px 400px; /* Adjust to your needs */
+  background-position: center center; /* Center the background image horizontally and vertically */
+  cursor: pointer !important;
+  position: relative;
+  background-color: #ffffff; /* Optional: Set a background color for the waveform container */
+  margin-bottom: 10px;
+}
+
+.help-tooltip {
+  position: fixed;
+  /*top: 110%; /*Adjust as needed */
+  top: 300px;
+  left: 50%; /* Adjust as needed */
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.help-tooltip img {
+  width: 400px;
+  height: 400px;
+  background-position: center;
+  display: block;
+  margin: 0 auto;
+  border: 4px solid #333;
+}
+
+.help-btn {
+  background-color: #20b4dd;
+  color: #fefefe;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 5px;
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 13px;
+}
+.help-btn:hover {
+  background-color: #0d4858;
+}
+
+#save-region-dot-btn,
+#save-region-dot-btn2,
+#save-region-dot-btn3,
+#save-region-dot-btn4,
+#save-region-dot-btn5,
+#save-region-dot-btn6,
+#save-region-dot-btn7,
+#save-region-dot-btn8,
+#save-region-dot-btn9,
+#save-region-dot-btn10 {
+  background: rgb(0, 100, 116);
+  color: #fefefe;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 5px;
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 18px;
+}
+#save-region-dot-btn:hover,
+#save-region-dot-btn2:hover,
+#save-region-dot-btn3:hover,
+#save-region-dot-btn4:hover,
+#save-region-dot-btn5:hover,
+#save-region-dot-btn6:hover,
+#save-region-dot-btn7:hover,
+#save-region-dot-btn8:hover,
+#save-region-dot-btn9:hover,
+#save-region-dot-btn10:hover{
+  background-color: #024661;
+}
+
+
+
+
+
+
+.dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: rgba(247, 188, 3, 1); /* or any color you prefer */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.submit-button {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 1px;
+  left: 300px;
+}
+
+.click-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.adj-checkbox-box {
+  display: grid;
+  place-items: center;
+  display: flex;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 900px; /* Adjust the width as needed */
+  align-items: center;
+}
+
+.adj-checkbox-box .column {
+  flex: 1;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+}
+
+.adj-checkbox-box .row {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.adj-checkbox-box .row input[type="checkbox"] {
+  margin-right: 5px;
+}
+.adj-checkbox-box {
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 15px;
+}
+
+/* Add padding to the right of the label for "Item 6" */
+.row label[for="item6"] {
+  padding-right: 10px; /* Adjust the padding as needed */
+}
+
+.adj-checkbox-box .column:last-child {
+  border: none;
+}
+
+.adj-checkbox-box h2 {
+  font-size: 18px;
+  margin: 30px 0;
+}
+
+
+
+.timeline-class {
+  margin-top: 20px; /* Add margin to create space between timeline and the buttons */
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 5px; /* Adjust the width of the dot */
+  background-color: green; /* Adjust the color of the dot */
+}
+
+#regions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.region-marker {
+  position: absolute;
+  height: 100%;
+  background-color: red;
+  opacity: 0.5;
+}
+
+.btn-toggle-pause,
+.btn-stop,
+.marker-btn,
+.save-dot-marker,
+.delete-all-btn {
+  background-color: #0077ff;
+  color: #fefefe;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 5px;
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 15px;
+}
+
+.delete-all-btn {
+  background-color: #20b4dd;
+  color: #fefefe;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 5px;
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 13px;
+
+}
+
+.delete-all-btn:hover {
+  background-color: #024661;
+}
+
+.wavesurfer-region-content {
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 15px;
+  background-color: #d4eaf1;
+}
+
+.btn-toggle-pause:hover,
+.btn-stop:hover,
+.marker-btn:hover,
+.save-dot-marker:hover {
+  background-color: #00326b;
+}
+
+.submit-audio1-data-btn:hover,
+.submit-audio2-data-btn:hover,
+.submit-audio3-data-btn:hover,
+.submit-audio4-data-btn:hover,
+.submit-audio5-data-btn:hover,
+.submit-audio6-data-btn:hover,
+.submit-audio7-data-btn:hover,
+.submit-audio8-data-btn:hover,
+.submit-audio9-data-btn:hover,
+.submit-audio10-data-btn:hover {
+  background-color: #00326b;
+}
+.submit-audio1-data-btn,
+.submit-audio2-data-btn,
+.submit-audio3-data-btn,
+.submit-audio4-data-btn,
+.submit-audio5-data-btn,
+.submit-audio6-data-btn,
+.submit-audio7-data-btn,
+.submit-audio8-data-btn,
+.submit-audio9-data-btn,
+.submit-audio10-data-btn {
+  background: rgb(0, 100, 116);
+  color: #fefefe;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 5px;
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 18px;
+}
+#submit-audio1-data-btn:hover {
+  background-color: #024661;
+}
+
+.container2 {
+  display: inline-flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 150px;      /* gaps between each individual radio item*/
+  line-height: 20px;
+  margin-bottom: 40px;
+  padding-left: 10px;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+.container2 {
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 15px;
+
+}
+
+.radio-group2 label {
+  display: block; /* Change display property to "block" */
+  width: 100%;
+  margin-bottom: 5px; /* Add some vertical spacing between the options */
+  
+}
+
+
+.question {
+  font-family: 'Helvetica';
+  font-weight: normal;
+  margin-bottom: 10px;
+  text-align: left;
+
+
+}
+
+
+
+
+
+
+/*add the dots when click, add a submit button so you can add multiple clicks/dots, and add a way of removing the dots too.*/
