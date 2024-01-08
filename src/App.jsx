@@ -2217,8 +2217,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page1' && (
         <div className="page" id="page1">
           <div className="main" id="'main1">
-          <img src="/film-score-emotion-survey/img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2264,8 +2264,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page2' && (
         <div class="page" id="page2">
           <div class="main" id="main2">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
           <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2325,8 +2325,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page3' && (
         <div class="page" id="page3">
           <div class="main" id="main3">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2440,8 +2440,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page4' && (
         <div class="page" id="page4">
           <div class="main" id="main4">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2781,8 +2781,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page5' && (
         <div class="page" id="page5">
           <div class="main" id="main5">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3151,8 +3151,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page6' && (
         <div class="page" id="page6">
           <div class="main" id="main6">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3357,8 +3357,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page7' && (
         <div class="page" id="page7">
           <div class="main" id="main7">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3415,8 +3415,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page8' && (
         <div class="page" id="page8">
           <div class="main" id="main8">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3537,8 +3537,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page9' && (
         <div class="page" id="page9">
           <div class="main" id="main9">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3654,8 +3654,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page10' && (
         <div class="page" id="page10">
           <div class="main" id="main10">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3767,8 +3767,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page11' && (
         <div class="page" id="page11">
           <div class="main" id="main11">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3880,8 +3880,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page12' && (
         <div class="page" id="page12">
           <div class="main" id="main12">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3993,8 +3993,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page13' && (
         <div class="page" id="page13">
           <div class="main" id="main13">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4106,8 +4106,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page14' && (
         <div class="page" id="page14">
           <div class="main" id="main14">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4219,8 +4219,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page15' && (
         <div class="page" id="page15">
           <div class="main" id="main15">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4332,8 +4332,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page16' && (
         <div class="page" id="page16">
           <div class="main" id="main16">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4445,8 +4445,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page17' && (
         <div class="page" id="page17">
           <div class="main" id="main17">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4558,8 +4558,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page18' && (
         <div class="page" id="page18">
           <div class="main" id="main18">
-          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="https://github.com/rubycrocker.github.io/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
