@@ -2221,7 +2221,7 @@ const handleNextButtonClickP5 = () => {
           <img src="img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
-            <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
+            <h1>Music, RUBYMood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 1 - Study Introduction </h5>
             
             <h4> The purpose of this study is to understand how music in films makes us feel. By sharing your thoughts, you'll help us learn more about how emotions are created in film music! </h4>
