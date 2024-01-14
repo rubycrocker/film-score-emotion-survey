@@ -3,12 +3,22 @@ import { useEffect } from 'react'
 import { initializeApp } from 'firebase/app';
 import { useRef } from 'react';
 import { getFirestore, collection, addDoc, updateDoc, getDoc } from 'firebase/firestore/lite';
-import { Vertex } from '/Users/rubycrocker/ruby-fme-app/src/vertex.jsx';
+import { Vertex } from './vertex.jsx';
 import { WavesurferVertex } from './wavesurferVertex.jsx';
 //import { WaveSurferComponent } from '/Users/rubycrocker/ruby-fme-app/src/WaveSurferComponent.jsx';
-import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js'
-import RegionsPlugin from 'https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.esm.js'
+import WaveSurfer from 'wavesurfer.js'
+import Regions from 'wavesurfer.js/dist/plugins/regions'
 //import { audioFiles } from 'audioFiles.json';\
+import { getRandomAudioPath1 } from './audioUtils1.jsx';
+import { getRandomAudioPath2 } from './audioUtils2.jsx';
+import { getRandomAudioPath3 } from './audioUtils3.jsx';
+import { getRandomAudioPath4 } from './audioUtils4.jsx';
+import { getRandomAudioPath5 } from './audioUtils5.jsx';
+import { getRandomAudioPath6 } from './audioUtils6.jsx';
+import { getRandomAudioPath7 } from './audioUtils7.jsx';
+import { getRandomAudioPath8 } from './audioUtils8.jsx';
+import { getRandomAudioPath9 } from './audioUtils9.jsx';
+import { getRandomAudioPath10 } from './audioUtils10.jsx';
 
 
 
@@ -43,6 +53,17 @@ function App() {
   const myRef = collection(firestore, 'messages');
   const [volume, setVolume] = useState(1.0); // Initial volume set to 100%
   const wavesurferRef = useRef(null);
+
+  const [audioPath, setAudioPath] = useState('');
+
+  // Use useEffect to run the audio file selection logic only on the initial load
+  useEffect(() => {
+    // If the audio path is not set, set it using getRandomAudioPath1
+    if (!audioPath) {
+      setAudioPath(getRandomAudioPath1());
+    }
+  }, [audioPath]);
+
 
 
   //emotion sentence and familiarity on form...
@@ -2214,15 +2235,38 @@ const handleNextButtonClickP5 = () => {
 
   return (
     <>
+    {/* Page 1 -  */} 
       {currentPage === 'page1' && (
         <div className="page" id="page1">
           <div className="main" id="'main1">
-          <img src="/img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
-            <h1>Music, RUBYCROCKERMood, and Motion: A Survey on Emotion in Film Music</h1>
+            <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 1 - Study Introduction </h5>
+
+
+             {/* <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+              <h2>1. Audio Waveform - Region and Markers </h2>
+              <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
+              <p1> Add as many markers as you'd like. </p1>
+              
+              <WavesurferVertex
+                  audioFile={getRandomAudioPath1()}
+                  //audioFile={audioFile1()}
+                  loadRandomAudioFile={loadRandomAudioFile1}
+                  containerId="audiowave1"
+                  point={dotPosition}
+                  onPositionUpdate={handlePositionUpdate}
+                  onDotPositionUpdate={(updatedPositions) => setDotPositions(updatedPositions)}
+                  onRegionInformationUpdate={(updatedRegionInfo) => setRegionInformation(updatedRegionInfo)}
+                  lockOriginalDot={lockOriginalDot}
+                  /> 
+              </div> 
+          <div></div>  */}
+            
+            
             
             <h4> The purpose of this study is to understand how music in films makes us feel. By sharing your thoughts, you'll help us learn more about how emotions are created in film music! </h4>
             <br></br>
@@ -2264,8 +2308,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page2' && (
         <div class="page" id="page2">
           <div class="main" id="main2">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
           <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2325,8 +2369,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page3' && (
         <div class="page" id="page3">
           <div class="main" id="main3">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2440,8 +2484,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page4' && (
         <div class="page" id="page4">
           <div class="main" id="main4">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2781,8 +2825,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page5' && (
         <div class="page" id="page5">
           <div class="main" id="main5">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3151,8 +3195,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page6' && (
         <div class="page" id="page6">
           <div class="main" id="main6">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3357,8 +3401,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page7' && (
         <div class="page" id="page7">
           <div class="main" id="main7">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3366,7 +3410,7 @@ const handleNextButtonClickP5 = () => {
             <p> This next section will require you to listen and label excerpts of music from films. Please make sure you have high quality headphones and/or speakers. And a quiet listening space away from distractions.</p>
             <h1>Test your volume here: </h1>
             <audio ref={audioRef} controls>
-              <source src="400hz_sine.mp3" type="audio/mp3" />
+              <source src="./400hz_sine.mp3" type="audio/mp3" />
               Your browser does not support the audio element.
             </audio>
             <input
@@ -3385,7 +3429,7 @@ const handleNextButtonClickP5 = () => {
               (Don't worry too much, it will be clear on the next few pages!) 
             </sub-paragraph>
             <br></br>
-            <img src="/img/example-exp.gif" style={{ width: '700px', height: '700px' }}/>
+            <img src="./img/example-exp.gif" style={{ width: '700px', height: '700px' }}/>
             <p> - First, label the waveform </p>{/*(the position where you feel the emotion) */}
             <p> - Then, label the graph with the corresponding dot colour.</p>{/*(high/low energy and high/low positivity) */}
             <p> - Then, add a short sentence on the emotions you felt.</p>
@@ -3396,7 +3440,7 @@ const handleNextButtonClickP5 = () => {
               If you are struggling to interpret the Energy/Positivity Graph, this is an example of how the graph could be interpreted by emotion annotations. However you can interpret it any way you want.
             </p>
             <br></br>
-            <img src="/img/en-pos-anno.png" style={{ width: '400px', height: '400px' }}/>
+            <img src="./img/en-pos-anno.png" style={{ width: '400px', height: '400px' }}/>
             <br></br>
 
           </div>
@@ -3410,13 +3454,13 @@ const handleNextButtonClickP5 = () => {
 
 
 
-      {/* Page 8 -  */}
-      
+      {/* Page 8 -  */} 
       {currentPage === 'page8' && (
         <div class="page" id="page8">
           <div class="main" id="main8">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3424,24 +3468,26 @@ const handleNextButtonClickP5 = () => {
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 1/10</p>
             <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
-              
+
               <WavesurferVertex
-                  //audioFile={handleRandomizeAudio}
-                  audioFile={audioFile1}
+              
+                  audioFile={audioPath}
+                  //audioFile={audioFile1}
                   loadRandomAudioFile={loadRandomAudioFile1}
                   containerId="audiowave1"
-
                   point={dotPosition}
                   onPositionUpdate={handlePositionUpdate}
                   onDotPositionUpdate={(updatedPositions) => setDotPositions(updatedPositions)}
                   onRegionInformationUpdate={(updatedRegionInfo) => setRegionInformation(updatedRegionInfo)}
                   lockOriginalDot={lockOriginalDot}
                   /> 
-
               </div> 
+
+          <div></div> 
           <div>
           <form>
             {/* button below saves regions and dots inside participant info in firebase: */}
@@ -3537,8 +3583,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page9' && (
         <div class="page" id="page9">
           <div class="main" id="main9">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3551,10 +3597,10 @@ const handleNextButtonClickP5 = () => {
               <p1> Add as many markers as you'd like. </p1>
               
               <WavesurferVertex
-                  audioFile={audioFile2}
+                  audioFile={getRandomAudioPath2()}
+                  //audioFile={audioFile2}
                   loadRandomAudioFile={loadRandomAudioFile2}
                   containerId="audiowave2"
-
                   point={dotPosition}
                   onPositionUpdate={handlePositionUpdate}
                   onDotPositionUpdate={(updatedPositions) => setDotPositions(updatedPositions)}
@@ -3654,8 +3700,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page10' && (
         <div class="page" id="page10">
           <div class="main" id="main10">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3667,7 +3713,7 @@ const handleNextButtonClickP5 = () => {
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
               <WavesurferVertex
-                  audioFile={audioFile3}
+                  audioFile={getRandomAudioPath3}
                   loadRandomAudioFile={loadRandomAudioFile3}
                   containerId="audiowave3"
 
@@ -3767,8 +3813,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page11' && (
         <div class="page" id="page11">
           <div class="main" id="main11">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3780,7 +3826,7 @@ const handleNextButtonClickP5 = () => {
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
               <WavesurferVertex
-                  audioFile={audioFile4}
+                  audioFile={getRandomAudioPath4}
                   loadRandomAudioFile={loadRandomAudioFile4}
                   containerId="audiowave4"
 
@@ -3880,8 +3926,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page12' && (
         <div class="page" id="page12">
           <div class="main" id="main12">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3893,7 +3939,7 @@ const handleNextButtonClickP5 = () => {
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
               <WavesurferVertex
-                  audioFile={audioFile5}
+                  audioFile={getRandomAudioPath5}
                   loadRandomAudioFile={loadRandomAudioFile5}
                   containerId="audiowave5"
 
@@ -3993,8 +4039,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page13' && (
         <div class="page" id="page13">
           <div class="main" id="main13">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4006,7 +4052,7 @@ const handleNextButtonClickP5 = () => {
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
               <WavesurferVertex
-                  audioFile={audioFile6}
+                  audioFile={getRandomAudioPath6}
                   loadRandomAudioFile={loadRandomAudioFile6}
                   containerId="audiowave6"
 
@@ -4106,8 +4152,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page14' && (
         <div class="page" id="page14">
           <div class="main" id="main14">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4119,7 +4165,7 @@ const handleNextButtonClickP5 = () => {
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
               <WavesurferVertex
-                  audioFile={audioFile7}
+                  audioFile={getRandomAudioPath7}
                   loadRandomAudioFile={loadRandomAudioFile7}
                   containerId="audiowave7"
 
@@ -4219,8 +4265,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page15' && (
         <div class="page" id="page15">
           <div class="main" id="main15">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4232,7 +4278,7 @@ const handleNextButtonClickP5 = () => {
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
               <WavesurferVertex
-                  audioFile={audioFile8}
+                  audioFile={getRandomAudioPath8}
                   loadRandomAudioFile={loadRandomAudioFile8}
                   containerId="audiowave8"
 
@@ -4332,8 +4378,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page16' && (
         <div class="page" id="page16">
           <div class="main" id="main16">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4345,7 +4391,7 @@ const handleNextButtonClickP5 = () => {
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
               <WavesurferVertex
-                  audioFile={audioFile9}
+                  audioFile={getRandomAudioPath9}
                   loadRandomAudioFile={loadRandomAudioFile9}
                   containerId="audiowave9"
 
@@ -4445,8 +4491,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page17' && (
         <div class="page" id="page17">
           <div class="main" id="main17">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4458,7 +4504,7 @@ const handleNextButtonClickP5 = () => {
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
               <WavesurferVertex
-                  audioFile={audioFile10}
+                  audioFile={getRandomAudioPath10}
                   loadRandomAudioFile={loadRandomAudioFile10}
                   containerId="audiowave10"
 
@@ -4558,8 +4604,8 @@ const handleNextButtonClickP5 = () => {
       {currentPage === 'page18' && (
         <div class="page" id="page18">
           <div class="main" id="main18">
-          <img src="/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>

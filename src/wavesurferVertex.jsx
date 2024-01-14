@@ -248,7 +248,7 @@ export const WavesurferVertex = ({ audioFile, loadRandomAudioFile, initialDots, 
 
       <div className="page-container" style={{ backgroundColor: '#d4eaf1'}}>
         <div className="centered-container">
-            <div className='vertex'>
+            <div className='vertex' style={{backgroundImage: 'url("./img/en-pos.png")'}}>
             {dots.map((dot, index) => (
                 <div
                     key={index}
@@ -269,7 +269,7 @@ export const WavesurferVertex = ({ audioFile, loadRandomAudioFile, initialDots, 
             >Help</button>
             {showHelpTooltip && (
             <div className="help-tooltip">
-              <img src="img/en-pos-anno.png" />
+              <img src="./img/en-pos-anno.png" />
             </div>
           )}
             
