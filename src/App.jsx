@@ -9,16 +9,19 @@ import { WavesurferVertex } from './wavesurferVertex.jsx';
 import WaveSurfer from 'wavesurfer.js'
 import Regions from 'wavesurfer.js/dist/plugins/regions'
 //import { audioFiles } from 'audioFiles.json';\
-import { getRandomAudioPath1 } from './audioUtils1.jsx';
-import { getRandomAudioPath2 } from './audioUtils2.jsx';
-import { getRandomAudioPath3 } from './audioUtils3.jsx';
-import { getRandomAudioPath4 } from './audioUtils4.jsx';
-import { getRandomAudioPath5 } from './audioUtils5.jsx';
-import { getRandomAudioPath6 } from './audioUtils6.jsx';
-import { getRandomAudioPath7 } from './audioUtils7.jsx';
-import { getRandomAudioPath8 } from './audioUtils8.jsx';
-import { getRandomAudioPath9 } from './audioUtils9.jsx';
-import { getRandomAudioPath10 } from './audioUtils10.jsx';
+
+import AudioSelector from './audioUtils1.jsx';
+
+
+//import { getRandomAudioPath2 } from './audioUtils2.jsx';
+//import { getRandomAudioPath3 } from './audioUtils3.jsx';
+//import { getRandomAudioPath4 } from './audioUtils4.jsx';
+//import { getRandomAudioPath5 } from './audioUtils5.jsx';
+//import { getRandomAudioPath6 } from './audioUtils6.jsx';
+//import { getRandomAudioPath7 } from './audioUtils7.jsx';
+//import { getRandomAudioPath8 } from './audioUtils8.jsx';
+//import { getRandomAudioPath9 } from './audioUtils9.jsx';
+//import { getRandomAudioPath10 } from './audioUtils10.jsx';
 
 
 
@@ -56,15 +59,8 @@ function App() {
 
   const [audioPath, setAudioPath] = useState('');
 
-  // Use useEffect to run the audio file selection logic only on the initial load
-  useEffect(() => {
-    // If the audio path is not set, set it using getRandomAudioPath1
-    if (!audioPath) {
-      setAudioPath(getRandomAudioPath1());
-    }
-  }, [audioPath]);
 
-
+  
 
   //emotion sentence and familiarity on form...
   const [emotionSentence, setEmotionSentence] = useState('');
@@ -252,7 +248,7 @@ function App() {
       try {
         // Check if an audio file is already selected
         if (!audioFile1) {
-          const response = await fetch('/audioFolder1.json');
+          const response = await fetch('/film-score-emotion-study/audioFolder1.json');
           const files = await response.json();
           console.log('Fetched Files:', files);
     
@@ -277,7 +273,7 @@ function App() {
       try {
         // Check if an audio file is already selected
         if (!audioFile2) {
-          const response = await fetch('/audioFolder2.json');
+          const response = await fetch('/film-score-emotion-study/audioFolder2.json');
           const files = await response.json();
           console.log('Fetched Files:', files);
     
@@ -302,7 +298,7 @@ function App() {
       try {
         // Check if an audio file is already selected
         if (!audioFile3) {
-          const response = await fetch('/audioFolder3.json');
+          const response = await fetch('/film-score-emotion-study/audioFolder3.json');
           const files = await response.json();
           console.log('Fetched Files:', files);
     
@@ -327,7 +323,7 @@ function App() {
       try {
         // Check if an audio file is already selected
         if (!audioFile4) {
-          const response = await fetch('/audioFolder4.json');
+          const response = await fetch('/film-score-emotion-study/audioFolder4.json');
           const files = await response.json();
           console.log('Fetched Files:', files);
     
@@ -352,7 +348,7 @@ function App() {
       try {
         // Check if an audio file is already selected
         if (!audioFile5) {
-          const response = await fetch('/audioFolder5.json');
+          const response = await fetch('/film-score-emotion-study/audioFolder5.json');
           const files = await response.json();
           console.log('Fetched Files:', files);
     
@@ -377,7 +373,7 @@ function App() {
       try {
         // Check if an audio file is already selected
         if (!audioFile6) {
-          const response = await fetch('/audioFolder6.json');
+          const response = await fetch('/film-score-emotion-study/audioFolder6.json');
           const files = await response.json();
           console.log('Fetched Files:', files);
     
@@ -401,7 +397,7 @@ function App() {
       try {
         // Check if an audio file is already selected
         if (!audioFile7) {
-          const response = await fetch('/audioFolder7.json');
+          const response = await fetch('/film-score-emotion-study/audioFolder7.json');
           const files = await response.json();
           console.log('Fetched Files:', files);
     
@@ -426,7 +422,7 @@ function App() {
       try {
         // Check if an audio file is already selected
         if (!audioFile8) {
-          const response = await fetch('/audioFolder8.json');
+          const response = await fetch('/film-score-emotion-study/audioFolder8.json');
           const files = await response.json();
           console.log('Fetched Files:', files);
     
@@ -451,7 +447,7 @@ function App() {
       try {
         // Check if an audio file is already selected
         if (!audioFile9) {
-          const response = await fetch('/audioFolder9.json');
+          const response = await fetch('/film-score-emotion-study/audioFolder9.json');
           const files = await response.json();
           console.log('Fetched Files:', files);
     
@@ -476,7 +472,7 @@ function App() {
       try {
         // Check if an audio file is already selected
         if (!audioFile10) {
-          const response = await fetch('/audioFolder10.json');
+          const response = await fetch('/film-score-emotion-study/audioFolder10.json');
           const files = await response.json();
           console.log('Fetched Files:', files);
     
@@ -535,7 +531,7 @@ function App() {
             formsData.song1ESF = {
               emotionSentence,
               familiarityRating,
-              audioFile: `/audioFolder1/${randomAudioFile}`,
+              audioFile: `/audioFolder1/${audioPath}`,
             };
     
             // Update the forms data in the participant's document
@@ -2237,36 +2233,14 @@ const handleNextButtonClickP5 = () => {
     <>
     {/* Page 1 -  */} 
       {currentPage === 'page1' && (
-        <div className="page" id="page1">
-          <div className="main" id="'main1">
-          <img src="./img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div classNameName="page" id="page1">
+          <div classNameName="main" id="'main1">
+          <img src="/film-score-emotion-survey/img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
-            <h5> Page 1 - Study Introduction </h5>
-
-
-             {/* <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
-              <h2>1. Audio Waveform - Region and Markers </h2>
-              <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
-              <p1> Add as many markers as you'd like. </p1>
-              
-              <WavesurferVertex
-                  audioFile={getRandomAudioPath1()}
-                  //audioFile={audioFile1()}
-                  loadRandomAudioFile={loadRandomAudioFile1}
-                  containerId="audiowave1"
-                  point={dotPosition}
-                  onPositionUpdate={handlePositionUpdate}
-                  onDotPositionUpdate={(updatedPositions) => setDotPositions(updatedPositions)}
-                  onRegionInformationUpdate={(updatedRegionInfo) => setRegionInformation(updatedRegionInfo)}
-                  lockOriginalDot={lockOriginalDot}
-                  /> 
-              </div> 
-          <div></div>  */}
-            
-            
+            <h5> Page 1 - EDIT-AUDIO-PATH-19 Study Introduction </h5>
             
             <h4> The purpose of this study is to understand how music in films makes us feel. By sharing your thoughts, you'll help us learn more about how emotions are created in film music! </h4>
             <br></br>
@@ -2285,17 +2259,17 @@ const handleNextButtonClickP5 = () => {
               interpreted too seriously, it was created for enjoyment rather than strict scientific analysis.</h4>
             <br></br>
             <br></br>
-            <div class="inputBox">
+            <div className="inputBox">
               <form action="" id="contactForm">
                 <input type="text" id="name" placeholder='Please type your email here if you want to stay updated about this study' ref={messageRef}/>
                 <button type="submit" onClick={handleSave}>Submit</button>
               </form>
             </div>
       </div>
-        {/* <button id="introduction-next-button" onClick={nextPage} class="button" value="hide">Next</button> */}
+        {/* <button id="introduction-next-button" onClick={nextPage} className="button" value="hide">Next</button> */}
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '10vh' }}>
-          <div class="navBox">
-                <button onClick={handleStartSurvey} className="button">
+          <div className="navBox">
+                <button onClick={handleStartSurvey} classNameName="button">
                   Start
                 </button>
           </div>
@@ -2306,38 +2280,47 @@ const handleNextButtonClickP5 = () => {
 
       {/* Page 2 */}
       {currentPage === 'page2' && (
-        <div class="page" id="page2">
-          <div class="main" id="main2">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page2">
+          <div className="main" id="main2">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
           <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
           <h5> Page 2 - Consent Page </h5>
             <form>
-            <p> Please provide consent for the following statements to proceed with taking part in this study, 
-              however you are reminded that you are free to withdraw your participation to the study at any point:</p>
+            <p> Thank you for your interest in this research. 
+              Should you wish to participate in the study, please consider the following statements. 
+              Before signing the consent form, you should initial all or any of the statements that you agree with. 
+              Your signature confirms that you are willing to participate in this research, 
+              however you are reminded that you are free to withdraw your participation at any time.</p>
+
             <br />
-            <label class="container1" id="consent">
+            <label className="container1" id="consent">
               I agree that the research project named above has been explained to me to my satisfaction on the information page.
+              I have read the information page and understand what the research study involves
 					    <input type="checkbox" id="item1" checked={checkedItems.item1} onChange={handleCheckboxChange}/>
             </label>
-            <label class="container1" id="consent">
-              I understand that if I decide at any other time during the research that I no longer wish to
-					    participate in this study, I can notify the researchers through the email address provided
-					    and be withdrawn from it immediately.
+            <label className="container1" id="consent">
+            I understand that my participation is voluntary and that I am free to stop taking part in the study at any time without giving any reason and without my rights being affected. 
 					      <input type="checkbox" id="item2" checked={checkedItems.item2} onChange={handleCheckboxChange}/>
 				    </label>
-            <label class="container1" id="consent">
-              I have read the information page and understand what the research study involves
+            <label className="container1" id="consent">
+              I confirm that I have read the Participant Information Sheet - below: Version 1.0 Date: 16/11/2023 for the above study; or it has been read to me. 
+              I have had the opportunity to consider the information, ask questions and have had these answered satisfactorily. 
 					      <input type="checkbox" id="item3" checked={checkedItems.item3} onChange={handleCheckboxChange}/>
 				    </label>
-            <label class="container1" id="consent">
-              I agree to take part in the study, which will include use of my personal data. The data will be
-					    anonymised, stored securely and not shared with any third parties.
+            <label className="container1" id="consent">
+              I understand that my data will be accessed by the author, Ruby Crocker.  I understand that my data will be securely stored on a QMUL server and in accordance with the data protection guidelines of the Queen Mary University of London accessible by the author in fully anonymised form. 
+              With the possibility of my data made available by open-access in the future, fully anonymised.
+					      <input type="checkbox" id="item6" checked={checkedItems.item6} onChange={handleCheckboxChange}/>
+				    </label>
+            <label className="container1" id="consent">
+            I understand that I can access the information I have provided and request destruction of that information at any time prior to 8th of March 2024. 
+            I understand that following 8th of March 2024 I will not be able to request withdrawal of the information I have provided.
                 <input type="checkbox" id="item4" checked={checkedItems.item4} onChange={handleCheckboxChange}/>
             </label>
-            <label class="container1" id="consent">
+            <label className="container1" id="consent">
               I confirm I am over the age of 18.
                 <input type="checkbox" id="item5" checked={checkedItems.item5} onChange={handleCheckboxChange}/>
             </label>
@@ -2347,18 +2330,20 @@ const handleNextButtonClickP5 = () => {
             <br></br>
             <a href="https://www.qmul.ac.uk/media/arcs/policyzone/Data-Protection-Policy-v03.1.pdf"> Data Protection Policy.pdf</a>
             <br></br>
+            <a href="/film-score-emotion-survey/Participant_Information_Sheet_2024.pdf">Participant Information Sheet Version 1.0 Date: 16/11/2023</a>
+            <br></br>
             <br></br>
             <div>
-              <button id="page2-next-button" onClick={confirmConsent} class="button" value="hide">Confirm Consent</button>
+              <button id="page2-next-button" onClick={confirmConsent} className="button" value="hide">Confirm Consent</button>
             </div>
             
             </form>
           </div>
 
-          <div class="navBox">
-            {/* <button id="page2-next-button" onClick={nextPage} class="button" value="hide">Next</button> */}
-            <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide" title="If you go to the previous page you must fill out all forms again.">Previous</button>
-            <button id="page2-next-button" onClick={handleNextButtonClickP2} class="button" value="hide">Next</button>
+          <div className="navBox">
+            {/* <button id="page2-next-button" onClick={nextPage} className="button" value="hide">Next</button> */}
+            <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide" title="If you go to the previous page you must fill out all forms again.">Previous</button>
+            <button id="page2-next-button" onClick={handleNextButtonClickP2} className="button" value="hide">Next</button>
           </div>
         </div>
         
@@ -2367,10 +2352,10 @@ const handleNextButtonClickP5 = () => {
 
       {/* Page 3 */}
       {currentPage === 'page3' && (
-        <div class="page" id="page3">
-          <div class="main" id="main3">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page3">
+          <div className="main" id="main3">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2378,79 +2363,79 @@ const handleNextButtonClickP5 = () => {
             <form action="" id="P3contactForm">
             <p> My age range is: </p>
 
-            <div id="age-range" class="radio-group">
-              <label class="container"> 
+            <div id="age-range" className="radio-group">
+              <label className="container"> 
 						    <input type="radio" name="age" id="18-24" value="18-24"></input>18-24
-						    <span class="checkmark"> </span>
+						    <span className="checkmark"> </span>
 					    </label>
 
-              <label class="container"> 
+              <label className="container"> 
 						    <input type="radio" name="age" id="25-34" value="25-34"></input>25-34
-						    <span class="checkmark"> </span>
+						    <span className="checkmark"> </span>
 					    </label>
 
-              <label class="container"> 
+              <label className="container"> 
                 <input type="radio" name="age" id="35-44" value="35-44"></input>35-44
-                <span class="checkmark"> </span>
+                <span className="checkmark"> </span>
               </label>
 
-              <label class="container"> 
+              <label className="container"> 
                 <input type="radio" name="age" id="45-54" value="45-54"></input>45-54
-                <span class="checkmark"> </span>
+                <span className="checkmark"> </span>
               </label>
 
-              <label class="container"> 
+              <label className="container"> 
                 <input type="radio" name="age" id="55-64" value="55-64"></input>55-64
-                <span class="checkmark"> </span>
+                <span className="checkmark"> </span>
               </label>
 
-              <label class="container"> 
+              <label className="container"> 
                 <input type="radio" name="age" id="65+" value="65+"></input>65+
-                <span class="checkmark"> </span>
+                <span className="checkmark"> </span>
               </label>
 
             </div>
 
             <p> I would best describe my current occupation as: </p>
-            <div id="occupation-type" class="radio-group"></div>
-              <label class="container"> 
+            <div id="occupation-type" className="radio-group"></div>
+              <label className="container"> 
                 <input type="radio" name="occupation" id="at-school" value="at-school"></input>At School
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
               </label>
 
-              <label class="container"> 
+              <label className="container"> 
                 <input type="radio" name="occupation" id="university" value="university"></input>At University
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
               </label>
 
-              <label class="container"> 
+              <label className="container"> 
                 <input type="radio" name="occupation" id="full-time-employment" value="full-time-employment"></input>Full-Time Employed
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
               </label>
 
-              <label class="container"> 
+              <label className="container"> 
                 <input type="radio" name="occupation" id="part-time-employment" value="part-time-employment"></input>Part-Time Employed
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
               </label>
 
-              <label class="container"> 
+              <label className="container"> 
                 <input type="radio" name="occupation" id="self-employment" value="self-employment"></input>Self-Employed
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
               </label>
 
-               <label class="container"> 
+               <label className="container"> 
                 <input type="radio" name="occupation" id="full-time-parent" value="full-time-parent"></input>Full-Time Parent
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
               </label>
 
-              <label class="container">
+              <label className="container">
                 <input type="radio" name="occupation" id="retired" value="retired"></input>Retired
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
               </label>
 
-              <label class="container">
+              <label className="container">
                 <input type="radio" name="occupation" id="other" value="other"></input>Other
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
               </label> 
 
             <p> I would describe my nationality as: </p>
@@ -2471,9 +2456,9 @@ const handleNextButtonClickP5 = () => {
 
               </form>
             </div>
-            <div class="navBox">
-              <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-              <button id="page3-next-button" onClick={handleNextButtonClickP3} class="button" value="hide">Next</button>
+            <div className="navBox">
+              <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide">Previous</button>
+              <button id="page3-next-button" onClick={handleNextButtonClickP3} className="button" value="hide">Next</button>
             </div>
         </div>
 
@@ -2482,10 +2467,10 @@ const handleNextButtonClickP5 = () => {
 
       {/* Page 4 - Music experience */ }
       {currentPage === 'page4' && (
-        <div class="page" id="page4">
-          <div class="main" id="main4">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page4">
+          <div className="main" id="main4">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2497,313 +2482,313 @@ const handleNextButtonClickP5 = () => {
                 <sub-paragraph>
                   <sup>(The main activity/focus is music listening)</sup>
                 </sub-paragraph>
-                <div id="music-hours" class="radio-group">
-                  <label class="container">  
+                <div id="music-hours" className="radio-group">
+                  <label className="container">  
                     <input type="radio" name="music-hrs" id="0-15" value="0-15"></input>0-15 mins
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="music-hrs" id="15-30" value="15-30"></input>15-30 mins 
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="music-hrs" id="30-60" value="30-60"></input>30-60 mins 
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="music-hrs" id="1-2hrs" value="1-2hrs"></input>1-2 hrs 
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="music-hrs" id="2-4 hrs" value="2-4 hrs"></input>2-4 hrs 
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="music-hrs" id="4+ hrs" value="4+ hrs"></input>4+ hrs 
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
                 </div>
               <p> 2. I listen to music casually ... a day</p>
                 <sub-paragraph>
                   <sup>(The main activity/focus isn't music listening/ I am doing something else/ It's on in the background)</sup>
                 </sub-paragraph>
-                <div id="music-hours2" class="radio-group">
-                  <label class="container"> 
+                <div id="music-hours2" className="radio-group">
+                  <label className="container"> 
                     <input type="radio" name="music-hrs2" id="0-15" value="0-15"></input> 0-15 mins 
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="music-hrs2" id="15-30" value="15-30"></input>15-30 mins 
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="music-hrs2" id="30-60" value="30-60"></input>30-60 mins 
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="music-hrs2" id="1-2hrs" value="1-2hrs"></input>1-2 hrs 
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="music-hrs2" id="2-4 hrs" value="2-4 hrs"></input>2-4 hrs 
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="music-hrs2" id="4+ hrs" value="4+ hrs"></input>4+ hrs 
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
                 </div>
 
 
               <p> 3. I engaged in regular, daily practice of a musical instrument (including voice) for the following number of years: </p>
-              <div id="music-years" class="radio-group">
-                  <label class="container"> 
+              <div id="music-years" className="radio-group">
+                  <label className="container"> 
                     <input type="radio" name="years" id="0-1" value="0-1"></input>0-1 yr
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="years" id="1-2" value="1-2"></input>1-2 yrs
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="years" id="2-4" value="2-4"></input>2-4 yrs
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="years" id="4-6" value="4-6"></input>4-6 yrs
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="years" id="6-9" value="6-10"></input>6-10 yrs
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="years" id="10+" value="10+"></input>10+ yrs
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
               </div>
 
               <p> 4. I am able to judge whether someone is a good singer or not.</p>
-              <div id="music-singer" class="radio-group">
-                <label class="container">  
+              <div id="music-singer" className="radio-group">
+                <label className="container">  
                   <input type="radio" name="singer" id="strongly-agree" value="strongly-agree"></input>Strongly Agree
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="singer" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="singer" id="sort-of-agree" value="sort-of-agree"></input>Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="singer" id="not-sure" value="not-sure"></input>Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="singer" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="singer" id="mostly-agree" value="mostly-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="singer" id="strongly-disagree" value="strongly-disagree"></input>Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
               <p> 5. I find it difficult to spot mistakes in a performance of a song even if I know the tune.</p>
-              <div id="music-mistakes" class="radio-group">
-                <label class="container"> 
+              <div id="music-mistakes" className="radio-group">
+                <label className="container"> 
                   <input type="radio" name="mistakes" id="strongly-agree" value="strongly-agree"></input>Strongly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="mistakes" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="mistakes" id="sort-of-agree" value="sort-of-agree"></input>Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="mistakes" id="not-sure" value="not-sure"></input>Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="mistakes" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="mistakes" id="mostly-agree" value="mostly-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="mistakes" id="strongly-disagree" value="strongly-disagree"></input>Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
               <p> 6. I can compare and discuss differences between two performances or versions of the same piece of music.</p>
-              <div id="music-differences" class="radio-group">
-                <label class="container"> 
+              <div id="music-differences" className="radio-group">
+                <label className="container"> 
                   <input type="radio" name="differences" id="strongly-agree" value="strongly-agree"></input>Strongly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="differences" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="differences" id="sort-of-agree" value="sort-of-agree"></input>Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="differences" id="not-sure" value="not-sure"></input>Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="differences" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="differences" id="mostly-agree" value="mostly-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="differences" id="strongly-disagree" value="strongly-disagree"></input>Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
               <p> 7. I can tell when people sing or play out of time to the beat</p>
-              <div id="music-out-of-time" class="radio-group">
-                <label class="container"> 
+              <div id="music-out-of-time" className="radio-group">
+                <label className="container"> 
                   <input type="radio" name="out-of-time" id="strongly-agree" value="strongly-agree"></input>Strongly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="out-of-time" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="out-of-time" id="sort-of-agree" value="sort-of-agree"></input>Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="out-of-time" id="not-sure" value="not-sure"></input>Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="out-of-time" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="out-of-time" id="most-agree" value="most-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="out-of-time" id="strongly-disagree" value="strongly-disagree"></input> Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
               <p> 8. I can tell when people sing or play out of tune.</p>
-              <div id="music-out-of-tune" class="radio-group">
-                <label class="container"> 
+              <div id="music-out-of-tune" className="radio-group">
+                <label className="container"> 
                   <input type="radio" name="out-of-tune" id="strongly-agree" value="strongly-agree"></input>Strongly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="out-of-tune" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="out-of-tune" id="sort-of-agree" value="sort-of-agree"></input>Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="out-of-tune" id="not-sure" value="not-sure"></input>Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="out-of-tune" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="out-of-tune" id="mostly-agree" value="mostly-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="out-of-tune" id="strongly-disagree" value="strongly-disagree"></input>Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
               <p> 9. I would consider myself a musician.</p>
-              <div id="music-musician" class="radio-group">
-                <label class="container"> 
+              <div id="music-musician" className="radio-group">
+                <label className="container"> 
                   <input type="radio" name="musician" id="strongly-agree" value="strongly-agree"></input>Strongly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="musician" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="musician" id="sort-of-agree" value="sort-of-agree"></input> Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="musician" id="not-sure" value="not-sure"></input>Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">  
+                <label className="container">  
                   <input type="radio" name="musician" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="musician" id="mostly-agree" value="mostly-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="musician" id="strongly-disagree" value="strongly-disagree"></input>Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
               <p> 10. I am familiar with music production and/or using DAWs etc: </p>
-              <div id="music-production" class="radio-group">
-                <label class="container"> 
+              <div id="music-production" className="radio-group">
+                <label className="container"> 
                   <input type="radio" name="production" id="strongly-agree" value="strongly-agree"></input>Strongly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="production" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="production" id="sort-of-agree" value="sort-of-agree"></input>Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="production" id="not-sure" value="not-sure"></input>Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="production" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="production" id="mostly-agree" value="mostly-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="production" id="strongly-disagree" value="strongly-disagree"></input>Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
@@ -2814,19 +2799,19 @@ const handleNextButtonClickP5 = () => {
 
             </form>
           </div>
-          <div class="navBox">
-            <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page4-next-button" onClick={handleNextButtonClickP4} class="button" value="hide">Next</button>
+          <div className="navBox">
+            <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide">Previous</button>
+            <button id="page4-next-button" onClick={handleNextButtonClickP4} className="button" value="hide">Next</button>
           </div>
         </div>
       )}
 
       {/* Page 5 - Emotion in music ...and film?...form */}
       {currentPage === 'page5' && (
-        <div class="page" id="page5">
-          <div class="main" id="main5">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page5">
+          <div className="main" id="main5">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -2837,178 +2822,178 @@ const handleNextButtonClickP5 = () => {
                 <sub-paragraph>
                   <sup>(0 - not important at all, 10 - one of the most important things to me)</sup>
                 </sub-paragraph>
-              <div id="music-importance" class="radio-group">
-                  <label class="container"> 
+              <div id="music-importance" className="radio-group">
+                  <label className="container"> 
                     <input type="radio" name="importance" id="0" value="0"></input>0
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="importance" id="1" value="1"></input>1
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="importance" id="2" value="2"></input>2
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="importance" id="3" value="3"></input>3
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="importance" id="4" value="4"></input>4
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="importance" id="5" value="5"></input>5
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="importance" id="6" value="6"></input>6
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="importance" id="7" value="7"></input>7
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="importance" id="8" value="8"></input>8
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="importance" id="9" value="9"></input>9
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
-                  <label class="container"> 
+                  <label className="container"> 
                     <input type="radio" name="importance" id="10" value="10"></input>10
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
                 </div>
 
               <p> 2. I spend a lot of my free time doing music-related activities</p>
-              <div id="music-activities" class="radio-group">
-                <label class="container"> 
+              <div id="music-activities" className="radio-group">
+                <label className="container"> 
                   <input type="radio" name="activities" id="strongly-agree" value="strongly-agree"></input>Strongly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="activities" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="activities" id="sort-of-agree" value="sort-of-agree"></input>Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="activities" id="not-sure" value="not-sure"></input>Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="activities" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="activities" id="mostly-agree" value="mostly-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="activities" id="strongly-disagree" value="strongly-disagree"></input>Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
               <p> 3. Music is kind of an addiction for me – I couldn’t live without it.</p>
-              <div id="music-addiction" class="radio-group">
-                <label class="container"> 
+              <div id="music-addiction" className="radio-group">
+                <label className="container"> 
                   <input type="radio" name="addiction" id="strongly-agree" value="strongly-agree"></input>Strongly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="addiction" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="addiction" id="sort-of-agree" value="sort-of-agree"></input>Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="addiction" id="not-sure" value="not-sure"></input>Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="addiction" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="addiction" id="mostly-agree" value="mostly-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="addiction" id="strongly-disagree" value="strongly-disagree"></input>Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
               <p> 4. I keep track of new music that I come across (e.g. new artists or recordings).</p>
-              <div id="music-new-music" class="radio-group">
-                <label class="container"> 
+              <div id="music-new-music" className="radio-group">
+                <label className="container"> 
                   <input type="radio" name="new_music" id="strongly-agree" value="strongly-agree"></input>Strongly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="new_music" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="new_music" id="sort-of-agree" value="sort-of-agree"></input>Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="new_music" id="not-sure" value="not-sure"></input>Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">  
+                <label className="container">  
                   <input type="radio" name="new_music" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="new_music" id="mostly-agree" value="mostly-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="new_music" id="strongly-disagree" value="strongly-disagree"></input>Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
               <p> 5. I often read or search the internet for things related to music.</p>
-              <div id="music-search" class="radio-group">
-                <label class="container"> 
+              <div id="music-search" className="radio-group">
+                <label className="container"> 
                   <input type="radio" name="search" id="strongly-agree" value="strongly-agree"></input>Strongly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="search" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="search" id="sort-of-agree" value="sort-of-agree"></input>Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="search" id="not-sure" value="not-sure"></input> Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="search" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="search" id="mostly-agree" value="mostly-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="search" id="strongly-disagree" value="strongly-disagree"></input>Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
@@ -3021,162 +3006,162 @@ const handleNextButtonClickP5 = () => {
 				      <label for="genre"> </label> 
 
               <p> 7. Pieces of music rarely evoke emotions for me. </p>
-              <div id="music-evoke" class="radio-group">
-                <label class="container"> 
+              <div id="music-evoke" className="radio-group">
+                <label className="container"> 
                   <input type="radio" name="evoke" id="strongly-agree" value="strongly-agree"></input>Strongly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="evoke" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="evoke" id="sort-of-agree" value="sort-of-agree"></input>Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="evoke" id="not-sure" value="not-sure"></input>Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="evoke" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="evoke" id="mostly-agree" value="mostly-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="evoke" id="strongly-disagree" value="strongly-disagree"></input>Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
               <p> 8. Music can evoke my memories of past people and places.</p>
-              <div id="music-memories" class="radio-group">
-                <label class="container">  
+              <div id="music-memories" className="radio-group">
+                <label className="container">  
                   <input type="radio" name="memories" id="strongly-agree" value="strongly-agree"></input>Strongly Agree
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="memories" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="memories" id="sort-of-agree" value="sort-of-agree"></input>Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="memories" id="not-sure" value="not-sure"></input>Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="memories" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="memories" id="mostly-agree" value="mostly-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="memories" id="strongly-disagree" value="strongly-disagree"></input>Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
 
               <p> 9. I sometimes choose (to listen/to play) music that can trigger shivers down my spine.</p>
-              <div id="music-shiver" class="radio-group">
-                <label class="container"> 
+              <div id="music-shiver" className="radio-group">
+                <label className="container"> 
                   <input type="radio" name="shiver" id="stronly-agree" value="strongly-agree"></input>Strongly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="shiver" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="shiver" id="sort-of-agree" value="sort-of-agree"></input>Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="shiver" id="not-sure" value="not-sure"></input>Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="shiver" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="shiver" id="mostly-agree" value="mostly-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="shiver" id="strongly-disagree" value="strongly-disagree"></input>Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
               <p> 10. I often pick certain music to motivate or excite me.</p>
-              <div id="music-excite" class="radio-group">
-                <label class="container">  
+              <div id="music-excite" className="radio-group">
+                <label className="container">  
                   <input type="radio" name="excite" id="strongly-agree" value="strongly-agree"></input>Strongly Agree
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="excite" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="excite" id="sort-of-agree" value="sort-of-agree"></input>Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="excite" id="not-sure" value="not-sure"></input>Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="excite" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="excite" id="mostly-agree" value="mostly-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="excite" id="strongly-disagree" value="strongly-disagree"></input>Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
               <p> 11. I am able to talk about the emotions that a piece of music evokes for me.</p>
-              <div id="music-talk" class="radio-group">
-                <label class="container">  
+              <div id="music-talk" className="radio-group">
+                <label className="container">  
                   <input type="radio" name="talk" id="strongly-agree" value="strongly-agree"></input>Strongly Agree
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="talk" id="mostly-agree" value="mostly-agree"></input>Mostly Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="talk" id="sort-of-agree" value="sort-of-agree"></input>Somewhat Agree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="talk" id="not-sure" value="not-sure"></input>Neither Agree or Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="talk" id="sort-of-disagree" value="sort-of-disagree"></input>Somewhat Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="talk" id="mostly-agree" value="mostly-agree"></input>Mostly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container"> 
+                <label className="container"> 
                   <input type="radio" name="talk" id="strongly-disagree" value="strongly-disagree"></input>Strongly Disagree 
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
               <p></p>
@@ -3184,19 +3169,19 @@ const handleNextButtonClickP5 = () => {
 
             </form>
           </div>
-          <div class="navBox">
-            <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page5-next-button" onClick={handleNextButtonClickP5} class="button" value="hide">Next</button>
+          <div className="navBox">
+            <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide">Previous</button>
+            <button id="page5-next-button" onClick={handleNextButtonClickP5} className="button" value="hide">Next</button>
           </div>
         </div>
       )}
 
       {/* Page 6 -  */}
       {currentPage === 'page6' && (
-        <div class="page" id="page6">
-          <div class="main" id="main6">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page6">
+          <div className="main" id="main6">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3206,36 +3191,36 @@ const handleNextButtonClickP5 = () => {
 
               <h3> Question 1: </h3>
               <p> Choose your favorite place to listen to music:</p>
-              <div id="q1" class="radio-group2">
-              <label class="container">
+              <div id="q1" className="radio-group2">
+              <label className="container">
                   <input type="radio" name="radio-option-0" id="option-0" value="0" onChange={() => handleAnswerChange(0, 0)}></input>
                    A) In a cosy corner with headphones on, shutting out the world
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-0" id="option-1" value="1" onChange={() => handleAnswerChange(0, 1)}></input>
                    B) Surrounded by friends and family, enjoying music together
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-0" id="option-2" value="2" onChange={() => handleAnswerChange(0, 2)}></input>
                    C) Out in nature, under the open sky, connected to music, emotion and the outdoors
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-0" id="option-3" value="3" onChange={() => handleAnswerChange(0, 3)}></input> 
                   D) In a vibrant, crowded music venue, emersed in the music and atmosphere
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-0" id="option-4" value="4" onChange={() => handleAnswerChange(0, 4)}></input> 
                   E) In the kitchen, cooking and singing along while the soothing melodies wash away the day's stresses
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-0" id="option-5" value="5" onChange={() => handleAnswerChange(0, 5)}></input> 
                   F) In the car on a long drive, the music as your companion
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
@@ -3244,140 +3229,140 @@ const handleNextButtonClickP5 = () => {
 
               <h3> Question 2: </h3>
               <p> When you hear a new song, what matters most to you?</p>
-              <div id="q2" class="radio-group2">
-                <label class="container">
+              <div id="q2" className="radio-group2">
+                <label className="container">
                   <input type="radio" name="radio-option-1" id="option-0" value="0" onChange={() => handleAnswerChange(1, 0)}></input>
                    A) The emotions it evokes and the specific instrumental sounds
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-1" id="option-1" value="1" onChange={() => handleAnswerChange(1, 1)}></input> 
                   B) The rhythm and whether it's dance-worthy
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-1" id="option-2" value="2" onChange={() => handleAnswerChange(1, 2)}></input> 
                   C) The atmosphere it creates and the soundscapes
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-1" id="option-3" value="3" onChange={() => handleAnswerChange(1, 3)}></input> 
                   D) The energy and excitement it brings
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-1" id="option-4" value="4" onChange={() => handleAnswerChange(1, 4)}></input> 
                   E) The creativity and unique instrumentations
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-1" id="option-5" value="5" onChange={() => handleAnswerChange(1, 5)}></input> 
                   F) The storytelling and the lyrics' depth
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
               <h3> Question 3: </h3>
               <p> How do you discover new music?</p>
-              <div id="q3" class="radio-group2">
-                <label class="container">
+              <div id="q3" className="radio-group2">
+                <label className="container">
                   <input type="radio" name="radio-option-2" id="option-0" value="0" onChange={() => handleAnswerChange(2, 0)}></input> 
                   A) By exploring moods and emotions through curated playlists/radio shows
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-2" id="option-1" value="1" onChange={() => handleAnswerChange(2, 1)}></input> 
                   B) Recommendations from friends and family
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-2" id="option-2" value="2" onChange={() => handleAnswerChange(2, 2)}></input> 
                   C) Through outdoor adventures and music festivals
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-2" id="option-3" value="3" onChange={() => handleAnswerChange(2, 3)}></input> 
                   D) By attending concerts/gigs and live performances
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-2" id="option-4" value="4" onChange={() => handleAnswerChange(2, 4)}></input> 
                   E) Scouring online forums/sources for hidden gems
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-2" id="option-5" value="5" onChange={() => handleAnswerChange(2, 5)}></input> 
                   F) By reading music blogs and reviews/ exploring record shops
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
               <h3> Question 4: </h3>
               <p> How would you describe your music taste?</p>
-              <div id="q4" class="radio-group2">
-                <label class="container">
+              <div id="q4" className="radio-group2">
+                <label className="container">
                   <input type="radio" name="radio-option-3" id="option-0" value="0" onChange={() => handleAnswerChange(3, 0)}></input> 
                   A) Eclectic, based on the feeling, not the genre
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-3" id="option-1" value="1" onChange={() => handleAnswerChange(3, 1)}></input> 
                   B) A mix of classics and crowd-pleasers, what makes me want to sing a long
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-3" id="option-2" value="2" onChange={() => handleAnswerChange(3, 2)}></input> 
                   C) A mix of ambient sounds, lots of fusion, mellow and cultural
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-3" id="option-3" value="3" onChange={() => handleAnswerChange(3, 3)}></input> 
                   D) High-energy and dance-centric
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-3" id="option-4" value="4" onChange={() => handleAnswerChange(3, 4)}></input> 
                   E) Focused on experimental and innovative music
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-3" id="option-5" value="5" onChange={() => handleAnswerChange(3, 5)}></input> 
                   F) Focused on thought-provoking lyrics and expressive sounds
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
               <h3> Question 5: </h3>
               <p> How much do you agree with this statement: "Music I like is based on the feeling, not the genre"?</p>
-              <div id="q5" class="radio-group2">
-                <label class="container">
+              <div id="q5" className="radio-group2">
+                <label className="container">
                   <input type="radio" name="radio-option-4" id="option-0" value="0" onChange={() => handleAnswerChange(4, 0)}></input> 
                   A) Strongly agree, my emotions guide my music choices
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-4" id="option-1" value="1" onChange={() => handleAnswerChange(4, 1)}></input> 
                   B) Somewhat agree, I like a mix of genres, but mood matters
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-4" id="option-2" value="2" onChange={() => handleAnswerChange(4, 2)}></input> 
                   C) Neutral, I appreciate various genres equally
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-4" id="option-3" value="3" onChange={() => handleAnswerChange(4, 3)}></input> 
                   D) Somewhat disagree, I tend to stick to specific genres
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-4" id="option-4" value="4" onChange={() => handleAnswerChange(4, 4)}></input> 
                   E) Strongly disagree, genre is the primary factor in my choices
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container">
+                <label className="container">
                   <input type="radio" name="radio-option-4" id="option-5" value="5" onChange={() => handleAnswerChange(4, 5)}></input> 
                   F) My music taste is a complex blend of mood and genre considerations
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
 
@@ -3386,9 +3371,9 @@ const handleNextButtonClickP5 = () => {
             </form>
 
             </div>
-            <div class="navBox">
-              <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-              <button id="page6-next-button" onClick={handleNextButtonClickMusicPersonality} class="button" value="hide">Next</button>
+            <div className="navBox">
+              <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide">Previous</button>
+              <button id="page6-next-button" onClick={handleNextButtonClickMusicPersonality} className="button" value="hide">Next</button>
             </div>
         </div>
       )} 
@@ -3399,10 +3384,10 @@ const handleNextButtonClickP5 = () => {
 
       {/* Page 7 - */}
       {currentPage === 'page7' && (
-        <div class="page" id="page7">
-          <div class="main" id="main7">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page7">
+          <div className="main" id="main7">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -3429,7 +3414,7 @@ const handleNextButtonClickP5 = () => {
               (Don't worry too much, it will be clear on the next few pages!) 
             </sub-paragraph>
             <br></br>
-            <img src="./img/example-exp.gif" style={{ width: '700px', height: '700px' }}/>
+            <img src="/film-score-emotion-survey/img/example-exp.gif" style={{ width: '700px', height: '700px' }}/>
             <p> - First, label the waveform </p>{/*(the position where you feel the emotion) */}
             <p> - Then, label the graph with the corresponding dot colour.</p>{/*(high/low energy and high/low positivity) */}
             <p> - Then, add a short sentence on the emotions you felt.</p>
@@ -3440,13 +3425,13 @@ const handleNextButtonClickP5 = () => {
               If you are struggling to interpret the Energy/Positivity Graph, this is an example of how the graph could be interpreted by emotion annotations. However you can interpret it any way you want.
             </p>
             <br></br>
-            <img src="./img/en-pos-anno.png" style={{ width: '400px', height: '400px' }}/>
+            <img src="/film-score-emotion-survey/img/en-pos-anno.png" style={{ width: '400px', height: '400px' }}/>
             <br></br>
 
           </div>
-          <div class="navBox">
-            <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page7-next-button" onClick={nextPage} class="button" value="hide">Next</button>
+          <div className="navBox">
+            <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide">Previous</button>
+            <button id="page7-next-button" onClick={nextPage} className="button" value="hide">Next</button>
           </div>
         </div>
       )}
@@ -3456,10 +3441,10 @@ const handleNextButtonClickP5 = () => {
 
       {/* Page 8 -  */} 
       {currentPage === 'page8' && (
-        <div class="page" id="page8">
-          <div class="main" id="main8">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page8">
+          <div className="main" id="main8">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
 
           <p>  </p>
           <br></br>
@@ -3467,15 +3452,17 @@ const handleNextButtonClickP5 = () => {
             <h5> Page 8 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 1/10</p>
-            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
 
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
+              <AudioSelector audioPath={audioPath} setAudioPath={setAudioPath} />
 
               <WavesurferVertex
               
                   audioFile={audioPath}
+                  //audioFile={"/film-score-emotion-survey/audioFolder1/Across_The_Ocean_Thomas_Newman_Elemental_sample_1.mp3"}
                   //audioFile={audioFile1}
                   loadRandomAudioFile={loadRandomAudioFile1}
                   containerId="audiowave1"
@@ -3503,7 +3490,7 @@ const handleNextButtonClickP5 = () => {
                 Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
                 </sub-paragraph>
 
-                <div class="inputBox">
+                <div className="inputBox">
                   <form>
                   <textarea 
                   rows="2"
@@ -3523,54 +3510,54 @@ const handleNextButtonClickP5 = () => {
 
             <h2> Was this music excerpt familiar to you? </h2>
             <form>
-              <div id="familiar-excerpt" class="radio-group">
-                <label class="container2">
+              <div id="familiar-excerpt" className="radio-group">
+                <label className="container2">
                   <input type="radio" name="familiar" id="definitely-familiar" value="definitely-familiar"
                   checked={familiarityRating === 'definitely-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is definitely familiar, I know the song and what film it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar" id="familiar" value="familiar"
                   checked={familiarityRating === 'familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is very familiar but I am not sure where it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar" id="not-sure" value="not-sure"
                   checked={familiarityRating === 'not-sure'}
                   onChange={handleFamiliarityChange}
                   ></input> Not Sure/ Don't know.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar" id="familiar-feeling-not-familiar" value="familiar-feeling-not-familiar"
                   checked={familiarityRating === 'familiar-feeling-not-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is not familiar, although it has a familiar feeling.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar" id="never-heard-this" value="never-heard-this"
                   checked={familiarityRating === 'never-heard-this'}
                   onChange={handleFamiliarityChange}
                   ></input> I have never heard this.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
               </form>
               <br></br>
                 <button type="submit" id="submitAudio1DataButton"
-                className="submit-audio1-data-btn"
+                classNameName="submit-audio1-data-btn"
                 onClick={handleSubmitSentenceFamiliar}> Submit Responses </button>
             </div>
             
           </div>
-          <div class="navBox">
-            <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page8-next-button" onClick={handleSubmitSong1} class="button" value="hide">Next</button>
+          <div className="navBox">
+            <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide">Previous</button>
+            <button id="page8-next-button" onClick={handleSubmitSong1} className="button" value="hide">Next</button>
           </div>
         </div>
       )}
@@ -3581,23 +3568,23 @@ const handleNextButtonClickP5 = () => {
       {/* Page 9 - */}
       {/* Song 2 - */}
       {currentPage === 'page9' && (
-        <div class="page" id="page9">
-          <div class="main" id="main9">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page9">
+          <div className="main" id="main9">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 9 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 2/10</p>
-            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
               
               <WavesurferVertex
-                  audioFile={getRandomAudioPath2()}
+                  audioFile={audioPath}
                   //audioFile={audioFile2}
                   loadRandomAudioFile={loadRandomAudioFile2}
                   containerId="audiowave2"
@@ -3623,7 +3610,7 @@ const handleNextButtonClickP5 = () => {
                 Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
                 </sub-paragraph>
 
-                <div class="inputBox">
+                <div className="inputBox">
                   <form>
                   <textarea
                   type="text" 
@@ -3641,54 +3628,54 @@ const handleNextButtonClickP5 = () => {
             </div>
             <h2> Was this music excerpt familiar to you? </h2>
             <form>
-              <div id="familiar-excerpt2" class="radio-group">
-                <label class="container2">
+              <div id="familiar-excerpt2" className="radio-group">
+                <label className="container2">
                   <input type="radio" name="familiar2" id="definitely-familiar" value="definitely-familiar"
                   checked={familiarityRating === 'definitely-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is definitely familiar, I know the song and what film it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar2" id="familiar" value="familiar"
                   checked={familiarityRating === 'familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is very familiar but I am not sure where it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar2" id="not-sure" value="not-sure"
                   checked={familiarityRating === 'not-sure'}
                   onChange={handleFamiliarityChange}
                   ></input> Not Sure/ Don't know.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar2" id="familiar-feeling-not-familiar" value="familiar-feeling-not-familiar"
                   checked={familiarityRating === 'familiar-feeling-not-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is not familiar, although it has a familiar feeling.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar2" id="never-heard-this" value="never-heard-this"
                   checked={familiarityRating === 'never-heard-this'}
                   onChange={handleFamiliarityChange}
                   ></input> I have never heard this.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
               </form>
               <br></br>
                 <button type="submit" id="submitAudio2DataButton"
-                className="submit-audio2-data-btn"
+                classNameName="submit-audio2-data-btn"
                 onClick={handleSubmitSentenceFamiliar2}> Submit Responses </button>
             </div>
             
           </div>
-          <div class="navBox">
-            <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page9-next-button" onClick={handleSubmitSong2} class="button" value="hide">Next</button>
+          <div className="navBox">
+            <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide">Previous</button>
+            <button id="page9-next-button" onClick={handleSubmitSong2} className="button" value="hide">Next</button>
           </div>
         </div>
       )}
@@ -3698,22 +3685,23 @@ const handleNextButtonClickP5 = () => {
 {/* -------------------------------------------------------------------------------------------------- */}
       {/* Page 10 - */}
       {currentPage === 'page10' && (
-        <div class="page" id="page10">
-          <div class="main" id="main10">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page10">
+          <div className="main" id="main10">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 10 - Music Emotion Survey</h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 3/10</p>
-            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
+
               <WavesurferVertex
-                  audioFile={getRandomAudioPath3}
+                  audioFile={audioPath}
                   loadRandomAudioFile={loadRandomAudioFile3}
                   containerId="audiowave3"
 
@@ -3738,7 +3726,7 @@ const handleNextButtonClickP5 = () => {
                 <p></p>
                 Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
                 </sub-paragraph>
-                <div class="inputBox">
+                <div className="inputBox">
                   <form>
                   <textarea 
                   type="text" 
@@ -3756,54 +3744,54 @@ const handleNextButtonClickP5 = () => {
             </div>
             <h2> Was this music excerpt familiar to you? </h2>
             <form>
-              <div id="familiar-excerpt3" class="radio-group">
-                <label class="container2">
+              <div id="familiar-excerpt3" className="radio-group">
+                <label className="container2">
                   <input type="radio" name="familiar3" id="definitely-familiar" value="definitely-familiar"
                   checked={familiarityRating === 'definitely-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is definitely familiar, I know the song and what film it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar3" id="familiar" value="familiar"
                   checked={familiarityRating === 'familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is very familiar but I am not sure where it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar3" id="not-sure" value="not-sure"
                   checked={familiarityRating === 'not-sure'}
                   onChange={handleFamiliarityChange}
                   ></input> Not Sure/ Don't know.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar3" id="familiar-feeling-not-familiar" value="familiar-feeling-not-familiar"
                   checked={familiarityRating === 'familiar-feeling-not-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is not familiar, although it has a familiar feeling.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar3" id="never-heard-this" value="never-heard-this"
                   checked={familiarityRating === 'never-heard-this'}
                   onChange={handleFamiliarityChange}
                   ></input> I have never heard this.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
               </form>
               <br></br>
                 <button type="submit" id="submitAudio3DataButton"
-                className="submit-audio3-data-btn"
+                classNameName="submit-audio3-data-btn"
                 onClick={handleSubmitSentenceFamiliar3}> Submit Responses </button>
             </div>
 
           </div>
-          <div class="navBox">
-            <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page10-next-button" onClick={handleSubmitSong3} class="button" value="hide">Next</button>
+          <div className="navBox">
+            <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide">Previous</button>
+            <button id="page10-next-button" onClick={handleSubmitSong3} className="button" value="hide">Next</button>
           </div>
         </div>
       )}
@@ -3811,17 +3799,17 @@ const handleNextButtonClickP5 = () => {
       {/* -------------------------------------------------------------------------------------------------- */}
       {/* Page 11 - */}
       {currentPage === 'page11' && (
-        <div class="page" id="page11">
-          <div class="main" id="main11">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page11">
+          <div className="main" id="main11">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 11 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 4/10</p>
-            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
@@ -3851,7 +3839,7 @@ const handleNextButtonClickP5 = () => {
                 <p></p>
                 Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
                 </sub-paragraph>
-                <div class="inputBox">
+                <div className="inputBox">
                   <form>
                   <textarea 
                   type="text" 
@@ -3869,54 +3857,54 @@ const handleNextButtonClickP5 = () => {
             </div>
             <h2> Was this music excerpt familiar to you? </h2>
             <form>
-              <div id="familiar-excerpt4" class="radio-group">
-                <label class="container2">
+              <div id="familiar-excerpt4" className="radio-group">
+                <label className="container2">
                   <input type="radio" name="familiar4" id="definitely-familiar" value="definitely-familiar"
                   checked={familiarityRating === 'definitely-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is definitely familiar, I know the song and what film it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar4" id="familiar" value="familiar"
                   checked={familiarityRating === 'familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is very familiar but I am not sure where it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar4" id="not-sure" value="not-sure"
                   checked={familiarityRating === 'not-sure'}
                   onChange={handleFamiliarityChange}
                   ></input> Not Sure/ Don't know.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar4" id="familiar-feeling-not-familiar" value="familiar-feeling-not-familiar"
                   checked={familiarityRating === 'familiar-feeling-not-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is not familiar, although it has a familiar feeling.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar4" id="never-heard-this" value="never-heard-this"
                   checked={familiarityRating === 'never-heard-this'}
                   onChange={handleFamiliarityChange}
                   ></input> I have never heard this.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
               </form>
               <br></br>
                 <button type="submit" id="submitAudio4DataButton"
-                className="submit-audio4-data-btn"
+                classNameName="submit-audio4-data-btn"
                 onClick={handleSubmitSentenceFamiliar4}> Submit Responses </button>
             </div>
 
           </div>
-          <div class="navBox">
-            <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page11-next-button" onClick={handleSubmitSong4} class="button" value="hide">Next</button>
+          <div className="navBox">
+            <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide">Previous</button>
+            <button id="page11-next-button" onClick={handleSubmitSong4} className="button" value="hide">Next</button>
           </div>
         </div>
       )}
@@ -3924,17 +3912,17 @@ const handleNextButtonClickP5 = () => {
       {/* -------------------------------------------------------------------------------------------------- */}
       {/* Page 12 - */}
       {currentPage === 'page12' && (
-        <div class="page" id="page12">
-          <div class="main" id="main12">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page12">
+          <div className="main" id="main12">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 12 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 5/10</p>
-            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
@@ -3964,7 +3952,7 @@ const handleNextButtonClickP5 = () => {
                 <p></p>
                 Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
                 </sub-paragraph>
-                <div class="inputBox">
+                <div className="inputBox">
                   <form>
                   <textarea 
                   type="text" 
@@ -3982,54 +3970,54 @@ const handleNextButtonClickP5 = () => {
             </div>
             <h2> Was this music excerpt familiar to you? </h2>
             <form>
-              <div id="familiar-excerpt5" class="radio-group">
-                <label class="container2">
+              <div id="familiar-excerpt5" className="radio-group">
+                <label className="container2">
                   <input type="radio" name="familiar5" id="definitely-familiar" value="definitely-familiar"
                   checked={familiarityRating === 'definitely-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is definitely familiar, I know the song and what film it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar5" id="familiar" value="familiar"
                   checked={familiarityRating === 'familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is very familiar but I am not sure where it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar5" id="not-sure" value="not-sure"
                   checked={familiarityRating === 'not-sure'}
                   onChange={handleFamiliarityChange}
                   ></input> Not Sure/ Don't know.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar5" id="familiar-feeling-not-familiar" value="familiar-feeling-not-familiar"
                   checked={familiarityRating === 'familiar-feeling-not-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is not familiar, although it has a familiar feeling.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar5" id="never-heard-this" value="never-heard-this"
                   checked={familiarityRating === 'never-heard-this'}
                   onChange={handleFamiliarityChange}
                   ></input> I have never heard this.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
               </form>
               <br></br>
                 <button type="submit" id="submitAudio5DataButton"
-                className="submit-audio5-data-btn"
+                classNameName="submit-audio5-data-btn"
                 onClick={handleSubmitSentenceFamiliar5}> Submit Responses </button>
             </div>
 
           </div>
-          <div class="navBox">
-            <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page12-next-button" onClick={handleSubmitSong5} class="button" value="hide">Next</button>
+          <div className="navBox">
+            <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide">Previous</button>
+            <button id="page12-next-button" onClick={handleSubmitSong5} className="button" value="hide">Next</button>
           </div>
         </div>
       )}
@@ -4037,17 +4025,17 @@ const handleNextButtonClickP5 = () => {
       {/* -------------------------------------------------------------------------------------------------- */}
       {/* Page 13 - */}
       {currentPage === 'page13' && (
-        <div class="page" id="page13">
-          <div class="main" id="main13">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page13">
+          <div className="main" id="main13">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 13 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 6/10</p>
-            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
@@ -4077,7 +4065,7 @@ const handleNextButtonClickP5 = () => {
                 <p></p>
                 Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
                 </sub-paragraph>
-                <div class="inputBox">
+                <div className="inputBox">
                   <form>
                   <textarea 
                   type="text" 
@@ -4095,54 +4083,54 @@ const handleNextButtonClickP5 = () => {
             </div>
             <h2> Was this music excerpt familiar to you? </h2>
             <form>
-              <div id="familiar-excerpt6" class="radio-group">
-                <label class="container2">
+              <div id="familiar-excerpt6" className="radio-group">
+                <label className="container2">
                   <input type="radio" name="familiar6" id="definitely-familiar" value="definitely-familiar"
                   checked={familiarityRating === 'definitely-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is definitely familiar, I know the song and what film it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar6" id="familiar" value="familiar"
                   checked={familiarityRating === 'familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is very familiar but I am not sure where it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar6" id="not-sure" value="not-sure"
                   checked={familiarityRating === 'not-sure'}
                   onChange={handleFamiliarityChange}
                   ></input> Not Sure/ Don't know.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar6" id="familiar-feeling-not-familiar" value="familiar-feeling-not-familiar"
                   checked={familiarityRating === 'familiar-feeling-not-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is not familiar, although it has a familiar feeling.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar6" id="never-heard-this" value="never-heard-this"
                   checked={familiarityRating === 'never-heard-this'}
                   onChange={handleFamiliarityChange}
                   ></input> I have never heard this.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
               </form>
               <br></br>
                 <button type="submit" id="submitAudio6DataButton"
-                className="submit-audio6-data-btn"
+                classNameName="submit-audio6-data-btn"
                 onClick={handleSubmitSentenceFamiliar6}> Submit Responses </button>
             </div>
 
           </div>
-          <div class="navBox">
-            <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page13-next-button" onClick={handleSubmitSong6} class="button" value="hide">Next</button>
+          <div className="navBox">
+            <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide">Previous</button>
+            <button id="page13-next-button" onClick={handleSubmitSong6} className="button" value="hide">Next</button>
           </div>
         </div>
       )}
@@ -4150,17 +4138,17 @@ const handleNextButtonClickP5 = () => {
       {/* -------------------------------------------------------------------------------------------------- */}
       {/* Page 14 - */}
       {currentPage === 'page14' && (
-        <div class="page" id="page14">
-          <div class="main" id="main14">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page14">
+          <div className="main" id="main14">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 14 - Music Emotion Survey</h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 7/10</p>
-            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
@@ -4190,7 +4178,7 @@ const handleNextButtonClickP5 = () => {
                 <p></p>
                 Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
                 </sub-paragraph>
-                <div class="inputBox">
+                <div className="inputBox">
                   <form>
                   <textarea 
                   type="text" 
@@ -4208,54 +4196,54 @@ const handleNextButtonClickP5 = () => {
             </div>
             <h2> Was this music excerpt familiar to you? </h2>
             <form>
-              <div id="familiar-excerpt7" class="radio-group">
-                <label class="container2">
+              <div id="familiar-excerpt7" className="radio-group">
+                <label className="container2">
                   <input type="radio" name="familiar7" id="definitely-familiar" value="definitely-familiar"
                   checked={familiarityRating === 'definitely-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is definitely familiar, I know the song and what film it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar7" id="familiar" value="familiar"
                   checked={familiarityRating === 'familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is very familiar but I am not sure where it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar7" id="not-sure" value="not-sure"
                   checked={familiarityRating === 'not-sure'}
                   onChange={handleFamiliarityChange}
                   ></input> Not Sure/ Don't know.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar7" id="familiar-feeling-not-familiar" value="familiar-feeling-not-familiar"
                   checked={familiarityRating === 'familiar-feeling-not-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is not familiar, although it has a familiar feeling.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar7" id="never-heard-this" value="never-heard-this"
                   checked={familiarityRating === 'never-heard-this'}
                   onChange={handleFamiliarityChange}
                   ></input> I have never heard this.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
               </form>
               <br></br>
                 <button type="submit" id="submitAudio7DataButton"
-                className="submit-audio7-data-btn"
+                classNameName="submit-audio7-data-btn"
                 onClick={handleSubmitSentenceFamiliar7}> Submit Responses </button>
             </div>
 
           </div>
-          <div class="navBox">
-            <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page14-next-button" onClick={handleSubmitSong7} class="button" value="hide">Next</button>
+          <div className="navBox">
+            <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide">Previous</button>
+            <button id="page14-next-button" onClick={handleSubmitSong7} className="button" value="hide">Next</button>
           </div>
         </div>
       )}
@@ -4263,17 +4251,17 @@ const handleNextButtonClickP5 = () => {
       {/* -------------------------------------------------------------------------------------------------- */}
       {/* Page 15 - */}
       {currentPage === 'page15' && (
-        <div class="page" id="page15">
-          <div class="main" id="main15">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page15">
+          <div className="main" id="main15">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 15 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 8/10</p>
-            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
@@ -4303,7 +4291,7 @@ const handleNextButtonClickP5 = () => {
                 <p></p>
                 Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
                 </sub-paragraph>
-                <div class="inputBox">
+                <div className="inputBox">
                   <form>
                   <textarea 
                   type="text" 
@@ -4321,54 +4309,54 @@ const handleNextButtonClickP5 = () => {
             </div>
             <h2> Was this music excerpt familiar to you? </h2>
             <form>
-              <div id="familiar-excerpt8" class="radio-group">
-                <label class="container2">
+              <div id="familiar-excerpt8" className="radio-group">
+                <label className="container2">
                   <input type="radio" name="familiar8" id="definitely-familiar" value="definitely-familiar"
                   checked={familiarityRating === 'definitely-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is definitely familiar, I know the song and what film it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar8" id="familiar" value="familiar"
                   checked={familiarityRating === 'familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is very familiar but I am not sure where it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar8" id="not-sure" value="not-sure"
                   checked={familiarityRating === 'not-sure'}
                   onChange={handleFamiliarityChange}
                   ></input> Not Sure/ Don't know.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar8" id="familiar-feeling-not-familiar" value="familiar-feeling-not-familiar"
                   checked={familiarityRating === 'familiar-feeling-not-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is not familiar, although it has a familiar feeling.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar8" id="never-heard-this" value="never-heard-this"
                   checked={familiarityRating === 'never-heard-this'}
                   onChange={handleFamiliarityChange}
                   ></input> I have never heard this.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
               </form>
               <br></br>
                 <button type="submit" id="submitAudio8DataButton"
-                className="submit-audio8-data-btn"
+                classNameName="submit-audio8-data-btn"
                 onClick={handleSubmitSentenceFamiliar8}> Submit Responses </button>
             </div>
 
           </div>
-          <div class="navBox">
-            <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page15-next-button" onClick={handleSubmitSong8} class="button" value="hide">Next</button>
+          <div className="navBox">
+            <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide">Previous</button>
+            <button id="page15-next-button" onClick={handleSubmitSong8} className="button" value="hide">Next</button>
           </div>
         </div>
       )}
@@ -4376,17 +4364,17 @@ const handleNextButtonClickP5 = () => {
       {/* -------------------------------------------------------------------------------------------------- */}
       {/* Page 16 - */}
       {currentPage === 'page16' && (
-        <div class="page" id="page16">
-          <div class="main" id="main16">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page16">
+          <div className="main" id="main16">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 16 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 9/10</p>
-            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
@@ -4416,7 +4404,7 @@ const handleNextButtonClickP5 = () => {
                 <p></p>
                 Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
                 </sub-paragraph>
-                <div class="inputBox">
+                <div className="inputBox">
                   <form>
                   <textarea 
                   type="text" 
@@ -4434,54 +4422,54 @@ const handleNextButtonClickP5 = () => {
             </div>
             <h2> Was this music excerpt familiar to you? </h2>
             <form>
-              <div id="familiar-excerpt9" class="radio-group">
-                <label class="container2">
+              <div id="familiar-excerpt9" className="radio-group">
+                <label className="container2">
                   <input type="radio" name="familiar9" id="definitely-familiar" value="definitely-familiar"
                   checked={familiarityRating === 'definitely-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is definitely familiar, I know the song and what film it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar9" id="familiar" value="familiar"
                   checked={familiarityRating === 'familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is very familiar but I am not sure where it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar9" id="not-sure" value="not-sure"
                   checked={familiarityRating === 'not-sure'}
                   onChange={handleFamiliarityChange}
                   ></input> Not Sure/ Don't know.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar9" id="familiar-feeling-not-familiar" value="familiar-feeling-not-familiar"
                   checked={familiarityRating === 'familiar-feeling-not-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is not familiar, although it has a familiar feeling.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar9" id="never-heard-this" value="never-heard-this"
                   checked={familiarityRating === 'never-heard-this'}
                   onChange={handleFamiliarityChange}
                   ></input> I have never heard this.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
               </form>
               <br></br>
                 <button type="submit" id="submitAudio9DataButton"
-                className="submit-audio9-data-btn"
+                classNameName="submit-audio9-data-btn"
                 onClick={handleSubmitSentenceFamiliar9}> Submit Responses </button>
             </div>
 
           </div>
-          <div class="navBox">
-            <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page16-next-button" onClick={handleSubmitSong9} class="button" value="hide">Next</button>
+          <div className="navBox">
+            <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide">Previous</button>
+            <button id="page16-next-button" onClick={handleSubmitSong9} className="button" value="hide">Next</button>
           </div>
         </div>
       )}
@@ -4489,17 +4477,17 @@ const handleNextButtonClickP5 = () => {
       {/* -------------------------------------------------------------------------------------------------- */}
       {/* Page 17 - */}
       {currentPage === 'page17' && (
-        <div class="page" id="page17">
-          <div class="main" id="main17">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page17">
+          <div className="main" id="main17">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 17 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 10/10</p>
-            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
@@ -4529,7 +4517,7 @@ const handleNextButtonClickP5 = () => {
                 <p></p>
                 Example 2: The third marker position is where I felt the mood change - the highest energy point and a feeling of fear followed by a feeling of slight relief, yet still uneasy.
                 </sub-paragraph>
-                <div class="inputBox">
+                <div className="inputBox">
                   <form>
                   <textarea 
                   type="text" 
@@ -4547,54 +4535,54 @@ const handleNextButtonClickP5 = () => {
             </div>
             <h2> Was this music excerpt familiar to you? </h2>
             <form>
-              <div id="familiar-excerpt10" class="radio-group">
-                <label class="container2">
+              <div id="familiar-excerpt10" className="radio-group">
+                <label className="container2">
                   <input type="radio" name="familiar10" id="definitely-familiar" value="definitely-familiar"
                   checked={familiarityRating === 'definitely-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is definitely familiar, I know the song and what film it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar10" id="familiar" value="familiar"
                   checked={familiarityRating === 'familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is very familiar but I am not sure where it's from.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar10" id="not-sure" value="not-sure"
                   checked={familiarityRating === 'not-sure'}
                   onChange={handleFamiliarityChange}
                   ></input> Not Sure/ Don't know.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar10" id="familiar-feeling-not-familiar" value="familiar-feeling-not-familiar"
                   checked={familiarityRating === 'familiar-feeling-not-familiar'}
                   onChange={handleFamiliarityChange}
                   ></input> It is not familiar, although it has a familiar feeling.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container2">
+                <label className="container2">
                   <input type="radio" name="familiar10" id="never-heard-this" value="never-heard-this"
                   checked={familiarityRating === 'never-heard-this'}
                   onChange={handleFamiliarityChange}
                   ></input> I have never heard this.
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
               </form>
               <br></br>
                 <button type="submit" id="submitAudio10DataButton"
-                className="submit-audio10-data-btn"
+                classNameName="submit-audio10-data-btn"
                 onClick={handleSubmitSentenceFamiliar10}> Submit Responses </button>
             </div>
 
           </div>
-          <div class="navBox">
-            <button id="previous-button" onClick={handlePreviousButtonClick} class="button" value="hide">Previous</button>
-            <button id="page17-next-button" onClick={handleSubmitSong10} class="button" value="hide">Next</button>
+          <div className="navBox">
+            <button id="previous-button" onClick={handlePreviousButtonClick} className="button" value="hide">Previous</button>
+            <button id="page17-next-button" onClick={handleSubmitSong10} className="button" value="hide">Next</button>
           </div>
         </div>
       )}
@@ -4602,10 +4590,10 @@ const handleNextButtonClickP5 = () => {
       {/* -------------------------------------------------------------------------------------------------- */}
       {/* Page 18 - */}
       {currentPage === 'page18' && (
-        <div class="page" id="page18">
-          <div class="main" id="main18">
-          <img src="./img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
-          <img src="./img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
+        <div className="page" id="page18">
+          <div className="main" id="main18">
+          <img src="/film-score-emotion-survey/img/aimlogo.png"style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
+          <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
@@ -4622,7 +4610,7 @@ const handleNextButtonClickP5 = () => {
               </div>
             )}
           </div>
-           {/*<button id="page18-next-button" onClick={nextPage} class="button" value="hide">Next</button>*/}
+           {/*<button id="page18-next-button" onClick={nextPage} className="button" value="hide">Next</button>*/}
         </div>
       )}
 
