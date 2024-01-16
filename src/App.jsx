@@ -9,22 +9,8 @@ import { WavesurferVertex } from './wavesurferVertex.jsx';
 import WaveSurfer from 'wavesurfer.js'
 import Regions from 'wavesurfer.js/dist/plugins/regions'
 //import { audioFiles } from 'audioFiles.json';\
-
 import AudioSelector from './audioUtils1.jsx';
-import AudioSelector2 from './audioUtils2.jsx';
-
-
-//import { getRandomAudioPath2 } from './audioUtils2.jsx';
-//import { getRandomAudioPath3 } from './audioUtils3.jsx';
-//import { getRandomAudioPath4 } from './audioUtils4.jsx';
-//import { getRandomAudioPath5 } from './audioUtils5.jsx';
-//import { getRandomAudioPath6 } from './audioUtils6.jsx';
-//import { getRandomAudioPath7 } from './audioUtils7.jsx';
-//import { getRandomAudioPath8 } from './audioUtils8.jsx';
-//import { getRandomAudioPath9 } from './audioUtils9.jsx';
-//import { getRandomAudioPath10 } from './audioUtils10.jsx';
-
-
+import AudioSelectorPage9 from './AudioSelectorPage9.jsx';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCkT3IblS1k8_0PDVrJeYPgm-fS2yCuU98",
@@ -59,7 +45,6 @@ function App() {
   const wavesurferRef = useRef(null);
 
   const [audioPath, setAudioPath] = useState('');
-  const [audioPath2, setAudioPath2] = useState('');
 
 
   
@@ -2242,7 +2227,7 @@ const handleNextButtonClickP5 = () => {
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
-            <h5> Page 1 - EDIT-AUDIO-PATH-28 Study Introduction </h5>
+            <h5> Page 1 - EDIT-AUDIO-PATH-29  Study Introduction </h5>
             
             <h4> The purpose of this study is to understand how music in films makes us feel. By sharing your thoughts, you'll help us learn more about how emotions are created in film music! </h4>
             <br></br>
@@ -3584,10 +3569,10 @@ const handleNextButtonClickP5 = () => {
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
-              <AudioSelector2 audioPath={audioPath2} setAudioPath={setAudioPath2} />
+              <AudioSelectorPage9 audioPath={audioPath} setAudioPath={setAudioPath} />
               
               <WavesurferVertex
-                  audioFile={audioPath2}
+                  audioFile={audioPath}
                   //audioFile={audioFile2}
                   loadRandomAudioFile={loadRandomAudioFile2}
                   containerId="audiowave2"

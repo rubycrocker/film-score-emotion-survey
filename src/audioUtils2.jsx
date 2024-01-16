@@ -47,11 +47,11 @@
 
 import { useEffect } from 'react';
 
-const AudioSelector2 = ({ audioPath2, setAudioPath2 }) => {
+const AudioSelectorPage9 = ({ audioPath, setAudioPath }) => {
   useEffect(() => {
-    // If the audio path is not set, set it using the AudioComponent logic
-    if (!audioPath2) {
-      const audioFolderFiles2 = ["Bounty_Hunter_Puss_In_Boots_Heitor_Pereira_sample_1.mp3",
+    if (!audioPath) {
+      // Define your audio files for Page 9 here
+      const audioFolderFilesPage9 = ["Bounty_Hunter_Puss_In_Boots_Heitor_Pereira_sample_1.mp3",
       "Boys_in_the_Mirror__Fatima_Al_Qadiri_Atlantics_sample_1.mp3",
       "Brothers_In_Arms_Mad_Max_Fury_Road_Junkie_XL_sample_1.mp3",
       "Buckskin_Stallion_Blues_-_Townes_Van_Zandt_-_Three_Billboards_Outside_Ebbing,_Missouri_sample_1.mp3",
@@ -80,30 +80,28 @@ const AudioSelector2 = ({ audioPath2, setAudioPath2 }) => {
       "Detach_Hans_Zimmer_interstellar_sample_1.mp3",
       "Dickon_Hinchliffe_-_Leda_The_Lost_Daughter_sample_1.mp3",
       "Dickon_Hinchliffe_-_Octopus_The_Lost_Daughter_sample_1.mp3",
-      "Django_Unchained_Luis_Bacalov_Django_sample_1.mp3"]; // Add all your audio file names
+      "Django_Unchained_Luis_Bacalov_Django_sample_1.mp3"];
 
       // Shuffle the array
-      const shuffledFiles2 = [...audioFolderFiles2];
-      for (let i = shuffledFiles2.length - 1; i > 0; i--) {
+      const shuffledFiles = [...audioFolderFilesPage9];
+      for (let i = shuffledFiles.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [shuffledFiles2[i], shuffledFiles2[j]] = [shuffledFiles2[j], shuffledFiles2[i]];
+        [shuffledFiles[i], shuffledFiles[j]] = [shuffledFiles[j], shuffledFiles[i]];
       }
 
       // Select the first file from the shuffled array
-      const selectedFile2 = shuffledFiles2[0];
+      const selectedFile = shuffledFiles[0];
 
       // Generate the full path
-      const basePath2 = "/film-score-emotion-survey/audioFolder2/";
-      const fullPath2 = basePath2 + selectedFile2;
+      const basePath = "/film-score-emotion-survey/audioFolder2/";
+      const fullPath = basePath + selectedFile;
 
       // Set the full path in the state
-      setAudioPath2(fullPath2);
+      setAudioPath(fullPath);
     }
-  }, [audioPath2, setAudioPath2]);
-
-  // You can render any UI components related to audio selection here if needed
+  }, [audioPath, setAudioPath]);
 
   return null; // or return a placeholder element if needed
 };
 
-export default AudioSelector2;
+export default AudioSelectorPage9;
