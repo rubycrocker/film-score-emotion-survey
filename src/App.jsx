@@ -11,6 +11,7 @@ import Regions from 'wavesurfer.js/dist/plugins/regions'
 //import { audioFiles } from 'audioFiles.json';\
 
 import AudioSelector from './audioUtils1.jsx';
+import AudioSelector2 from './audioUtils2.jsx';
 
 
 //import { getRandomAudioPath2 } from './audioUtils2.jsx';
@@ -58,6 +59,7 @@ function App() {
   const wavesurferRef = useRef(null);
 
   const [audioPath, setAudioPath] = useState('');
+  const [audioPath2, setAudioPath2] = useState('');
 
 
   
@@ -2233,14 +2235,14 @@ const handleNextButtonClickP5 = () => {
     <>
     {/* Page 1 -  */} 
       {currentPage === 'page1' && (
-        <div classNameName="page" id="page1">
-          <div classNameName="main" id="'main1">
+        <div className="page" id="page1">
+          <div className="main" id="'main1">
           <img src="/film-score-emotion-survey/img/aimlogo.png" style={{ width: '100px', height: 'auto', float: 'right', padding: '10px'}} />
           <img src="/film-score-emotion-survey/img/qmullogo.jpeg" style={{ width: '200px', height: 'auto', float: 'left', padding: '10px'}} />
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
-            <h5> Page 1 - EDIT-AUDIO-PATH-19 Study Introduction </h5>
+            <h5> Page 1 - EDIT-AUDIO-PATH-28 Study Introduction </h5>
             
             <h4> The purpose of this study is to understand how music in films makes us feel. By sharing your thoughts, you'll help us learn more about how emotions are created in film music! </h4>
             <br></br>
@@ -2269,7 +2271,7 @@ const handleNextButtonClickP5 = () => {
         {/* <button id="introduction-next-button" onClick={nextPage} className="button" value="hide">Next</button> */}
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '10vh' }}>
           <div className="navBox">
-                <button onClick={handleStartSurvey} classNameName="button">
+                <button onClick={handleStartSurvey} className="button">
                   Start
                 </button>
           </div>
@@ -2330,7 +2332,7 @@ const handleNextButtonClickP5 = () => {
             <br></br>
             <a href="https://www.qmul.ac.uk/media/arcs/policyzone/Data-Protection-Policy-v03.1.pdf"> Data Protection Policy.pdf</a>
             <br></br>
-            <a href="/film-score-emotion-survey/Participant_Information_Sheet_2024.pdf">Participant Information Sheet Version 1.0 Date: 16/11/2023</a>
+            <a href="https://github.com/rubycrocker/film-score-emotion-survey/raw/main/src/Participant_Information_Sheet_2024_Music,_Mood,_and_Motion.pdf" download>Download "Participant Information Sheet"</a>
             <br></br>
             <br></br>
             <div>
@@ -3452,7 +3454,7 @@ const handleNextButtonClickP5 = () => {
             <h5> Page 8 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 1/10</p>
-            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
 
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
@@ -3550,7 +3552,7 @@ const handleNextButtonClickP5 = () => {
               </form>
               <br></br>
                 <button type="submit" id="submitAudio1DataButton"
-                classNameName="submit-audio1-data-btn"
+                className="submit-audio1-data-btn"
                 onClick={handleSubmitSentenceFamiliar}> Submit Responses </button>
             </div>
             
@@ -3578,13 +3580,14 @@ const handleNextButtonClickP5 = () => {
             <h5> Page 9 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 2/10</p>
-            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
+              <AudioSelector2 audioPath={audioPath2} setAudioPath={setAudioPath2} />
               
               <WavesurferVertex
-                  audioFile={audioPath}
+                  audioFile={audioPath2}
                   //audioFile={audioFile2}
                   loadRandomAudioFile={loadRandomAudioFile2}
                   containerId="audiowave2"
@@ -3668,7 +3671,7 @@ const handleNextButtonClickP5 = () => {
               </form>
               <br></br>
                 <button type="submit" id="submitAudio2DataButton"
-                classNameName="submit-audio2-data-btn"
+                className="submit-audio2-data-btn"
                 onClick={handleSubmitSentenceFamiliar2}> Submit Responses </button>
             </div>
             
@@ -3695,7 +3698,7 @@ const handleNextButtonClickP5 = () => {
             <h5> Page 10 - Music Emotion Survey</h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 3/10</p>
-            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
@@ -3784,7 +3787,7 @@ const handleNextButtonClickP5 = () => {
               </form>
               <br></br>
                 <button type="submit" id="submitAudio3DataButton"
-                classNameName="submit-audio3-data-btn"
+                className="submit-audio3-data-btn"
                 onClick={handleSubmitSentenceFamiliar3}> Submit Responses </button>
             </div>
 
@@ -3809,7 +3812,7 @@ const handleNextButtonClickP5 = () => {
             <h5> Page 11 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 4/10</p>
-            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
@@ -3897,7 +3900,7 @@ const handleNextButtonClickP5 = () => {
               </form>
               <br></br>
                 <button type="submit" id="submitAudio4DataButton"
-                classNameName="submit-audio4-data-btn"
+                className="submit-audio4-data-btn"
                 onClick={handleSubmitSentenceFamiliar4}> Submit Responses </button>
             </div>
 
@@ -3922,7 +3925,7 @@ const handleNextButtonClickP5 = () => {
             <h5> Page 12 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 5/10</p>
-            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
@@ -4010,7 +4013,7 @@ const handleNextButtonClickP5 = () => {
               </form>
               <br></br>
                 <button type="submit" id="submitAudio5DataButton"
-                classNameName="submit-audio5-data-btn"
+                className="submit-audio5-data-btn"
                 onClick={handleSubmitSentenceFamiliar5}> Submit Responses </button>
             </div>
 
@@ -4035,7 +4038,7 @@ const handleNextButtonClickP5 = () => {
             <h5> Page 13 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 6/10</p>
-            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
@@ -4123,7 +4126,7 @@ const handleNextButtonClickP5 = () => {
               </form>
               <br></br>
                 <button type="submit" id="submitAudio6DataButton"
-                classNameName="submit-audio6-data-btn"
+                className="submit-audio6-data-btn"
                 onClick={handleSubmitSentenceFamiliar6}> Submit Responses </button>
             </div>
 
@@ -4148,7 +4151,7 @@ const handleNextButtonClickP5 = () => {
             <h5> Page 14 - Music Emotion Survey</h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 7/10</p>
-            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
@@ -4236,7 +4239,7 @@ const handleNextButtonClickP5 = () => {
               </form>
               <br></br>
                 <button type="submit" id="submitAudio7DataButton"
-                classNameName="submit-audio7-data-btn"
+                className="submit-audio7-data-btn"
                 onClick={handleSubmitSentenceFamiliar7}> Submit Responses </button>
             </div>
 
@@ -4261,7 +4264,7 @@ const handleNextButtonClickP5 = () => {
             <h5> Page 15 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 8/10</p>
-            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
@@ -4349,7 +4352,7 @@ const handleNextButtonClickP5 = () => {
               </form>
               <br></br>
                 <button type="submit" id="submitAudio8DataButton"
-                classNameName="submit-audio8-data-btn"
+                className="submit-audio8-data-btn"
                 onClick={handleSubmitSentenceFamiliar8}> Submit Responses </button>
             </div>
 
@@ -4374,7 +4377,7 @@ const handleNextButtonClickP5 = () => {
             <h5> Page 16 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 9/10</p>
-            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
@@ -4462,7 +4465,7 @@ const handleNextButtonClickP5 = () => {
               </form>
               <br></br>
                 <button type="submit" id="submitAudio9DataButton"
-                classNameName="submit-audio9-data-btn"
+                className="submit-audio9-data-btn"
                 onClick={handleSubmitSentenceFamiliar9}> Submit Responses </button>
             </div>
 
@@ -4487,7 +4490,7 @@ const handleNextButtonClickP5 = () => {
             <h5> Page 17 - Music Emotion Survey </h5>
             <p> Please fill out all fields. Add AT LEAST one marker and one dot coordinate below:</p>
             <p>Song 10/10</p>
-            <div classNameName='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
+            <div className='wavesurfer-vertex' style={{ backgroundColor: '#d4eaf1' }}>
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
@@ -4575,7 +4578,7 @@ const handleNextButtonClickP5 = () => {
               </form>
               <br></br>
                 <button type="submit" id="submitAudio10DataButton"
-                classNameName="submit-audio10-data-btn"
+                className="submit-audio10-data-btn"
                 onClick={handleSubmitSentenceFamiliar10}> Submit Responses </button>
             </div>
 
