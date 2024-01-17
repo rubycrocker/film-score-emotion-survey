@@ -64,7 +64,7 @@ const AudioSelector = ({ audioPath, setAudioPath }) => {
       "Airlock_Steven_Price_Gravity_sample_1.mp3",
       "Alan_Silvestri_-_Infinity_War_(From_Avengers_sample_1.mp3",
       "Alberto_Iglesias_Claqueta_Final_Pain_and_Glory_sample_1.mp3",
-      "alexander-hamilton_Hamilton_sample_1.mp3",
+      //"alexander-hamilton_Hamilton_sample_1.mp3", //might not work...
       "All-quiet-on-the-western-front_main-theme-song-volker-bertelmann_sample_1.mp3",
       "All-quiet-on-the-western-front_remains-volker-bertelmann_sample_1.mp3",
       //"Almost_Human_Antonio_Sanchez_Birdman_sample_1.mp3",
@@ -75,7 +75,7 @@ const AudioSelector = ({ audioPath, setAudioPath }) => {
       "Antonio_Sanchez_Doors_and_Distance_Birdman_sample_1.mp3",
       "Arrival_Heptapod_B_Johann Johannsson_sample_1.mp3",
       "Arrival_Jonny_Greenwood_Spencer_sample_1.mp3",
-      "audiomachine-the-big-smoke-1917_sample_1.mp3",
+      //"audiomachine-the-big-smoke-1917_sample_1.mp3",//might not work...
       "Arrival_Johann_Johannsson_Arrival_sample_1.mp3",
       "Ava_Ex_Machina_Ben_Salisbury_Geoff_Barrow_sample_1.mp3",
       "Bali_Girls_-_Michael_Stearns,_Bonnie_Jo_Hunt,_Ron_Sunsinger_Samsara_sample_1.mp3",

@@ -10,7 +10,15 @@ import WaveSurfer from 'wavesurfer.js'
 import Regions from 'wavesurfer.js/dist/plugins/regions'
 //import { audioFiles } from 'audioFiles.json';\
 import AudioSelector from './audioUtils1.jsx';
-import AudioSelectorPage9 from './AudioSelectorPage9.jsx';
+import AudioSelectorPage9 from './audioUtils2.jsx';
+import AudioSelectorPage10 from './audioUtils3.jsx';
+import AudioSelectorPage11 from './audioUtils4.jsx';
+import AudioSelectorPage12 from './audioUtils5.jsx';
+import AudioSelectorPage13 from './audioUtils6.jsx';
+import AudioSelectorPage14 from './audioUtils7.jsx';
+import AudioSelectorPage15 from './audioUtils8.jsx';
+import AudioSelectorPage16 from './audioUtils9.jsx';
+import AudioSelectorPage17 from './audioUtils10.jsx';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCkT3IblS1k8_0PDVrJeYPgm-fS2yCuU98",
@@ -45,6 +53,15 @@ function App() {
   const wavesurferRef = useRef(null);
 
   const [audioPath, setAudioPath] = useState('');
+  const [audioPathPage9, setAudioPathPage9] = useState('');
+  const [audioPathPage10, setAudioPathPage10] = useState('');
+  const [audioPathPage11, setAudioPathPage11] = useState('');
+  const [audioPathPage12, setAudioPathPage12] = useState('');
+  const [audioPathPage13, setAudioPathPage13] = useState('');
+  const [audioPathPage14, setAudioPathPage14] = useState('');
+  const [audioPathPage15, setAudioPathPage15] = useState('');
+  const [audioPathPage16, setAudioPathPage16] = useState('');
+  const [audioPathPage17, setAudioPathPage17] = useState('');
 
 
   
@@ -603,7 +620,7 @@ function App() {
             formsData.song2ESF = {
               emotionSentence2,
               familiarityRating2,
-              audioFile: audioFile2,
+              audioFile: `/audioFolder2/${audioPathPage9}`,
             };
     
             // Update the forms data in the participant's document
@@ -688,7 +705,7 @@ function App() {
             formsData.song3ESF = {
               emotionSentence3,
               familiarityRating3,
-              audioFile: audioFile3,
+              audioFile: `/audioFolder3/${audioPathPage10}`,
             };
     
             // Update the forms data in the participant's document
@@ -768,7 +785,7 @@ function App() {
             formsData.song4ESF = {
               emotionSentence4,
               familiarityRating4,
-              audioFile: audioFile4,
+              audioFile: `/audioFolder4/${audioPathPage11}`,
             };
     
             // Update the forms data in the participant's document
@@ -848,7 +865,7 @@ function App() {
             formsData.song5ESF = {
               emotionSentence5,
               familiarityRating5,
-              audioFile: audioFile5,
+              audioFile: `/audioFolder5/${audioPathPage12}`,
             };
     
             // Update the forms data in the participant's document
@@ -928,7 +945,7 @@ function App() {
             formsData.song6ESF = {
               emotionSentence6,
               familiarityRating6,
-              audioFile: audioFile6,
+              audioFile: `/audioFolder6/${audioPathPage13}`,
             };
     
             // Update the forms data in the participant's document
@@ -1008,7 +1025,7 @@ function App() {
             formsData.song7ESF = {
               emotionSentence7,
               familiarityRating7,
-              audioFile: audioFile7,
+              audioFile: `/audioFolder7/${audioPathPage14}`,
             };
     
             // Update the forms data in the participant's document
@@ -1088,7 +1105,7 @@ function App() {
             formsData.song8ESF = {
               emotionSentence8,
               familiarityRating8,
-              audioFile: audioFile8,
+              audioFile: `/audioFolder8/${audioPathPage15}`,
             };
     
             // Update the forms data in the participant's document
@@ -1168,7 +1185,7 @@ function App() {
             formsData.song9ESF = {
               emotionSentence9,
               familiarityRating9,
-              audioFile: audioFile9,
+              audioFile: `/audioFolder9/${audioPathPage16}`,
             };
     
             // Update the forms data in the participant's document
@@ -1248,7 +1265,7 @@ function App() {
             formsData.song10ESF = {
               emotionSentence10,
               familiarityRating10,
-              audioFile: audioFile10,
+              audioFile: `/audioFolder10/${audioPathPage17}`,
             };
     
             // Update the forms data in the participant's document
@@ -2039,7 +2056,7 @@ const handleNextButtonClickP5 = () => {
   };
 
   const personalityDescriptions = {
-    A: "A - The Introspective Explorer!",
+    A: "A - The Introspective Explorer!: You are the introspective explorer, diving deep into the soul of music. You find solace in the quiet spaces between notes, embracing the emotional journey each melody takes you on. Your music discovery is a personal quest, seeking out hidden gems that resonate with your innermost thoughts. Possibility and positivity thrive in the unique stories told by each song, and your personality is one of quiet contemplation and depth.",
     B: "B - The Social Harmonizer!",
     C: "C - The Outdoor Melodist!",
     D: "D - The Groove Commander!",
@@ -2227,7 +2244,7 @@ const handleNextButtonClickP5 = () => {
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
-            <h5> Page 1 - EDIT-AUDIO-PATH-29  Study Introduction </h5>
+            <h5> Page 1 - EDIT-AUDIO-PATH-36  Study Introduction </h5>
             
             <h4> The purpose of this study is to understand how music in films makes us feel. By sharing your thoughts, you'll help us learn more about how emotions are created in film music! </h4>
             <br></br>
@@ -3569,10 +3586,10 @@ const handleNextButtonClickP5 = () => {
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
-              <AudioSelectorPage9 audioPath={audioPath} setAudioPath={setAudioPath} />
+              <AudioSelectorPage9 audioPathPage9={audioPathPage9} setAudioPathPage9={setAudioPathPage9} />
               
               <WavesurferVertex
-                  audioFile={audioPath}
+                  audioFile={audioPathPage9}
                   //audioFile={audioFile2}
                   loadRandomAudioFile={loadRandomAudioFile2}
                   containerId="audiowave2"
@@ -3687,12 +3704,12 @@ const handleNextButtonClickP5 = () => {
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
+              <AudioSelectorPage10 audioPathPage10={audioPathPage10} setAudioPathPage10={setAudioPathPage10} />
 
               <WavesurferVertex
-                  audioFile={audioPath}
+                  audioFile={audioPathPage10}
                   loadRandomAudioFile={loadRandomAudioFile3}
                   containerId="audiowave3"
-
                   point={dotPosition}
                   onPositionUpdate={handlePositionUpdate}
                   onDotPositionUpdate={(updatedPositions) => setDotPositions(updatedPositions)}
@@ -3801,8 +3818,10 @@ const handleNextButtonClickP5 = () => {
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
+              <AudioSelectorPage11 audioPathPage11={audioPathPage11} setAudioPathPage11={setAudioPathPage11} />
+
               <WavesurferVertex
-                  audioFile={getRandomAudioPath4}
+                  audioFile={audioPathPage11}
                   loadRandomAudioFile={loadRandomAudioFile4}
                   containerId="audiowave4"
 
@@ -3914,8 +3933,10 @@ const handleNextButtonClickP5 = () => {
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
+              <AudioSelectorPage12 audioPathPage12={audioPathPage12} setAudioPathPage12={setAudioPathPage12} />
+
               <WavesurferVertex
-                  audioFile={getRandomAudioPath5}
+                  audioFile={audioPathPage12}
                   loadRandomAudioFile={loadRandomAudioFile5}
                   containerId="audiowave5"
 
@@ -4027,8 +4048,9 @@ const handleNextButtonClickP5 = () => {
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
+              <AudioSelectorPage13 audioPathPage13={audioPathPage13} setAudioPathPage13={setAudioPathPage13} />
               <WavesurferVertex
-                  audioFile={getRandomAudioPath6}
+                  audioFile={audioPathPage13}
                   loadRandomAudioFile={loadRandomAudioFile6}
                   containerId="audiowave6"
 
@@ -4140,8 +4162,9 @@ const handleNextButtonClickP5 = () => {
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
+              <AudioSelectorPage14 audioPathPage14={audioPathPage14} setAudioPathPage14={setAudioPathPage14} />
               <WavesurferVertex
-                  audioFile={getRandomAudioPath7}
+                  audioFile={audioPathPage14}
                   loadRandomAudioFile={loadRandomAudioFile7}
                   containerId="audiowave7"
 
@@ -4253,8 +4276,9 @@ const handleNextButtonClickP5 = () => {
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
+              <AudioSelectorPage15 audioPathPage15={audioPathPage15} setAudioPathPage15={setAudioPathPage15} />
               <WavesurferVertex
-                  audioFile={getRandomAudioPath8}
+                  audioFile={audioPathPage15}
                   loadRandomAudioFile={loadRandomAudioFile8}
                   containerId="audiowave8"
 
@@ -4366,8 +4390,9 @@ const handleNextButtonClickP5 = () => {
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
+              <AudioSelectorPage16 audioPathPage16={audioPathPage16} setAudioPathPage16={setAudioPathPage16} />
               <WavesurferVertex
-                  audioFile={getRandomAudioPath9}
+                  audioFile={audioPathPage16}
                   loadRandomAudioFile={loadRandomAudioFile9}
                   containerId="audiowave9"
 
@@ -4479,8 +4504,9 @@ const handleNextButtonClickP5 = () => {
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
+              <AudioSelectorPage17 audioPathPage17={audioPathPage17} setAudioPathPage17={setAudioPathPage17} />
               <WavesurferVertex
-                  audioFile={getRandomAudioPath10}
+                  audioFile={audioPathPage17}
                   loadRandomAudioFile={loadRandomAudioFile10}
                   containerId="audiowave10"
 
@@ -4586,7 +4612,7 @@ const handleNextButtonClickP5 = () => {
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 18 - Music Personality Results: </h5>
-            <p> music personality results page... </p>
+            <p>  </p>
 
             {musicPersonality && (
               <div>
@@ -4595,6 +4621,8 @@ const handleNextButtonClickP5 = () => {
                   <p key={personality}>{personalityDescriptions[personality]}</p>
                 ))}
                 {/* Add short description based on the music personality */}
+
+                <img src="/film-score-emotion-survey/img/music-personality.jpg"style={{ width: '300px', height: 'auto', float: 'center', padding: '10px'}} />
               </div>
             )}
           </div>
