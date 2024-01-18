@@ -2057,11 +2057,11 @@ const handleNextButtonClickP5 = () => {
 
   const personalityDescriptions = {
     A: "A - The Introspective Explorer!: You are the introspective explorer, diving deep into the soul of music. You find solace in the quiet spaces between notes, embracing the emotional journey each melody takes you on. Your music discovery is a personal quest, seeking out hidden gems that resonate with your innermost thoughts. Possibility and positivity thrive in the unique stories told by each song, and your personality is one of quiet contemplation and depth.",
-    B: "B - The Social Harmonizer!",
-    C: "C - The Outdoor Melodist!",
-    D: "D - The Groove Commander!",
-    E: "E - The Sonic Innovator!",
-    F: "F - The Serenading Poet!"
+    B: "B - The Social Harmonizer!: As the social harmonizer, you see music as a universal language that brings people together. Your music listening is a shared experience, and you thrive in the energy of live performances and communal playlists. Your music discovery is driven by the desire to connect and share, and you radiate positivity by fostering harmony and unity through the power of music. Your personality is outgoing, friendly, and always seeking to create shared moments.",
+    C: "C - The Outdoor Melodist!: The outdoor melodist finds inspiration in the world around them. Your music accompanies you on nature's adventures, creating soundtracks to the beauty of the great outdoors. Music discovery is an organic process, often stumbled upon during your wanderings, and you see endless possibilities in the diverse sounds of the world. Your personality is free-spirited, appreciating the simple joys in life and sharing them with those around you.",
+    D: "D - The Groove Commander!: You are the groove commander, navigating the rhythmic landscape with confidence and style. Your music is all about the beat, and you love discovering new tracks that make you move. Possibility and positivity are found in the infectious energy of a killer rhythm, and your personality exudes charisma and a love for life's danceable moments.",
+    E: "E - The Sonic Innovator!: As the Sonic Innovator, you thrive on pushing the limits of musical exploration. Your diverse taste traverses various genres and eras, reveling in the excitement of uncovering sounds that defy conventions. You find boundless potential and positivity within the realm of experimental music, embodying an open-minded and forward-thinking personality that eagerly welcomes each new sonic adventure.",
+    F: "F - The Serenading Poet!: As the serenading poet, you effortlessly unravel profound layers of meaning and emotion in every song. You have an unmatched ability to discover new tracks that resonate deeply with your soul. Your personality is one of contemplation, empathy, and an innate connection to the emotional subtleties of life. Your ability to capture the intricate relationship between sound and sentiment in your music listening is a testament to your profound understanding of the human experience through the art of song. "
   };
 
 
@@ -2244,7 +2244,7 @@ const handleNextButtonClickP5 = () => {
           <p>  </p>
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
-            <h5> Page 1 - EDIT-AUDIO-PATH-36  Study Introduction </h5>
+            <h5> Page 1 - Study Introduction </h5>
             
             <h4> The purpose of this study is to understand how music in films makes us feel. By sharing your thoughts, you'll help us learn more about how emotions are created in film music! </h4>
             <br></br>
@@ -4622,7 +4622,7 @@ const handleNextButtonClickP5 = () => {
                 ))}
                 {/* Add short description based on the music personality */}
 
-                <img src="/film-score-emotion-survey/img/music-personality.jpg"style={{ width: '300px', height: 'auto', float: 'center', padding: '10px'}} />
+                <img src="/film-score-emotion-survey/img/music-personality.jpg"style={{ width: '800px', height: 'auto', float: 'center', padding: '10px'}} />
               </div>
             )}
           </div>
