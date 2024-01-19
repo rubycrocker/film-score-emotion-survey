@@ -4,16 +4,16 @@ const AudioSelectorPage12 = ({ audioPathPage12, setAudioPathPage12 }) => {
   useEffect(() => {
     if (!audioPathPage12) {
       // Define your audio files for Page 12 here
-      const audioFolderFilesPage12 = ["Kyle_Eastwood_-_Gran Torino_feat._Hugh_Coltman.crdownload_sample_1.mp3",
-      "Kyle_Eastwood_-_Gran Torino_feat._Hugh_Coltman.crdownload_sample_2.mp3",
+      const audioFolderFilesPage12 = ["Kyle_Eastwood_-_Gran_Torino_feat._Hugh_Coltman.crdownload_sample_1.mp3",
+      "Kyle_Eastwood_-_Gran_Torino_feat._Hugh_Coltman.crdownload_sample_2.mp3",
       "L'Ultima_Diligenza_di_Red_Rock_Ennio_Morricone_The_Hateful_Eight_sample_1.mp3",
       "L'Ultima_Diligenza_di_Red_Rock_Ennio_Morricone_The_Hateful_Eight_sample_2.mp3",
       "L'amitie_Jean-Michel_Blais_Matthias_&_Maxime_sample_1.mp3",
       "L'amitie_Jean-Michel_Blais_Matthias_&_Maxime_sample_2.mp3",
       "La_Jeune_Fille_en_Feu_Portrait_of_a_Lady_on_Fire_Para_One_Arthur_Simonini_sample_1.mp3",
       "La_Jeune_Fille_en_Feu_Portrait_of_a_Lady_on_Fire_Para_One_Arthur_Simonini_sample_2.mp3",
-      "La_Musique_du_Futur_-_Mon Coeur_Petite_Maman_Jean-Baptiste_de_Laubier_Para_One_Céline_Sciamma_sample_1.mp3",
-      "La_Musique_du_Futur_-_Mon Coeur_Petite_Maman_Jean-Baptiste_de_Laubier_Para_One_Céline_Sciamma_sample_2.mp3",
+      "La_Musique_du_Futur_-_Mon_Coeur_Petite_Maman_Jean-Baptiste_de_Laubier_Para_One_Celine_Sciamma_sample_1.mp3",
+      "La_Musique_du_Futur_-_Mon_Coeur_Petite_Maman_Jean-Baptiste_de_Laubier_Para_One_Celine_Sciamma_sample_2.mp3",
       "La_Puntura_Della_Morte_Ennio_Morricone__The_Hateful_Eight_sample_1.mp3",
       "La_Puntura_Della_Morte_Ennio_Morricone__The_Hateful_Eight_sample_2.mp3",
       "Lady_Bird__Jon_Brion_Lady_Bird_sample_1.mp3",
@@ -22,8 +22,8 @@ const AudioSelectorPage12 = ({ audioPathPage12, setAudioPathPage12 }) => {
       "Las-visitas_Alberto__Iglesias_Parallel_Mothers_sample_2.mp3",
       "Le_feu_Jean-Benoit_Dunckel_Summer_Of_85'_sample_1.mp3",
       "Le_feu_Jean-Benoit_Dunckel_Summer_Of_85'_sample_2.mp3",
-      "Leo_Birenberg_Bottoms_End Credits_sample_1.mp3",
-      "Leo_Birenberg_Bottoms_End Credits_sample_2.mp3",
+      "Leo_Birenberg_Bottoms_End_Credits_sample_1.mp3",
+      "Leo_Birenberg_Bottoms_End_Credits_sample_2.mp3",
       "Leonard_Bernstein_-_The_Dance_at_the_Gym_Mambo_West_Side_Story_Leonard_Berstein,_David_Newman,_Matt_Sullivan,_Jeanine_Tesori_sample_1.mp3",
       "Leonard_Bernstein_-_The_Dance_at_the_Gym_Mambo_West_Side_Story_Leonard_Berstein,_David_Newman,_Matt_Sullivan,_Jeanine_Tesori_sample_2.mp3",
       "Les_feuilles_mortes_Jean-Michel_Blais_Matthias_&_Maxime_sample_1.mp3",
@@ -62,8 +62,8 @@ const AudioSelectorPage12 = ({ audioPathPage12, setAudioPathPage12 }) => {
       "Married_Life_Michael_Giacchino_Up_sample_2.mp3",
       "Max_-_Richter_On_the_Nature_of_Daylight_Shutter_Island_sample_2.mp3",
       "Max_-_Richter_On_the_Nature_of_Daylight_Shutter_Island_sample_1.mp3",
-      "Mexican_Institute_of_Sound_-_Jálale_From_Coco_sample_1.mp3",
-      "Mexican_Institute_of_Sound_-_Jálale_From_Coco_sample_2.mp3"];
+      "Mexican_Institute_of_Sound_-_Jalale_From_Coco_sample_1.mp3",
+      "Mexican_Institute_of_Sound_-_Jalale_From_Coco_sample_2.mp3"];
 
       // Shuffle the array
       const shuffledFiles = [...audioFolderFilesPage12];
