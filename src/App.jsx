@@ -2245,7 +2245,7 @@ const handleNextButtonClickP5 = () => {
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 1 - Study Introduction </h5>
-            <h5> Please complete this study on a laptop or computer, NOT on a phone. Please use good quality headphones or speakers.</h5>
+            <h5> Please complete this study on a laptop or computer, not on a phone. Please use good quality headphones or speakers.</h5>
             
             <h4> The purpose of this study is to understand how music in films makes us feel. By sharing your thoughts, you'll help us learn more about how emotions are created in film music! </h4>
             <br></br>
