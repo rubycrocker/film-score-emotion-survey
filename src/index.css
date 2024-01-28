@@ -474,8 +474,7 @@ sub-paragraph sup {
   z-index: 10;
   border-radius: 10px;
   background-image: url('./img/en-pos.png'); /* Replace with the actual path to your image */
-  /*background-size: 400px 400px; /* Adjust to your needs */
-  background-size: cover;
+  background-size: 400px 400px; /* Adjust to your needs */
   background-position: center center; /* Center the background image horizontally and vertically */
   cursor: pointer !important;
   position: relative;
