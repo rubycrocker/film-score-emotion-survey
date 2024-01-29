@@ -2249,7 +2249,7 @@ const handleNextButtonClickP5 = () => {
           <br></br>
             <h1>Music, Mood, and Motion: A Survey on Emotion in Film Music</h1>
             <h5> Page 1 - Study Introduction </h5>
-            <h5> Please complete this study on a laptop or computer, not on a phone. Please use good quality headphones or speakers.</h5>
+            <h5> Please complete this study on a laptop or computer, NOT on a phone. Please use good quality headphones or speakers.</h5>
             
             {/* <button id="err-message-button" onClick={showErrorMessage}>Something doesn't look right</button> */}
 
