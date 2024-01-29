@@ -5,7 +5,93 @@ const AudioSelector = ({ audioPath, setAudioPath }) => {
   useEffect(() => {
     // If the audio path is not set, set it using the AudioComponent logic
     if (!audioPath) {
-      const audioFolderFiles1 = ["25_Years_Jonny_Greenwood_The_Power_of_the_Dog_sample_1.mp3",
+      const audioFolderFiles1 = ["25_years_jonny_greenwood_the_power_of_the_dog_sample_1.mp3",
+      "25_years_jonny_greenwood_the_power_of_the_dog_sample_2.mp3",
+      "528491_inception_hans_zimmer_sample_1.mp3",
+      "528491_inception_hans_zimmer_sample_2.mp3",
+      "7horse__meth_lab_zoso_sticker_the_wolf_of_wall_street_sample_1.mp3",
+      "7horse__meth_lab_zoso_sticker_the_wolf_of_wall_street_sample_2.mp3",
+      "a_story_about_letters_alfonso_g_aguilar_klaus_sample_1.mp3",
+      "a_story_about_letters_alfonso_g_aguilar_klaus_sample_2.mp3",
+      "across_the_ocean_thomas_newman_elemental_sample_1.mp3",
+      "across_the_ocean_thomas_newman_elemental_sample_2.mp3",
+      "airlock_steven_price_gravity_sample_1.mp3",
+      "airlock_steven_price_gravity_sample_2.mp3",
+      "alan_silvestri__infinity_war_from_avengers_sample_1.mp3",
+      "alan_silvestri__infinity_warfromavengers_sample_2.mp3",
+      "alberto_iglesias_claqueta_final_pain_and_glory_sample_1.mp3",
+      "alberto_iglesias_claqueta_final_pain_and_glory_sample_2.mp3",
+      "allquietonthewesternfront_mainthemesongvolkerbertelmann_sample_1.mp3",
+      "allquietonthewesternfront_mainthemesongvolkerbertelmann_sample_2.mp3",
+      "allquietonthewesternfront_remainsvolkerbertelmann_sample_1.mp3",
+      "allquietonthewesternfront_remainsvolkerbertelmann_sample_2.mp3",
+      "almost_human_antonio_sanchez_birdman_sample_1.mp3",
+      "almost_human_antonio_sanchez_birdman_sample_2.mp3",
+      "angela_tries_to_leave_cliff_martinez__kimi_sample_1.mp3",
+      "angela_tries_to_leave_cliff_martinez__kimi_sample_2.mp3",
+      "anna_karenin_overture_dario_marianelli_sample_1.mp3",
+      "anna_karenin_overture_dario_marianelli_sample_2.mp3",
+      "anna_karenina_toolate_dario_marianelli_sample_1.mp3",
+      "anna_karenina_toolate_dario_marianelli_sample_2.mp3",
+      "another_round__druk__schubert_fantasie_in_f_moll_d940_fantasy_in_f_minor_sample_1.mp3",
+      "another_round__druk__schubert_fantasie_in_f_moll_d940_fantasy_in_f_minor_sample_2.mp3",
+      "antonio_sanchez_doors_and_distance_birdman_sample_2.mp3",
+      "arrival_heptapod_b_johannjohannsson_sample_1.mp3",
+      "arrival_heptapod_b_johannjohannsson_sample_2.mp3",
+      "arrival_johann_johannsson_arrival_sample_1.mp3",
+      "arrival_johann_johannsson_arrival_sample_2.mp3",
+      "arrival_jonny_greenwood_spencer_sample_1.mp3",
+      "arrival_jonny_greenwood_spencer_sample_2.mp3",
+      "ava_ex_machina_ben_salisbury_geoff_barrow_sample_1.mp3",
+      "ava_ex_machina_ben_salisbury_geoff_barrow_sample_2.mp3",
+      "bali_girls__michael_stearns_bonnie_jo_hunt_ron_sunsinger_samsara_sample_1.mp3",
+      "bali_girls__michael_stearns_bonnie_jo_hunt_ron_sunsinger_samsara_sample_2.mp3",
+      "beach_puke__jim_williams_titane_sample_1.mp3",
+      "beach_puke__jim_williams_titane_sample_2.mp3",
+      "beyond_the_black_rainbow_sinoia_caves__forever_dilating_eye_sample_1.mp3",
+      "beyond_the_black_rainbow_sinoia_caves__forever_dilating_eye_sample_2.mp3",
+      "beyond_the_black_rainbow_sinoia_caves_arboria_tapes_sample_1.mp3",
+      "beyond_the_black_rainbow_sinoia_caves_arboria_tapes_sample_2.mp3",
+      "blackfish_jeff_beal_blackfish_sample_1.mp3",
+      "blackfish_jeff_beal_blackfish_sample_2.mp3",
+      "blackway__black_caviar__whats_up_danger_spiderman_into_the_spiderverse_sample_1.mp3",
+      "blackway__black_caviar__whats_up_danger_spiderman_into_the_spiderverse_sample_2.mp3",
+      "blade_runner_hans_zimmer_benjamin_wallfisch_blade_runner_2049_sample_1.mp3",
+      "blade_runner_hans_zimmer_benjamin_wallfisch_blade_runner_2049_sample_2.mp3",
+      "bliss_main_theme_valentin_hadjadj_close_sample_1.mp3",
+      "bliss_main_theme_valentin_hadjadj_close_sample_2.mp3",
+      "book_reviews_and_big_dates_ludwig_goransson_everything_everything_sample_1.mp3",
+      "book_reviews_and_big_dates_ludwig_goransson_everything_everything_sample_2.mp3",
+      "bottom_of_the_list__the_help_thomas_newman_sample_1.mp3",
+      "bottom_of_the_list__the_help_thomas_newman_sample_2.mp3"]; // Add all your audio file names
+
+      // Shuffle the array
+      const shuffledFiles = [...audioFolderFiles1];
+      for (let i = shuffledFiles.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledFiles[i], shuffledFiles[j]] = [shuffledFiles[j], shuffledFiles[i]];
+      }
+
+      // Select the first file from the shuffled array
+      const selectedFile = shuffledFiles[0];
+
+      // Generate the full path
+      const basePath = "/film-score-emotion-survey/audioFolder1/";
+      const fullPath = basePath + selectedFile;
+
+      // Set the full path in the state
+      setAudioPath(fullPath);
+    }
+  }, [audioPath, setAudioPath]);
+
+  // You can render any UI components related to audio selection here if needed
+
+  return null; // or return a placeholder element if needed
+};
+
+export default AudioSelector;
+
+/* "25_Years_Jonny_Greenwood_The_Power_of_the_Dog_sample_1.mp3",
       "25_Years_Jonny_Greenwood_The_Power_of_the_Dog_sample_2.mp3",
       "528491_Inception_Hans_Zimmer_sample_1.mp3",
       "528491_Inception_Hans_Zimmer_sample_2.mp3",
@@ -64,30 +150,4 @@ const AudioSelector = ({ audioPath, setAudioPath }) => {
       "Book_Reviews_and_Big_Dates_Ludwig_Goransson_Everything_Everything_sample_1.mp3",
       "Book_Reviews_and_Big_Dates_Ludwig_Goransson_Everything_Everything_sample_2.mp3",
       "Bottom_Of_The_List__The_Help_Thomas_Newman_sample_1.mp3",
-      "Bottom_Of_The_List__The_Help_Thomas_Newman_sample_2.mp3"]; // Add all your audio file names
-
-      // Shuffle the array
-      const shuffledFiles = [...audioFolderFiles1];
-      for (let i = shuffledFiles.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffledFiles[i], shuffledFiles[j]] = [shuffledFiles[j], shuffledFiles[i]];
-      }
-
-      // Select the first file from the shuffled array
-      const selectedFile = shuffledFiles[0];
-
-      // Generate the full path
-      const basePath = "/film-score-emotion-survey/audioFolder1/";
-      const fullPath = basePath + selectedFile;
-
-      // Set the full path in the state
-      setAudioPath(fullPath);
-    }
-  }, [audioPath, setAudioPath]);
-
-  // You can render any UI components related to audio selection here if needed
-
-  return null; // or return a placeholder element if needed
-};
-
-export default AudioSelector;
+      "Bottom_Of_The_List__The_Help_Thomas_Newman_sample_2.mp3" */

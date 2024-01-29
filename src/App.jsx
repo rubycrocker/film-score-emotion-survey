@@ -3462,6 +3462,7 @@ const handleNextButtonClickP5 = () => {
               <h2>1. Audio Waveform - Region and Markers </h2>
               <p1>Please add markers to the waveform as soon as you feel a change in emotion/mood. </p1> 
               <p1> Add as many markers as you'd like. </p1>
+
               <AudioSelector audioPath={audioPath} setAudioPath={setAudioPath} />
 
               <WavesurferVertex
@@ -3481,7 +3482,9 @@ const handleNextButtonClickP5 = () => {
 
           <div></div> 
           <div>
+            
           <form>
+          <br></br>
             {/* button below saves regions and dots inside participant info in firebase: */}
             <button id='save-region-dot-btn' onClick={handleSaveRegionsToFirestore}> Save regions and dots </button> 
           </form>
@@ -3603,6 +3606,7 @@ const handleNextButtonClickP5 = () => {
               </div> 
           <div>
           <form>
+          <br></br>
             {/* button below saves regions and dots inside participant info in firebase: */}
             <button id='save-region-dot-btn2' onClick={handleSaveRegionsToFirestore2}> Save regions and dots </button> 
           </form>
@@ -3720,6 +3724,7 @@ const handleNextButtonClickP5 = () => {
               </div> 
           <div>
           <form>
+          <br></br>
             {/* button below saves regions and dots inside participant info in firebase: */}
             <button id='save-region-dot-btn3' onClick={handleSaveRegionsToFirestore3}> Save regions and dots </button> 
           </form>
@@ -3835,6 +3840,7 @@ const handleNextButtonClickP5 = () => {
               </div> 
           <div>
           <form>
+          <br></br>
             {/* button below saves regions and dots inside participant info in firebase: */}
             <button id='save-region-dot-btn4' onClick={handleSaveRegionsToFirestore4}> Save regions and dots </button> 
           </form>
@@ -3950,6 +3956,7 @@ const handleNextButtonClickP5 = () => {
               </div> 
           <div>
           <form>
+          <br></br>
             {/* button below saves regions and dots inside participant info in firebase: */}
             <button id='save-region-dot-btn5' onClick={handleSaveRegionsToFirestore5}> Save regions and dots </button> 
           </form>
@@ -4064,6 +4071,7 @@ const handleNextButtonClickP5 = () => {
               </div> 
           <div>
           <form>
+          <br></br>
             {/* button below saves regions and dots inside participant info in firebase: */}
             <button id='save-region-dot-btn6' onClick={handleSaveRegionsToFirestore6}> Save regions and dots </button> 
           </form>
@@ -4178,6 +4186,7 @@ const handleNextButtonClickP5 = () => {
               </div> 
           <div>
           <form>
+          <br></br>
             {/* button below saves regions and dots inside participant info in firebase: */}
             <button id='save-region-dot-btn7' onClick={handleSaveRegionsToFirestore7}> Save regions and dots </button> 
           </form>
@@ -4292,6 +4301,7 @@ const handleNextButtonClickP5 = () => {
               </div> 
           <div>
           <form>
+          <br></br>
             {/* button below saves regions and dots inside participant info in firebase: */}
             <button id='save-region-dot-btn8' onClick={handleSaveRegionsToFirestore8}> Save regions and dots </button> 
           </form>
@@ -4406,6 +4416,7 @@ const handleNextButtonClickP5 = () => {
               </div> 
           <div>
           <form>
+          <br></br>
             {/* button below saves regions and dots inside participant info in firebase: */}
             <button id='save-region-dot-btn9' onClick={handleSaveRegionsToFirestore9}> Save regions and dots </button> 
           </form>
@@ -4520,6 +4531,7 @@ const handleNextButtonClickP5 = () => {
               </div> 
           <div>
           <form>
+          <br></br>
             {/* button below saves regions and dots inside participant info in firebase: */}
             <button id='save-region-dot-btn10' onClick={handleSaveRegionsToFirestore10}> Save regions and dots </button> 
           </form>

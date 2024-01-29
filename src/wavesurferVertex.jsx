@@ -242,9 +242,7 @@ export const WavesurferVertex = ({ audioFile, loadRandomAudioFile, initialDots, 
       <h2> 2. Energy and Positivity - Emotion Graph </h2>
       <p1> Please click and drag the dots that match the corresponding markers above to represent the energy/positivity you feel: </p1>
       <p></p>
-      <sub-paragraph>
-        The dots might be a bit slow moving! 
-      </sub-paragraph>
+      <p1> - The dots might be a bit slow moving! - </p1>
 
       <div className="page-container" style={{ backgroundColor: '#d4eaf1'}}>
         <div className="centered-container">
@@ -276,6 +274,7 @@ export const WavesurferVertex = ({ audioFile, loadRandomAudioFile, initialDots, 
         </div>
         </div>
          {/* <button id="saveMarkerDotButton" className="save-dot-marker" onClick={handleSavePositions}>Save Dot Positions</button>  */}
+         <br></br>
      <button id="saveMarkerDotButton" className="save-dot-marker" onClick={() => { handleSaveAndUpdate(); alert('Updated!'); }}>Update</button>
     </div>
   );
