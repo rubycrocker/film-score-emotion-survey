@@ -4,7 +4,92 @@ const AudioSelectorPage12 = ({ audioPathPage12, setAudioPathPage12 }) => {
   useEffect(() => {
     if (!audioPathPage12) {
       // Define your audio files for Page 12 here
-      const audioFolderFilesPage12 = ["Kyle_Eastwood_-_Gran_Torino_feat_Hugh_Coltman_crdownload_sample_1.mp3",
+      const audioFolderFilesPage12 = ["kyle_eastwood__grantorino_feat_hugh_coltmancrdownload_sample_1.mp3",
+      "kyle_eastwood__grantorino_feat_hugh_coltmancrdownload_sample_2.mp3",
+      "la_jeune_fille_en_feu_portrait_of_a_lady_on_fire_para_one_arthur_simonini_sample_1.mp3",
+      "la_jeune_fille_en_feu_portrait_of_a_lady_on_fire_para_one_arthur_simonini_sample_2.mp3",
+      "la_musique_du_futur__moncoeur_petite_maman_jeanbaptiste_de_laubier_para_one_celine_sciamma_sample_1.mp3",
+      "la_musique_du_futur__moncoeur_petite_maman_jeanbaptiste_de_laubier_para_one_celine_sciamma_sample_2.mp3",
+      "la_puntura_della_morte_ennio_morricone__the_hateful_eight_sample_1.mp3",
+      "la_puntura_della_morte_ennio_morricone__the_hateful_eight_sample_2.mp3",
+      "lady_bird__jon_brion_lady_bird_sample_1.mp3",
+      "lady_bird__jon_brion_lady_bird_sample_2.mp3",
+      "lamitie_jeanmichel_blais_matthias__maxime_sample_1.mp3",
+      "lamitie_jeanmichel_blais_matthias__maxime_sample_2.mp3",
+      "lasvisitas_alberto__iglesias_parallel_mothers_sample_1.mp3",
+      "lasvisitas_alberto__iglesias_parallel_mothers_sample_2.mp3",
+      "le_feu_jeanbenoit_dunckel_summer_of_85_sample_1.mp3",
+      "le_feu_jeanbenoit_dunckel_summer_of_85_sample_2.mp3",
+      "leo_birenberg_bottoms_endcredits_sample_1.mp3",
+      "leo_birenberg_bottoms_endcredits_sample_2.mp3",
+      "leonard_bernstein__the_dance_at_the_gym_mambo_west_side_story_leonard_berstein_david_newman_matt_sullivan_jeanine_tesori_sample_1.mp3",
+      "leonard_bernstein__the_dance_at_the_gym_mambo_west_side_story_leonard_berstein_david_newman_matt_sullivan_jeanine_tesori_sample_2.mp3",
+      "les_feuilles_mortes_jeanmichel_blais_matthias__maxime_sample_1.mp3",
+      "les_feuilles_mortes_jeanmichel_blais_matthias__maxime_sample_2.mp3",
+      "licorice_pizza__jonny_greenwood_licorice_pizza_sample_1.mp3",
+      "licorice_pizza__jonny_greenwood_licorice_pizza_sample_2.mp3",
+      "limpeza_pesada_mateus_alves_tomaz_alves_souza_bacurau_sample_1.mp3",
+      "limpeza_pesada_mateus_alves_tomaz_alves_souza_bacurau_sample_2.mp3",
+      "little_women__alexandre_desplat__laurie_and_jo_on_the_hill_sample_1.mp3",
+      "little_women__alexandre_desplat__laurie_and_jo_on_the_hill_sample_2.mp3",
+      "little_women__robert_schumann__kinderszenen_op15_i_von_fremden_landern_und_menschen_sample_1.mp3",
+      "little_women__robert_schumann__kinderszenen_op15_i_von_fremden_landern_und_menschen_sample_2.mp3",
+      "loneliness_3_night_talking_arcade_fire_owen_pallett_her_sample_1.mp3",
+      "loneliness_3_night_talking_arcade_fire_owen_pallett_her_sample_2.mp3",
+      "lost_but_won_hans_zimmer_rush_sample_1.mp3",
+      "lost_but_won_hans_zimmer_rush_sample_2.mp3",
+      "love_letters_dario_marianelli_atonement_sample_1.mp3",
+      "love_letters_dario_marianelli_atonement_sample_2.mp3",
+      "love_scooter_thomas_newman_elemental_sample_1.mp3",
+      "love_scooter_thomas_newman_elemental_sample_2.mp3",
+      "love_theme_from_the_midwife_pessi_levanto_sample_1.mp3",
+      "love_theme_from_the_midwife_pessi_levanto_sample_2.mp3",
+      "ludovico_einaudi_cold_wind_var2_day_4_the_father_sample_1.mp3",
+      "ludovico_einaudi_cold_wind_var2_day_4_the_father_sample_2.mp3",
+      "ludovico_einaudi_low_mist_var2_day_1__the_father_sample_1.mp3",
+      "ludovico_einaudi_low_mist_var2_day_1__the_father_sample_2.mp3",
+      "ludwig_goransson__yucatan__black_panther_wakanda_forever_sample_1.mp3",
+      "ludwig_goransson__yucatan__black_panther_wakanda_forever_sample_2.mp3",
+      "ludwig_goransson_tchalla_black_panther_wakanda_forever_sample_1.mp3",
+      "ludwig_goransson_tchalla_black_panther_wakanda_forever_sample_2.mp3",
+      "lultima_diligenza_di_red_rock_ennio_morricone_the_hateful_eight_sample_1.mp3",
+      "lultima_diligenza_di_red_rock_ennio_morricone_the_hateful_eight_sample_2.mp3",
+      "main_theme_terence_blanchard_blackkklansman_sample_1.mp3",
+      "main_theme_terence_blanchard_blackkklansman_sample_2.mp3",
+      "marco_beltrami_bucksanders__le_mans_66_ford_v_ferrari_sample_1.mp3",
+      "marco_beltrami_bucksanders__le_mans_66_ford_v_ferrari_sample_2.mp3",
+      "married_life_michael_giacchino_up_sample_1.mp3",
+      "married_life_michael_giacchino_up_sample_2.mp3",
+      "max__richter_on_the_nature_of_daylight_shutter_island_sample_1.mp3",
+      "max__richter_on_the_nature_of_daylight_shutter_island_sample_2.mp3",
+      "mexican_institute_of_sound__jalale_fromcoco_sample_1.mp3",
+      "mexican_institute_of_sound__jalale_fromcoco_sample_2.mp3"];
+
+      // Shuffle the array
+      const shuffledFiles = [...audioFolderFilesPage12];
+      for (let i = shuffledFiles.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledFiles[i], shuffledFiles[j]] = [shuffledFiles[j], shuffledFiles[i]];
+      }
+
+      // Select the first file from the shuffled array
+      const selectedFile = shuffledFiles[0];
+
+      // Generate the full path
+      const basePath = "/film-score-emotion-survey/audioFolder5/";
+      const fullPath = basePath + selectedFile;
+
+      // Set the full path in the state
+      setAudioPathPage12(fullPath);
+    }
+  }, [audioPathPage12, setAudioPathPage12]);
+
+  return null; // or return a placeholder element if needed
+};
+
+export default AudioSelectorPage12;
+
+/* "Kyle_Eastwood_-_Gran_Torino_feat_Hugh_Coltman_crdownload_sample_1.mp3",
       "Kyle_Eastwood_-_Gran_Torino_feat_Hugh_Coltman_crdownload_sample_2.mp3",
       "L_Ultima_Diligenza_di_Red_Rock_Ennio_Morricone_The_Hateful_Eight_sample_1.mp3",
       "L_Ultima_Diligenza_di_Red_Rock_Ennio_Morricone_The_Hateful_Eight_sample_2.mp3",
@@ -63,31 +148,7 @@ const AudioSelectorPage12 = ({ audioPathPage12, setAudioPathPage12 }) => {
       "Max_-_Richter_On_the_Nature_of_Daylight_Shutter_Island_sample_2.mp3",
       "Max_-_Richter_On_the_Nature_of_Daylight_Shutter_Island_sample_1.mp3",
       "Mexican_Institute_of_Sound_-_Jalale_From_Coco_sample_1.mp3",
-      "Mexican_Institute_of_Sound_-_Jalale_From_Coco_sample_2.mp3"];
-
-      // Shuffle the array
-      const shuffledFiles = [...audioFolderFilesPage12];
-      for (let i = shuffledFiles.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffledFiles[i], shuffledFiles[j]] = [shuffledFiles[j], shuffledFiles[i]];
-      }
-
-      // Select the first file from the shuffled array
-      const selectedFile = shuffledFiles[0];
-
-      // Generate the full path
-      const basePath = "/film-score-emotion-survey/audioFolder5/";
-      const fullPath = basePath + selectedFile;
-
-      // Set the full path in the state
-      setAudioPathPage12(fullPath);
-    }
-  }, [audioPathPage12, setAudioPathPage12]);
-
-  return null; // or return a placeholder element if needed
-};
-
-export default AudioSelectorPage12;
+      "Mexican_Institute_of_Sound_-_Jalale_From_Coco_sample_2.mp3" */
 
 /* export function getRandomAudioPath5() {
     const audioFiles = ["Kyle_Eastwood_-_Gran Torino_feat._Hugh_Coltman.crdownload_sample_1.mp3",

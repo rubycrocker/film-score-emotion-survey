@@ -2211,6 +2211,10 @@ const handleNextButtonClickP5 = () => {
     }
   };
 
+  const showErrorMessage = () => {
+    alert("Please contact me on WhatsApp if something doesn't look right: 07847408346. If it's an issue with images and text positions try zooming in and out on your browser - it might help!");
+  };
+
   const [checkedItems, setCheckedItems] = useState({}); // State to track checked items
   
   const handleCheckboxChange = (event) => {
@@ -2247,6 +2251,8 @@ const handleNextButtonClickP5 = () => {
             <h5> Page 1 - Study Introduction </h5>
             <h5> Please complete this study on a laptop or computer, not on a phone. Please use good quality headphones or speakers.</h5>
             
+            {/* <button id="err-message-button" onClick={showErrorMessage}>Something doesn't look right</button> */}
+
             <h4> The purpose of this study is to understand how music in films makes us feel. By sharing your thoughts, you'll help us learn more about how emotions are created in film music! </h4>
             <br></br>
             <h4> This study will consist of 2 main surveys. </h4>
@@ -3561,6 +3567,7 @@ const handleNextButtonClickP5 = () => {
                 className="submit-audio1-data-btn"
                 onClick={handleSubmitSentenceFamiliar}> Submit Responses </button>
             </div>
+            {/* <button id="err-message-button" onClick={showErrorMessage}>Something doesn't look right</button> */}
             
           </div>
           <div className="navBox">

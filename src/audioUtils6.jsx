@@ -4,7 +4,93 @@ const AudioSelectorPage13 = ({ audioPathPage13, setAudioPathPage13 }) => {
   useEffect(() => {
     if (!audioPathPage13) {
       // Define your audio files for Page 13 here
-      const audioFolderFilesPage13 = ["Mia_&_Sebastian’s_Theme_La_La_Land_Justin_Hurwitz_sample_1.mp3",
+      const audioFolderFilesPage13 = ["mia__sebastians_theme_la_la_land_justin_hurwitz_sample_1.mp3",
+      "mia__sebastians_theme_la_la_land_justin_hurwitz_sample_2.mp3",
+      "mica_levi__lipstick_to_void__under_the_skin_sample_1.mp3",
+      "mica_levi__lipstick_to_void__under_the_skin_sample_2.mp3",
+      "mica_levi__love__under_the_skin_sample_1.mp3",
+      "mica_levi__love__under_the_skin_sample_2.mp3",
+      "mildred_goes_to_war__carter_burwell_three_billboards_outside_ebbing_missouri_sample_1.mp3",
+      "mildred_goes_to_war__carter_burwell_three_billboards_outside_ebbing_missouri_sample_2.mp3",
+      "milk__honey_1_arcade_fire_owen_pallett_her_sample_1.mp3",
+      "milk__honey_1_arcade_fire_owen_pallett_her_sample_2.mp3",
+      "montparnasse_julie_roue_jeune_femme_sample_1.mp3",
+      "montparnasse_julie_roue_jeune_femme_sample_2.mp3",
+      "morality_in_darkness_jamesnewtonhoward_a_hidden_life_sample_1.mp3",
+      "morality_in_darkness_jamesnewtonhoward_a_hidden_life_sample_2.mp3",
+      "mother_cornel_wilczek_talk_to_me_sample_1.mp3",
+      "mother_cornel_wilczek_talk_to_me_sample_2.mp3",
+      "mr_moustafa_the_grand_budapest_hotel_alexandre_desplat_sample_1.mp3",
+      "mr_moustafa_the_grand_budapest_hotel_alexandre_desplat_sample_2.mp3",
+      "nathan_johnson__theme_from_glass_onion_glass_onion_sample_1.mp3",
+      "nathan_johnson__theme_from_glass_onion_glass_onion_sample_2.mp3",
+      "neil_diamond__brother_loves_travelling_salvation_show_once_upon_a_time_in_hollywood_sample_1.mp3",
+      "neil_diamond__brother_loves_travelling_salvation_show_once_upon_a_time_in_hollywood_sample_2.mp3",
+      "nicholas_britell__the_middle_of_the_world__moonlight_sample_1.mp3",
+      "nicholas_britell__the_middle_of_the_world__moonlight_sample_2.mp3",
+      "nighthawk_mateus_alves_tomaz_alves_souza_bacurau_sample_1.mp3",
+      "nighthawk_mateus_alves_tomaz_alves_souza_bacurau_sample_2.mp3",
+      "nina_simone__i_put_a_spell_on_you__ford_v_ferrari_sample_1.mp3",
+      "nina_simone__i_put_a_spell_on_you__ford_v_ferrari_sample_2.mp3",
+      "nirvana__something_in_the_way_the_batman_sample_1.mp3",
+      "nirvana__something_in_the_way_the_batman_sample_2.mp3",
+      "one_without_aftersun__oliver_coates_sample_1.mp3",
+      "one_without_aftersun__oliver_coates_sample_2.mp3",
+      "opening__gustavo_santaolalla_brokeback_mountain_sample_1.mp3",
+      "opening__gustavo_santaolalla_brokeback_mountain_sample_2.mp3",
+      "opening_theme_from_a_thousand_and_one__gary_gunn_a_thousand_and_one_sample_1.mp3",
+      "opening_theme_from_a_thousand_and_one__gary_gunn_a_thousand_and_one_sample_2.mp3",
+      "oppenheimer_can_you_hear_the_music__ludwig_goransson_sample_1.mp3",
+      "oppenheimer_can_you_hear_the_music__ludwig_goransson_sample_2.mp3",
+      "oppenheimer_fission_ludwig_goransson_sample_1.mp3",
+      "oppenheimer_fission_ludwig_goransson_sample_2.mp3",
+      "paddy__tommy__mark_ishamwarrior_sample_1.mp3",
+      "paddy__tommy__mark_ishamwarrior_sample_2.mp3",
+      "parallel_mothers_sesion_de_fotos__alberto_iglesias_madres_paralelas_sample_1.mp3",
+      "parallel_mothers_sesion_de_fotos__alberto_iglesias_madres_paralelas_sample_2.mp3",
+      "pas_de_deux_michael_abels_us_sample_1.mp3",
+      "pas_de_deux_michael_abels_us_sample_2.mp3",
+      "pawel_mykietyn__thebeginning_eo_sample_1.mp3",
+      "pawel_mykietyn__thebeginning_eo_sample_2.mp3",
+      "pawel_mykietynlove_story_eo_sample_1.mp3",
+      "pawel_mykietynlove_story_eo_sample_2.mp3",
+      "phantom_thread_i_jonny_greenwood_phantom_thread_sample_1.mp3",
+      "phantom_thread_i_jonny_greenwood_phantom_thread_sample_2.mp3",
+      "pharmacy_heist__michaelandrews_nosajthing_the_king_of_staten_island_sample_1.mp3",
+      "pharmacy_heist__michaelandrews_nosajthing_the_king_of_staten_island_sample_2.mp3",
+      "pinocchios_choice_alexandre_desplat_guillermo_del_toros_pinnochio_sample_1.mp3",
+      "pinocchios_choice_alexandre_desplat_guillermo_del_toros_pinnochio_sample_2.mp3",
+      "polegnala_e_todora__the_ensemble_of_the_bulgarian_republicthe_banshees_of_inisherin_sample_1.mp3",
+      "polegnala_e_todora__the_ensemble_of_the_bulgarian_republicthe_banshees_of_inisherin_sample_2.mp3",
+      "prayer_hans_zimmer_the_creator_sample_1.mp3",
+      "prayer_hans_zimmer_the_creator_sample_2.mp3"];
+
+      // Shuffle the array
+      const shuffledFiles = [...audioFolderFilesPage13];
+      for (let i = shuffledFiles.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledFiles[i], shuffledFiles[j]] = [shuffledFiles[j], shuffledFiles[i]];
+      }
+
+      // Select the first file from the shuffled array
+      const selectedFile = shuffledFiles[0];
+
+      // Generate the full path
+      const basePath = "/film-score-emotion-survey/audioFolder6/";
+      const fullPath = basePath + selectedFile;
+
+      // Set the full path in the state
+      setAudioPathPage13(fullPath);
+    }
+  }, [audioPathPage13, setAudioPathPage13]);
+
+  return null; // or return a placeholder element if needed
+};
+
+export default AudioSelectorPage13;
+
+
+/* "Mia_&_Sebastian’s_Theme_La_La_Land_Justin_Hurwitz_sample_1.mp3",
       "Mia_&_Sebastian’s_Theme_La_La_Land_Justin_Hurwitz_sample_2.mp3",
       "Mica_Levi_-_Lipstick_to_Void__Under_the_Skin_sample_1.mp3",
       "Mica_Levi_-_Lipstick_to_Void__Under_the_Skin_sample_2.mp3",
@@ -63,31 +149,9 @@ const AudioSelectorPage13 = ({ audioPathPage13, setAudioPathPage13 }) => {
       "Polegnala_E_Todora__The_Ensemble_of_the_Bulgarian_Republic-The_Banshees_Of_Inisherin_sample_1.mp3",
       "Polegnala_E_Todora__The_Ensemble_of_the_Bulgarian_Republic-The_Banshees_Of_Inisherin_sample_2.mp3",
       "Prayer_Hans_Zimmer_The_Creator_sample_1.mp3",
-      "Prayer_Hans_Zimmer_The_Creator_sample_2.mp3"];
+      "Prayer_Hans_Zimmer_The_Creator_sample_2.mp3"*/
 
-      // Shuffle the array
-      const shuffledFiles = [...audioFolderFilesPage13];
-      for (let i = shuffledFiles.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffledFiles[i], shuffledFiles[j]] = [shuffledFiles[j], shuffledFiles[i]];
-      }
 
-      // Select the first file from the shuffled array
-      const selectedFile = shuffledFiles[0];
-
-      // Generate the full path
-      const basePath = "/film-score-emotion-survey/audioFolder6/";
-      const fullPath = basePath + selectedFile;
-
-      // Set the full path in the state
-      setAudioPathPage13(fullPath);
-    }
-  }, [audioPathPage13, setAudioPathPage13]);
-
-  return null; // or return a placeholder element if needed
-};
-
-export default AudioSelectorPage13;
 /* 
 export function getRandomAudioPath6() {
     const audioFiles = ["Mia_&_Sebastian’s_Theme_La_La_Land_Justin_Hurwitz_sample_1.mp3",

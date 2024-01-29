@@ -343,6 +343,19 @@ form {
   text-align: center;
 }
 
+#err-message-button {
+  background-color: rgb(0, 100, 116); /* Green background color */
+  color: white; /* White text color */
+  padding: 10px 1px; /* Padding for the button */
+  border: none; /* No border */
+  width: 200px;
+  /*border-radius: 4px;  Rounded corners */
+  cursor: pointer; /* Cursor on hover */
+  font-family: 'Helvetica';
+  font-weight: 20;
+  font-style: normal;
+  font-size: 16px;
+}
 
 #confirm-consent-button,
 #submit-demographics-button,

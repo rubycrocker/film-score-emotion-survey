@@ -4,7 +4,93 @@ const AudioSelectorPage17 = ({ audioPathPage17, setAudioPathPage17 }) => {
   useEffect(() => {
     if (!audioPathPage17) {
       // Define your audio files for Page 17 here
-      const audioFolderFilesPage17 = ["WTF_Is_That_Michael_Abels_Nope_sample_1.mp3",
+      const audioFolderFilesPage17 = ["aaronburrsir_hamilton_sample_1.mp3",
+      "aaronburrsir_hamilton_sample_2.mp3",
+      "alexanderhamilton_hamilton_sample_1.mp3",
+      "alexanderhamilton_hamilton_sample_2.mp3",
+      "audiomachinethebigsmoke1917_sample_1.mp3",
+      "audiomachinethebigsmoke1917_sample_2.mp3",
+      "capharnaum_khaled_mouzanarfromcapharnaumoriginalmotionpicturesoundtrack_sample_1.mp3",
+      "capharnaum_khaled_mouzanarfromcapharnaumoriginalmotionpicturesoundtrack_sample_2.mp3",
+      "greenbooksoundtrackmakethefirstmovekrisbowers_sample_1.mp3",
+      "greenbooksoundtrackmakethefirstmovekrisbowers_sample_2.mp3",
+      "greenbooksoundtracksolongloversislandthebluejays_sample_1.mp3",
+      "greenbooksoundtracksolongloversislandthebluejays_sample_2.mp3",
+      "josslovickiamapoorwayfaringstrangerfrom1917acappella1917ost_sample_1.mp3",
+      "josslovickiamapoorwayfaringstrangerfrom1917acappella1917ost_sample_2.mp3",
+      "khaledmouzanarzeyn_capernaum_sample_1.mp3",
+      "khaledmouzanarzeyn_capernaum_sample_2.mp3",
+      "sparkleyournameradwimps_sample_1.mp3",
+      "sparkleyournameradwimps_sample_2.mp3",
+      "themeofmsokudera_radwimps_your_name_sample_1.mp3",
+      "themeofmsokudera_radwimps_your_name_sample_2.mp3",
+      "toystory3lefreak_chic_sample_1.mp3",
+      "toystory3lefreak_chic_sample_2.mp3",
+      "walking_home_andre_matthias_the_gravediggers_wife_sample_1.mp3",
+      "walking_home_andre_matthias_the_gravediggers_wife_sample_2.mp3",
+      "walle_thomas_newman_sample_1.mp3",
+      "walle_thomas_newman_sample_2.mp3",
+      "walter_time_theodore_shapiro_jose_gonzalez_mark_graham_the_secret_life_of_walter_mitty_sample_1.mp3",
+      "walter_time_theodore_shapiro_jose_gonzalez_mark_graham_the_secret_life_of_walter_mitty_sample_2.mp3",
+      "west_jonny_greenwood_the_power_of_the_dog_sample_1.mp3",
+      "west_jonny_greenwood_the_power_of_the_dog_sample_2.mp3",
+      "west_side_waltz__dick_walter_spotlight_sample_1.mp3",
+      "west_side_waltz__dick_walter_spotlight_sample_2.mp3",
+      "what_a_life__scarlet_pleasure__another_round_sample_1.mp3",
+      "what_a_life__scarlet_pleasure__another_round_sample_2.mp3",
+      "what_i_love_about_nicole_randy_newman_marriage_story_sample_1.mp3",
+      "what_i_love_about_nicole_randy_newman_marriage_story_sample_2.mp3",
+      "what_this_missions_about__da_5_bloods_terence_blanchard_sample_1.mp3",
+      "what_this_missions_about__da_5_bloods_terence_blanchard_sample_2.mp3",
+      "whiplash_hank_levy_sample_1.mp3",
+      "whiplash_hank_levy_sample_2.mp3",
+      "whiplash_overture_justin_hurwitz_sample_1.mp3",
+      "whiplash_overture_justin_hurwitz_sample_2.mp3",
+      "why_so_serious_hans_zimmer_the_dark_knight_sample_1.mp3",
+      "why_so_serious_hans_zimmer_the_dark_knight_sample_2.mp3",
+      "wont_get_fooled_again_the_who_top_gun_maverick_sample_1.mp3",
+      "wont_get_fooled_again_the_who_top_gun_maverick_sample_2.mp3",
+      "working_the_boulder_problem_marco_beltrami_free_solo_sample_1.mp3",
+      "working_the_boulder_problem_marco_beltrami_free_solo_sample_2.mp3",
+      "wtf_is_that_michael_abels_nope_sample_1.mp3",
+      "wtf_is_that_michael_abels_nope_sample_2.mp3",
+      "yo_la_tengo__ill_be_around_yolatengo_georgia_hubley_irakaplan_james_mcnew_boyhood_sample_1.mp3",
+      "yo_la_tengo__ill_be_around_yolatengo_georgia_hubley_irakaplan_james_mcnew_boyhood_sample_2.mp3",
+      "you_are_not_a_cow__gary_gunn_a_thousand_and_one_sample_1.mp3",
+      "you_are_not_a_cow__gary_gunn_a_thousand_and_one_sample_2.mp3",
+      "you_know_youre_not_asleep_steven_price_last_night_in_soho_sample_1.mp3",
+      "you_know_youre_not_asleep_steven_price_last_night_in_soho_sample_2.mp3",
+      "youandwhosearmy_radiohead_incendies_sample_1.mp3",
+      "youandwhosearmy_radiohead_incendies_sample_2.mp3",
+      "zara_larsson__invisible_klaus_sample_1.mp3",
+      "zara_larsson__invisible_klaus_sample_2.mp3"]; 
+
+      // Shuffle the array
+      const shuffledFiles = [...audioFolderFilesPage17];
+      for (let i = shuffledFiles.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledFiles[i], shuffledFiles[j]] = [shuffledFiles[j], shuffledFiles[i]];
+      }
+
+      // Select the first file from the shuffled array
+      const selectedFile = shuffledFiles[0];
+
+      // Generate the full path
+      const basePath = "/film-score-emotion-survey/audioFolder10/";
+      const fullPath = basePath + selectedFile;
+
+      // Set the full path in the state
+      setAudioPathPage17(fullPath);
+    }
+  }, [audioPathPage17, setAudioPathPage17]);
+
+  return null; // or return a placeholder element if needed
+};
+
+export default AudioSelectorPage17;
+
+
+/*"WTF_Is_That_Michael_Abels_Nope_sample_1.mp3",
       "WTF_Is_That_Michael_Abels_Nope_sample_2.mp3",
       "Walking_Home_Andre_Matthias_The_Gravedigger's_Wife_sample_1.mp3",
       "Walking_Home_Andre_Matthias_The_Gravedigger's_Wife_sample_2.mp3",
@@ -63,32 +149,9 @@ const AudioSelectorPage17 = ({ audioPathPage17, setAudioPathPage17 }) => {
       "toy-story-3-le-freak_chic_sample_1.mp3",
       "toy-story-3-le-freak_chic_sample_2.mp3",
       "you-and-whose-army_radiohead_incendies_sample_1.mp3",
-      "you-and-whose-army_radiohead_incendies_sample_2.mp3"]; 
+      "you-and-whose-army_radiohead_incendies_sample_2.mp3"*/
 
-      // Shuffle the array
-      const shuffledFiles = [...audioFolderFilesPage17];
-      for (let i = shuffledFiles.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffledFiles[i], shuffledFiles[j]] = [shuffledFiles[j], shuffledFiles[i]];
-      }
-
-      // Select the first file from the shuffled array
-      const selectedFile = shuffledFiles[0];
-
-      // Generate the full path
-      const basePath = "/film-score-emotion-survey/audioFolder10/";
-      const fullPath = basePath + selectedFile;
-
-      // Set the full path in the state
-      setAudioPathPage17(fullPath);
-    }
-  }, [audioPathPage17, setAudioPathPage17]);
-
-  return null; // or return a placeholder element if needed
-};
-
-export default AudioSelectorPage17;
-
+       
 /* export function getRandomAudioPath10() {
     const audioFiles = ["WTF_Is_That_Michael_Abels_Nope_sample_1.mp3",
     "Walking_Home_Andre_Matthias_The_Gravedigger's_Wife_sample_1.mp3",

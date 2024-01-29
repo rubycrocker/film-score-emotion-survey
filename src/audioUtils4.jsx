@@ -4,7 +4,94 @@ const AudioSelectorPage11 = ({ audioPathPage11, setAudioPathPage11 }) => {
   useEffect(() => {
     if (!audioPathPage11) {
       // Define your audio files for Page 11 here
-      const audioFolderFilesPage11 = ["Ha_Dias_-_Luca_Mundaca_sample_1.mp3",
+      const audioFolderFilesPage11 = ["ha_dias__luca_mundaca_sample_1.mp3",
+      "ha_dias__luca_mundaca_sample_2.mp3",
+      "he_had_a_good_time_cliff_martinez_drive_sample_1.mp3",
+      "he_had_a_good_time_cliff_martinez_drive_sample_2.mp3",
+      "help_me_make_it_through_the_nightkris_kristoffersoncorsage_sample_1.mp3",
+      "help_me_make_it_through_the_nightkris_kristoffersoncorsage_sample_2.mp3",
+      "hope_jamesnewtonhoward_a_hidden_life_sample_1.mp3",
+      "hope_jamesnewtonhoward_a_hidden_life_sample_2.mp3",
+      "hungryspirit_cornel_wilczek_thomas_e_rouch_talk_to_me_sample_1.mp3",
+      "hungryspirit_cornel_wilczek_thomas_e_rouch_talk_to_me_sample_2.mp3",
+      "hunting_alexisgrapsas_philipklein_pig_sample_1.mp3",
+      "hunting_alexisgrapsas_philipklein_pig_sample_2.mp3",
+      "i_could_show_you_if_youd_like_hans_zimmer_rush_sample_1.mp3",
+      "i_could_show_you_if_youd_like_hans_zimmer_rush_sample_2.mp3",
+      "i_remember_you_christopher_bear_daniel_rossen_past_lives_sample_1.mp3",
+      "i_remember_you_christopher_bear_daniel_rossen_past_lives_sample_2.mp3",
+      "im_with_you_to_the_end_steven_price_last_night_in_soho_sample_1.mp3",
+      "im_with_you_to_the_end_steven_price_last_night_in_soho_sample_2.mp3",
+      "in_motion__trentreznor_and_atticusross_the_social_network_sample_1.mp3",
+      "in_motion__trentreznor_and_atticusross_the_social_network_sample_2.mp3",
+      "in_stori_stif_and_stronge_the_green_knight_daniel_hart_sample_1.mp3",
+      "in_stori_stif_and_stronge_the_green_knight_daniel_hart_sample_2.mp3",
+      "inglorious_basterds_the_green_leaves_of_summer__nick_perito_sample_1.mp3",
+      "inglorious_basterds_the_green_leaves_of_summer__nick_perito_sample_2.mp3",
+      "into_the_spiderverse_daniel_pemberton_sample_1.mp3",
+      "into_the_spiderverse_daniel_pemberton_sample_2.mp3",
+      "into_the_wild_timekeeper_michael_brook_sample_1.mp3",
+      "into_the_wild_timekeeper_michael_brook_sample_2.mp3",
+      "is_that_what_everybody_wants_cliffmartinez_solaris_sample_1.mp3",
+      "is_that_what_everybody_wants_cliffmartinez_solaris_sample_2.mp3",
+      "itll_all_be_over_the_supreme_jubilees_moonlight_sample_1.mp3",
+      "itll_all_be_over_the_supreme_jubilees_moonlight_sample_2.mp3",
+      "its_on_your_buzzer__cliff_martinez__kimi_sample_1.mp3",
+      "its_on_your_buzzer__cliff_martinez__kimi_sample_2.mp3",
+      "jim_crow_the_help_thomas_newman_sample_1.mp3",
+      "jim_crow_the_help_thomas_newman_sample_2.mp3",
+      "john_williams_the_fabelmans_sample_1.mp3",
+      "john_williams_the_fabelmans_sample_2.mp3",
+      "joi_hans_zimmer_benjamin_wallfisch_blade_runner_2049_sample_1.mp3",
+      "joi_hans_zimmer_benjamin_wallfisch_blade_runner_2049_sample_2.mp3",
+      "jojos_theme_michael_giacchino_jojo_rabbit_sample_1.mp3",
+      "jojos_theme_michael_giacchino_jojo_rabbit_sample_2.mp3",
+      "joker__defeated_clown_call_me_joker_hildur_gudnadottir_sample_1.mp3",
+      "joker__defeated_clown_call_me_joker_hildur_gudnadottir_sample_2.mp3",
+      "joy_turns_to_sadness_a_growing_personality_michael_giacchinoinside_out_sample_1.mp3",
+      "joy_turns_to_sadness_a_growing_personality_michael_giacchinoinside_out_sample_2.mp3",
+      "judas_and_the_black_messiah_jimmy_enters_store__mark_isham__craig_harris_sample_1.mp3",
+      "judas_and_the_black_messiah_jimmy_enters_store__mark_isham__craig_harris_sample_2.mp3",
+      "judas_and_the_black_messiah_the_inflated_tear__the_car_the_club_mark_isham_sample_1.mp3",
+      "judas_and_the_black_messiah_the_inflated_tear__the_car_the_club_mark_isham_sample_2.mp3",
+      "julie_roue__revolution_day_jeune_femme_sample_1.mp3",
+      "julie_roue__revolution_day_jeune_femme_sample_2.mp3",
+      "jupiters_claim_michael_abels_nope_sample_1.mp3",
+      "jupiters_claim_michael_abels_nope_sample_2.mp3",
+      "katies_life_good_cop_dog_cop_mark_mothersbaugh_the_mitchells_vs_the_machines_sample_1.mp3",
+      "katies_life_good_cop_dog_cop_mark_mothersbaugh_the_mitchells_vs_the_machines_sample_2.mp3",
+      "kesariya__brahmastra__pritam_sample_1.mp3",
+      "kesariya__brahmastra__pritam_sample_2.mp3",
+      "kevin_beakn__michael_giacchino_up_sample_1.mp3",
+      "kevin_beakn__michael_giacchino_up_sample_2.mp3"];
+
+      // Shuffle the array
+      const shuffledFiles = [...audioFolderFilesPage11];
+      for (let i = shuffledFiles.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledFiles[i], shuffledFiles[j]] = [shuffledFiles[j], shuffledFiles[i]];
+      }
+
+      // Select the first file from the shuffled array
+      const selectedFile = shuffledFiles[0];
+
+      // Generate the full path
+      const basePath = "/film-score-emotion-survey/audioFolder4/";
+      const fullPath = basePath + selectedFile;
+
+      // Set the full path in the state
+      setAudioPathPage11(fullPath);
+    }
+  }, [audioPathPage11, setAudioPathPage11]);
+
+  return null; // or return a placeholder element if needed
+};
+
+export default AudioSelectorPage11;
+
+
+
+/*"Ha_Dias_-_Luca_Mundaca_sample_1.mp3",
       "Ha_Dias_-_Luca_Mundaca_sample_2.mp3",
       "He_Had_a_Good_Time_Cliff_Martinez_Drive_sample_1.mp3",
       "He_Had_a_Good_Time_Cliff_Martinez_Drive_sample_2.mp3",
@@ -63,31 +150,9 @@ const AudioSelectorPage11 = ({ audioPathPage11, setAudioPathPage11 }) => {
       "Kesariya_-_Brahmastra__Pritam_sample_1.mp3",
       "Kesariya_-_Brahmastra__Pritam_sample_2.mp3",
       "Kevin_Beak'n__Michael_Giacchino_Up_sample_1.mp3",
-      "Kevin_Beak'n__Michael_Giacchino_Up_sample_2.mp3"];
+      "Kevin_Beak'n__Michael_Giacchino_Up_sample_2.mp3"*/
 
-      // Shuffle the array
-      const shuffledFiles = [...audioFolderFilesPage11];
-      for (let i = shuffledFiles.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffledFiles[i], shuffledFiles[j]] = [shuffledFiles[j], shuffledFiles[i]];
-      }
 
-      // Select the first file from the shuffled array
-      const selectedFile = shuffledFiles[0];
-
-      // Generate the full path
-      const basePath = "/film-score-emotion-survey/audioFolder4/";
-      const fullPath = basePath + selectedFile;
-
-      // Set the full path in the state
-      setAudioPathPage11(fullPath);
-    }
-  }, [audioPathPage11, setAudioPathPage11]);
-
-  return null; // or return a placeholder element if needed
-};
-
-export default AudioSelectorPage11;
 /* 
 export function getRandomAudioPath4() {
     const audioFiles = ["Ha_Dias_-_Luca_Mundaca_sample_1.mp3",
